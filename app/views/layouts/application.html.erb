@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dreamgram</title>
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body class="container">
+	<header class="navbar navbar-static-top">
+		<div class="navbar-inner">
+			<span class="brand"><%= link_to "Dreamgram", root_path %></span>
+			<ul class="nav pull-right">
+				<li><%= link_to "Home", dreams_path %></li>
+			</ul>
+		</div>
+	</header>
+
+	<%= yield %>
+</body>
+</html>
