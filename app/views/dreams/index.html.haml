@@ -1,5 +1,7 @@
-%h1 Bucketlist
-= link_to 'Add', new_dream_path
+%header.clearfix
+  %h1.pull-left Bucketlist
+  = link_to new_dream_path, :class => 'pull-right' do
+    %i.icon-plus-sign.icon-2x
 
 .dreams
   - @dreams.each do |dream|
