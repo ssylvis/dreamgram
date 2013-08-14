@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
 gem 'bootstrap-sass'
+gem 'haml-rails'
 gem 'jquery-rails'
 gem 'json'
+gem 'rails', '3.2.13'
 
 group :development, :test do
   gem 'rspec-rails'

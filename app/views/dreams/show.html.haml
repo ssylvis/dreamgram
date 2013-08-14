@@ -1,0 +1,7 @@
+%h2 Dream
+- if notice
+  #notice.alert.alert-success= notice
+%p= @dream.name
+= link_to 'Edit', edit_dream_path(@dream)
+|
+= link_to 'Back', dreams_path
