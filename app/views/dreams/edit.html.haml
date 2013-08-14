@@ -1,3 +1,2 @@
-= render :partial => 'header'
-= render 'form'
-= link_to 'Cancel', dreams_path
+= render 'header'
+= render :partial => 'form', :locals => {:submit => 'Update'}

@@ -1,13 +1,9 @@
-= form_for(@dream) do |f|
-  - if @dream.errors.any?
-    #error_explanation.alert.alert-error
-      %h3
-        = pluralize(@dream.errors.count, "error")
-        prohibited this dream from being saved:
-      %ul
-        - @dream.errors.full_messages.each do |msg|
-          %li= msg
-  .field
-    = f.text_field :name
-  .actions
-    = f.submit
+= form_for @dream, :html => {:class => 'form-horizontal'} do |f|
+  .control-group
+    = f.label :name, 'Name:', :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'span6'
+  .control-group
+    .controls
+      = f.submit "#{submit}", :class => 'btn btn-primary'
+      = link_to 'Cancel', dreams_path, :class => 'btn'
