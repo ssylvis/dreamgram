@@ -1,8 +1,4 @@
-%header.clearfix
-  %h1.pull-left Bucketlist
-  = link_to new_dream_path, :class => 'pull-right' do
-    %i.icon-plus-sign.icon-2x
-
+= render :partial => 'header', :locals => {:show_buttons => true}
 .dreams
   - @dreams.each do |dream|
     .dream

@@ -1,0 +1,7 @@
+- show_buttons ||= nil
+
+%header.clearfix
+  %h1.pull-left Bucketlist
+  - if show_buttons
+    = link_to new_dream_path, :class => 'pull-right' do
+      %i.icon-plus-sign.icon-2x
