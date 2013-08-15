@@ -1,4 +1,32 @@
 class DreamsController < ApplicationController
+  def create
+    @dream = Dream.new(params[:dream])
+
+    respond_to do |format|
+      if @dream.save
+        format.html { redirect_to dreams_url }
+        format.json { render :json => @dream, :status => :created, :location => @dreams }
+      else
+        format.html { render :action => "new" }
+        format.json { render :json => @dream.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @dream = Dream.find(params[:id])
+    @dream.destroy
+
+    respond_to do |format|
+      format.html { redirect_to dreams_url }
+      format.json { head :no_content }
+    end
+  end
+
+  def edit
+    @dream = Dream.find(params[:id])
+  end
+
   def index
     @dreams = Dream.all
 
@@ -17,24 +45,6 @@ class DreamsController < ApplicationController
     end
   end
 
-  def edit
-    @dream = Dream.find(params[:id])
-  end
-
-  def create
-    @dream = Dream.new(params[:dream])
-
-    respond_to do |format|
-      if @dream.save
-        format.html { redirect_to dreams_url }
-        format.json { render :json => @dream, :status => :created, :location => @dreams }
-      else
-        format.html { render :action => "new" }
-        format.json { render :json => @dream.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
   def update
     @dream = Dream.find(params[:id])
 
@@ -46,16 +56,6 @@ class DreamsController < ApplicationController
         format.html { render :action => "edit" }
         format.json { render :json => @dream.errors, :status => :unprocessable_entity }
       end
-    end
-  end
-
-  def destroy
-    @dream = Dream.find(params[:id])
-    @dream.destroy
-
-    respond_to do |format|
-      format.html { redirect_to dreams_url }
-      format.json { head :no_content }
     end
   end
 end
