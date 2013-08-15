@@ -18,7 +18,7 @@ class DreamsController < ApplicationController
     @dream.destroy
 
     respond_to do |format|
-      format.html { redirect_to dreams_url }
+      format.html { redirect_to dreams_url(:edit => true) }
       format.json { head :no_content }
     end
   end

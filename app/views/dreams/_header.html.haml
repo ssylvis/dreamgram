@@ -1,7 +1,13 @@
-- show_buttons ||= nil
+- mode ||= nil
 
 %header.clearfix
   %h1.pull-left Bucketlist
-  - if show_buttons
+  - case mode
+  - when :editing
+    = link_to dreams_path, :class => 'done pull-right' do
+      %i.icon-ok-sign.icon-2x
+  - when :listing
     = link_to new_dream_path, :class => 'new pull-right' do
       %i.icon-plus-sign.icon-2x
+    = link_to dreams_path(:edit => true), :class => 'edit pull-right' do
+      %i.icon-pencil.icon-2x
