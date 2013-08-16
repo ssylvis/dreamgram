@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'bootstrap-sass'
 gem 'haml-rails'
@@ -7,6 +8,7 @@ gem 'json'
 gem 'rails', '3.2.13'
 
 group :development, :test do
+  gem 'pry-debugger'
   gem 'rspec-rails'
   gem 'sqlite3'
 end
