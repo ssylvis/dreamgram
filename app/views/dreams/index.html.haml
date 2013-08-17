@@ -1,12 +1,14 @@
 - mode = params[:edit] ? :editing : :listing
+- height = 300
+- width = 240
 
 = render :partial => 'header', :locals => {:mode => mode}
-.dreams
+.dreams.row-fluid
   - @dreams.each do |dream|
-    .dream
-      - if mode == :editing
-        = link_to dream.name, edit_dream_path(dream)
-        = button_to 'Delete', dream_path(dream), {:method => 'delete', :class => 'btn btn-danger'} do
-          %i.icon-ok-sign.icon-2x
-      - else
-        = dream.name
+    .dream.pull-left
+      %ul.thumbnails
+        %li
+          .thumbnail{:style => "width: #{width}px"}
+            - image_src = dream.image.blank? ? 'empty.png' : dream.image
+            = image_tag image_src, :size => "#{width}x#{height}", :style => "height: #{height}px"
+            = render :partial => 'caption', :locals => {:dream => dream, :mode => mode}

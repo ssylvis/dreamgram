@@ -4,6 +4,10 @@
     .controls
       = f.text_field :name, :class => 'span6'
   .control-group
+    = f.label :image, 'Image URL:', :class => 'control-label'
+    .controls
+      = f.text_field :image, :class => 'span6'
+  .control-group
     .controls
       = f.submit "#{submit}", :class => 'btn btn-primary'
       = link_to 'Cancel', dreams_path, :class => 'btn'
