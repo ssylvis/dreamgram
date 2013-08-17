@@ -145,7 +145,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
-  coffee-rails (~> 3.2.1)
+  coffee-rails
   font-awesome-rails
   haml-rails
   jquery-rails
@@ -154,6 +154,6 @@ DEPENDENCIES
   pry-debugger
   rails (= 3.2.13)
   rspec-rails
-  sass-rails (~> 3.2.3)
+  sass-rails
   sqlite3
-  uglifier (>= 1.0.3)
+  uglifier
