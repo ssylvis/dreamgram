@@ -4,7 +4,9 @@
 .dreams
   - @dreams.each do |dream|
     .dream
-      = link_to dream.name, edit_dream_path(dream)
       - if mode == :editing
+        = link_to dream.name, edit_dream_path(dream)
         = button_to 'Delete', dream_path(dream), {:method => 'delete', :class => 'btn btn-danger'} do
           %i.icon-ok-sign.icon-2x
+      - else
+        = dream.name
