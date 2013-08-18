@@ -4,11 +4,10 @@
 
 body
   font-family: museo-sans
-  margin: 50px
 
 header
   border-top: 2px solid black
-  margin-bottom: 40px
+  margin: 0 8px 40px 8px
 
   a
     margin: 15px 0 15px 10px
@@ -25,33 +24,15 @@ header
   .new
     color: rgb(51,217,88)
 
-.dream
-  margin: 8px 0
+// Portrait tablet and larger
+@media (min-width: 768px)
+  body
+    margin: 50px 30px
 
-  a
-    color: inherit
+// Portrait tablet and smaller
+@media (max-width: 767px)
+  body
+    margin: 20px
 
-  .thumbnail
-    border: none
-    border-radius: 0
-    box-shadow: none
-
-    .caption
-      height: 10px
-
-      .btn
-        margin-top: 8px
-
-    .caption-edit
-      height: 30px
-
-.form-horizontal
-  .control-label
-    font-weight: bold
-    width: 80px
-
-  .controls
-    margin-left: 100px
-
-    p
-      padding: 5px 0
+  header a
+    margin-left: 5px
