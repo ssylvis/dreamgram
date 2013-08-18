@@ -2,13 +2,15 @@
 
 %header.row-fluid.clearfix
   %h1.pull-left Bucketlist
-  - case mode
-  - when :editing
-    = link_to 'Done', dreams_path, :class => 'btn btn-primary done pull-right'
-  - when :listing
-    = link_to new_dream_path, :class => 'new pull-right' do
-      %i.icon-plus-sign.icon-2x
-    = link_to dreams_path(:edit => true), :class => 'edit pull-right' do
-      %span.icon-stack
-        %i.icon-circle.icon-stack-base
-        %i.icon-pencil.icon-light
+
+  .buttons.clear-fix
+    - case mode
+    - when :editing
+      = link_to 'Done', dreams_path, :class => 'btn btn-primary done pull-right'
+    - when :listing
+      = link_to new_dream_path, :class => 'new pull-right' do
+        %i.icon-plus-sign.icon-2x
+      = link_to dreams_path(:edit => true), :class => 'edit pull-right' do
+        %span.icon-stack
+          %i.icon-circle.icon-stack-base
+          %i.icon-pencil.icon-light
