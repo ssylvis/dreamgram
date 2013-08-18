@@ -3,12 +3,22 @@
 - width = 240
 
 = render :partial => 'header', :locals => {:mode => mode}
+
 .dreams.row-fluid
   - @dreams.each do |dream|
     .dream.pull-left
+      - if mode == :editing
+        .buttons
+          = form_tag dream_path(dream), :method => 'delete' do
+            = image_submit_tag 'remove-circle.png', :class => 'dream-remove'
+          = link_to edit_dream_path(dream), :class => 'dream-edit' do
+            %span.icon-stack
+              %i.icon-circle-blank.icon-stack-base
+              %i.icon-info
+
       %ul.thumbnails
         %li
           .thumbnail{:style => "width: #{width}px"}
             - image_src = dream.image.blank? ? 'empty.png' : dream.image
             = image_tag image_src, :size => "#{width}x#{height}", :style => "height: #{height}px"
-            = render :partial => 'caption', :locals => {:dream => dream, :mode => mode}
+            .caption= dream.name
