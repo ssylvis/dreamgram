@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
 
+gem 'bcrypt-ruby'
 gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'jquery-rails'
