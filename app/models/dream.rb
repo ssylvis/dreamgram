@@ -1,3 +1,3 @@
 class Dream < ActiveRecord::Base
-  attr_accessible :image, :name
+  attr_accessible :description, :image
 end

@@ -1,8 +1,8 @@
 = form_for @dream, :html => {:class => 'form-horizontal'} do |f|
   .control-group
-    = f.label :name, 'Name:', :class => 'control-label'
+    = f.label :description, 'Description:', :class => 'control-label'
     .controls
-      = f.text_field :name, :class => 'span6'
+      = f.text_field :description, :class => 'span6'
   .control-group
     = f.label :image, 'Image URL:', :class => 'control-label'
     .controls

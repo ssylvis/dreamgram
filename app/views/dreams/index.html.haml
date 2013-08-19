@@ -21,4 +21,4 @@
           .thumbnail{:style => "width: #{width}px"}
             - image_src = dream.image.blank? ? 'empty.png' : dream.image
             = image_tag image_src, :size => "#{width}x#{height}", :style => "height: #{height}px"
-            .caption= dream.name
+            .caption= dream.description
