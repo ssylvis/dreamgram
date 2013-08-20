@@ -5,7 +5,7 @@ class DreamsController < ApplicationController
     if @dream.save
       redirect_to dreams_url
     else
-      render :action => 'new'
+      render 'new'
     end
   end
 
@@ -34,7 +34,7 @@ class DreamsController < ApplicationController
     if @dream.update_attributes(params[:dream])
       redirect_to dreams_url
     else
-      render :action => 'edit'
+      render 'edit'
     end
   end
 end
