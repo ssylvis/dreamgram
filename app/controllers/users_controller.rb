@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
+      login @user
       redirect_to dreams_url
     else
       render 'new'
@@ -10,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    logout
     @user = User.find(params[:id])
     @user.destroy
   end

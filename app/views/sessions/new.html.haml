@@ -1,0 +1,12 @@
+%header
+  %h1 Bucketlist
+
+= form_for :session, :url => sessions_path, :html => {:class => 'form-horizontal'} do |f|
+  = render :partial => 'shared/signin', :locals => {:f => f}
+  .control-group
+    .controls
+      = f.submit 'Signin', :class => 'btn btn-primary'
+
+%p
+  New user?
+  = link_to "Register for an account.", signup_path
