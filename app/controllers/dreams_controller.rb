@@ -1,6 +1,8 @@
 class DreamsController < ApplicationController
+  before_filter :login_required
+
   def create
-    @dream = Dream.new(params[:dream])
+    @dream = current_user.dreams.build(params[:dream])
 
     if @dream.save
       redirect_to dreams_url
@@ -10,18 +12,18 @@ class DreamsController < ApplicationController
   end
 
   def destroy
-    @dream = Dream.find(params[:id])
+    @dream = find_dream(params[:id])
     @dream.destroy
 
     redirect_to dreams_url(:edit => true)
   end
 
   def edit
-    @dream = Dream.find(params[:id])
+    @dream = find_dream(params[:id])
   end
 
   def index
-    @dreams = Dream.order('created_at')
+    @dreams = current_user.dreams.order('created_at')
   end
 
   def new
@@ -29,7 +31,7 @@ class DreamsController < ApplicationController
   end
 
   def update
-    @dream = Dream.find(params[:id])
+    @dream = find_dream(params[:id])
 
     if @dream.update_attributes(params[:dream])
       redirect_to dreams_url
@@ -37,4 +39,11 @@ class DreamsController < ApplicationController
       render 'edit'
     end
   end
+
+private
+
+  def find_dream(id)
+    current_user.dreams.find(id)
+  end
+
 end

@@ -14,16 +14,19 @@
 ActiveRecord::Schema.define(:version => 20130819011437) do
 
   create_table "dreams", :force => true do |t|
-    t.string   "description", :null => false
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "description",                :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.string   "image"
+    t.integer  "user_id",     :default => 0, :null => false
   end
+
+  add_index "dreams", ["user_id"], :name => "index_dreams_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "name",            :null => false
-    t.string   "password_digest"
+    t.string   "password_digest", :null => false
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

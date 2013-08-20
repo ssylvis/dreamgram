@@ -12,6 +12,10 @@ module SessionsHelper
     self.current_user = user
   end
 
+  def login_required
+    redirect_to login_url unless logged_in?
+  end
+
   def logout
     session.delete(:remember_token)
     self.current_user = nil
