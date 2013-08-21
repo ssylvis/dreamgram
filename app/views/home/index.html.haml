@@ -1,6 +1,7 @@
-.center.hero-unit
-  .page-header
-    %h1
-      Dreamgram
-      %small Share your dreams. Big and small.
-  = link_to 'Get Started', dreams_path, :class => 'btn btn-primary btn-large'
+- content_for :body do
+  .center.hero-unit
+    .page-header
+      %h1
+        Dreamgram
+        %small Share your dreams. Big and small.
+    = link_to 'Get Started', dreams_path, :class => 'btn btn-primary btn-large'

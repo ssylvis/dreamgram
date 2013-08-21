@@ -1,0 +1,19 @@
+- height = 330
+- width = 220
+
+%section.dream.pull-left
+  - if mode == :editing
+    .buttons
+      = form_tag dream_path(dream), :method => 'delete' do
+        = image_submit_tag 'remove-circle.png', :class => 'dream-remove pull-left'
+      = link_to edit_dream_path(dream), :class => 'dream-edit pull-right' do
+        %span.icon-stack
+          %i.icon-circle-blank.icon-stack-base
+          %i.icon-info
+
+  %ul.thumbnails
+    %li
+      .thumbnail{:style => "width: #{width}px"}
+        - image_src = dream.image.blank? ? 'empty.png' : dream.image
+        = image_tag image_src, :size => "#{width}x#{height}", :style => "height: #{height}px"
+        .caption= dream.description
