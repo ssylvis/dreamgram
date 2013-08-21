@@ -1,5 +1,9 @@
 // Layout for pages other than Home
 - content_for :body do
+  - if logged_in?
+    %section.profile
+      = button_to 'Logout', logout_path, {:method => :delete, :class => 'btn btn-link'}
+
   %header.row-fluid.clear-fix
     %h1.pull-left Bucketlist
     = yield :header
