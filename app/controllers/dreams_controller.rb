@@ -3,7 +3,6 @@ class DreamsController < ApplicationController
 
   def create
     @dream = current_user.dreams.build(params[:dream])
-
     if @dream.save
       redirect_to dreams_url
     else
@@ -32,7 +31,6 @@ class DreamsController < ApplicationController
 
   def update
     @dream = find_dream(params[:id])
-
     if @dream.update_attributes(params[:dream])
       redirect_to dreams_url
     else
@@ -45,5 +43,4 @@ private
   def find_dream(id)
     current_user.dreams.find(id)
   end
-
 end

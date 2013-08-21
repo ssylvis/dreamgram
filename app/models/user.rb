@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   validates :password, :length => { :minimum => 10 }
 
 private
+
   def sanitize_email
     self.email = email.downcase
   end
