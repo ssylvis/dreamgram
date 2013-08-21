@@ -3,9 +3,9 @@
 = form_for :session, :url => login_path, :html => {:class => 'form-horizontal'} do |f|
   = render :partial => 'shared/signin', :locals => {:f => f}
   .control-group
-    .controls
+    %span.controls
       = f.submit 'Signin', :class => 'btn btn-primary'
 
-%p
-  New user?
-  = link_to "Register for an account.", signup_path
+      %span.new-user
+        New user?
+        = link_to "Register for an account.", signup_path
