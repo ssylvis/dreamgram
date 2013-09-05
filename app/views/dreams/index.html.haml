@@ -5,7 +5,7 @@
   .buttons.clear-fix
     - case mode
     - when :editing
-      = link_to 'Done', dreams_path, :class => 'btn btn-primary done pull-right'
+      = link_to 'Done', dreams_path, :class => 'btn-link done pull-right'
     - when :listing
       = link_to new_dream_path, :class => 'new pull-right' do
         %i.icon-plus-sign.icon-2x

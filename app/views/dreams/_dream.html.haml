@@ -5,11 +5,14 @@
   - if mode == :editing
     .buttons
       = form_tag dream_path(dream), :method => 'delete' do
-        = image_submit_tag 'remove-circle.png', :class => 'dream-remove pull-left'
-      = link_to edit_dream_path(dream), :class => 'dream-edit pull-right' do
+        = button_tag :type => 'submit', :class => 'dream-remove btn-link' do
+          %span.icon-stack
+            %i.icon-stack-base.icon-circle
+            %i.icon-remove.icon-light
+      = link_to edit_dream_path(dream), :class => 'dream-edit' do
         %span.icon-stack
-          %i.icon-circle-blank.icon-stack-base
-          %i.icon-info
+          %i.icon-stack-base.icon-circle
+          %i.icon-info.icon-light
 
   %ul.thumbnails
     %li
