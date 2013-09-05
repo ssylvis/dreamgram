@@ -7,7 +7,7 @@
   %header.row-fluid.clear-fix
     %h1.pull-left Bucketlist
     - if logged_in?
-      %h2.pull-left= current_user.name
+      %h1.user-name.pull-left= current_user.name
     = yield :header
 
   = yield
