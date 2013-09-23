@@ -1,8 +1,12 @@
-.control-group
+- model ||= nil
+
+- control_group_for(model, :email) do
   = f.label :email, 'Email:', :class => 'control-label'
   .controls
     = f.text_field :email
-.control-group
+    - error_for model, :email
+- control_group_for(model, :password) do
   = f.label :password, 'Password:', :class => 'control-label'
   .controls
     = f.password_field :password
+    - error_for model, :password
