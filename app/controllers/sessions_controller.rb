@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def create
     email = params[:session][:email].downcase
     password = params[:session][:password]
-    user = User.where('email = ?', email).first
+    user = User.find_by_email(email)
     if user && user.authenticate(password)
       login user
       redirect_to dreams_url

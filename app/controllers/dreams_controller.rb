@@ -22,7 +22,7 @@ class DreamsController < ApplicationController
   end
 
   def index
-    @dreams = current_user.dreams.order('created_at')
+    @dreams = current_user.dreams.order_by_creation
   end
 
   def new
