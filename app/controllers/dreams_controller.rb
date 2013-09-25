@@ -22,7 +22,8 @@ class DreamsController < ApplicationController
   end
 
   def index
-    @dreams = current_user.dreams.order_by_creation
+    state = DreamState.value_of(params[:state]) || DreamState::ALL
+    @dreams = current_user.dreams.completed(state)
   end
 
   def new
