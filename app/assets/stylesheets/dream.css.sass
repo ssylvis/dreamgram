@@ -4,45 +4,56 @@
   a
     color: inherit
 
-  .buttons
-    left: -12px
+  .edit-buttons
+    left: -8px
     position: absolute
-    top: -14px
+    top: -10px
 
-    .dream-edit
+    form
+      display: inline-block
+
+    .edit
       color: rgb(75,179,243)
-      left: 45px
-      position: absolute
-      top: 2px
 
-    .dream-remove
+    .remove
       color: rgb(245,26,26)
+      display: inline-block
       font-size: 1em
-      position: absolute
+      padding: 0
 
       &:hover
         text-decoration: none
-
 
   .thumbnail
     border: none
     border-radius: 0
     box-shadow: none
 
+    .buttons
+      font-size: 1em
+
     .caption
       height: 2em
       overflow: hidden
 
-  .thumbnails
-    li
-      margin-left: 0
+.dreams
+  .dream
+    margin-left: 0
 
 // Portrait tablet and larger
 @media (min-width: 768px)
   .dream .thumbnail
-    margin: 0 8px
+    margin: 0 4px
 
 // Portrait tablet and smaller
 @media (max-width: 767px)
-  .dream .thumbnail
-    margin: 0
+  .dream
+    float: left !important
+
+    .thumbnail
+      margin: 0
+
+// Landscape phone and smaller
+@media (max-width: 480px)
+  .dream
+    float: none

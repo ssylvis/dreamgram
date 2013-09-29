@@ -1,22 +1,20 @@
 - height = 330
 - width = 220
 
-%section.dream.pull-left
-  - if mode == :editing
-    .buttons
-      = form_tag dream_path(dream), :method => 'delete' do
-        = button_tag :type => 'submit', :class => 'dream-remove btn-link' do
+%li.dream
+  .thumbnail{:style => "width: #{width}px"}
+    - if mode == :editing
+      .buttons.edit-buttons
+        = form_tag dream_path(dream), :method => 'delete' do
+          = button_tag :type => 'submit', :class => 'btn-link remove' do
+            %span.icon-stack
+              %i.icon-stack-base.icon-circle
+              %i.icon-remove.icon-light
+        = link_to edit_dream_path(dream), :class => 'edit' do
           %span.icon-stack
             %i.icon-stack-base.icon-circle
-            %i.icon-remove.icon-light
-      = link_to edit_dream_path(dream), :class => 'dream-edit' do
-        %span.icon-stack
-          %i.icon-stack-base.icon-circle
-          %i.icon-info.icon-light
+            %i.icon-info.icon-light
 
-  %ul.thumbnails
-    %li
-      .thumbnail{:style => "width: #{width}px"}
-        - image_src = dream.image.blank? ? 'empty.png' : dream.image
-        = image_tag image_src, :size => "#{width}x#{height}", :style => "height: #{height}px"
-        .caption= dream.description
+    - image_src = dream.image.blank? ? 'empty.png' : dream.image
+    = image_tag image_src, :size => "#{width}x#{height}", :style => "height: #{height}px"
+    .caption= dream.description

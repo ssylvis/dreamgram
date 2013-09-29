@@ -15,4 +15,5 @@
           %i.icon-pencil.icon-light
 
 %section.dreams.row-fluid
-  = render :partial => 'dream', :collection => @dreams, :locals => {:mode => mode}
+  %ul.thumbnails
+    = render :partial => 'dream', :collection => @dreams, :locals => {:mode => mode}
