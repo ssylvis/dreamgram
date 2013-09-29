@@ -15,6 +15,16 @@
             %i.icon-stack-base.icon-circle
             %i.icon-info.icon-light
 
+    .buttons.completed-button
+      = form_tag dream_path(dream), :method => 'put' do
+        - classes = 'btn-link'
+        - classes += ' completed' if dream.completed?
+        = hidden_field_tag 'edit', 'true' if params[:edit].present?
+        = hidden_field_tag 'state', params[:state] if params[:state].present?
+        = hidden_field_tag 'dream[completed]', !dream.completed?
+        = button_tag :type => 'submit', :class => classes do
+          %i.icon-ok-circle.icon-2x
+
     - image_src = dream.image.blank? ? 'empty.png' : dream.image
     = image_tag image_src, :size => "#{width}x#{height}", :style => "height: #{height}px"
     .caption= dream.description
