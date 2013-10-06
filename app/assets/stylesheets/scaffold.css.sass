@@ -9,6 +9,9 @@ header
   border-top: 2px solid black
   margin: 15px 8px 40px 8px
 
+  h1
+    display: inline-block
+
   .user-name
     color: rgb(112,112,112)
     font-weight: normal
@@ -55,5 +58,16 @@ section.profile
   body
     margin: 20px
 
-  header .buttons a
-    margin-left: 5px
+// Landscape phone and smaller
+@media (max-width: 480px)
+  header
+    h1
+      display: block
+      float: none !important
+
+    .buttons
+      margin: 5px 0
+
+    .user-name
+      line-height: 20px
+      margin: 0 0 15px 0

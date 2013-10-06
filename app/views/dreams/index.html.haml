@@ -3,18 +3,18 @@
 - state = DreamState.value_of(params[:state]) || DreamState::ALL
 
 - content_for :header do
-  .buttons.clear-fix
+  .buttons.pull-right
     - case mode
     - when :editing
-      = link_to 'Done', dreams_path, :class => 'btn-link done pull-right'
+      = link_to 'Done', dreams_path, :class => 'btn-link done'
     - when :listing
-      = link_to new_dream_path, :class => 'new pull-right' do
-        %i.icon-plus-sign.icon-2x
       - edit_options = params.slice(:state).merge(:edit => true)
-      = link_to dreams_path(edit_options), :class => 'edit pull-right' do
+      = link_to dreams_path(edit_options), :class => 'edit' do
         %span.icon-stack
           %i.icon-circle.icon-stack-base
           %i.icon-pencil.icon-light
+      = link_to new_dream_path, :class => 'new' do
+        %i.icon-plus-sign.icon-2x
 
 %section.dreams.row-fluid.text-center
   %ul.nav.nav-pills
