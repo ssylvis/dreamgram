@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130925053226) do
+ActiveRecord::Schema.define(:version => 20131117065056) do
 
   create_table "dreams", :force => true do |t|
     t.string   "description",                 :null => false
@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(:version => 20130925053226) do
     t.string   "image"
     t.integer  "user_id",      :default => 0, :null => false
     t.datetime "completed_at"
+    t.integer  "crop_x"
+    t.integer  "crop_y"
+    t.integer  "crop_w"
+    t.integer  "crop_h"
   end
 
   add_index "dreams", ["user_id"], :name => "index_dreams_on_user_id"

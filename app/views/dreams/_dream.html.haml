@@ -1,5 +1,5 @@
-- height = 330
-- width = 220
+- height = DreamsHelper::IMAGE_HEIGHT
+- width = DreamsHelper::IMAGE_WIDTH
 
 %li.dream
   .thumbnail{:style => "width: #{width}px"}
@@ -24,6 +24,7 @@
         = button_tag :type => 'submit', :class => classes do
           %i.icon-ok-circle.icon-2x
 
-    - image_src = dream.image.blank? ? 'empty.png' : dream.image
-    = image_tag image_src, :size => "#{width}x#{height}", :style => "height: #{height}px"
+    .image
+      - image_src = dream.image.blank? ? 'empty.png' : dream.image
+      = image_tag image_src, :style => image_style(dream)
     .caption= dream.description

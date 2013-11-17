@@ -1,5 +1,6 @@
 class Dream < ActiveRecord::Base
   attr_accessible :completed_at, :description, :image
+  attr_accessible :crop_x, :crop_y, :crop_w, :crop_h
 
   belongs_to :user
   validates :user_id, :presence => true
@@ -9,6 +10,10 @@ class Dream < ActiveRecord::Base
 
   def completed?
     completed_at.present?
+  end
+
+  def cropped?
+    crop_x.present? && crop_y.present? && crop_w.present? && crop_h.present?
   end
 
 private
