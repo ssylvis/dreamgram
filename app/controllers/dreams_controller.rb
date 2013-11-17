@@ -23,8 +23,7 @@ class DreamsController < ApplicationController
   end
 
   def index
-    state = DreamState.value_of(params[:state]) || DreamState::ALL
-    @dreams = current_user.dreams.completed(state)
+    @dreams = current_user.dreams.completed(DreamState::ALL)
   end
 
   def new
@@ -34,7 +33,7 @@ class DreamsController < ApplicationController
   def update
     @dream = find_dream(params[:id])
     if @dream.update_attributes(params[:dream])
-      redirect_to dreams_url(params.slice(:edit, :state))
+      redirect_to dreams_url(params.slice(:edit))
     else
       render 'edit'
     end

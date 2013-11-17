@@ -1,6 +1,5 @@
 - @title = 'Dreams'
 - mode = params[:edit] ? :editing : :listing
-- state = DreamState.value_of(params[:state]) || DreamState::ALL
 
 - content_for :header do
   .buttons.pull-right
@@ -8,19 +7,13 @@
     - when :editing
       = link_to 'Done', dreams_path, :class => 'btn-link done'
     - when :listing
-      - edit_options = params.slice(:state).merge(:edit => true)
+      - edit_options = params.merge(:edit => true)
       = link_to dreams_path(edit_options), :class => 'edit' do
         %span.icon-stack
           %i.icon-circle.icon-stack-base
           %i.icon-pencil.icon-light
       = link_to new_dream_path, :class => 'new' do
         %i.icon-plus-sign.icon-2x
-
-%section.dreams.row-fluid.text-center
-  %ul.nav.nav-pills
-    - dream_tab DreamState::ALL, state
-    - dream_tab DreamState::ACTIVE, state
-    - dream_tab DreamState::FULFILLED, state
 
 %section.dreams.row-fluid
   %ul.thumbnails

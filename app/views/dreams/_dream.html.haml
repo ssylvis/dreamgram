@@ -20,7 +20,6 @@
         - classes = 'btn-link'
         - classes += ' completed' if dream.completed?
         = hidden_field_tag 'edit', 'true' if params[:edit].present?
-        = hidden_field_tag 'state', params[:state] if params[:state].present?
         = hidden_field_tag 'dream[completed]', !dream.completed?
         = button_tag :type => 'submit', :class => classes do
           %i.icon-ok-circle.icon-2x
