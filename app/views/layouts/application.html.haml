@@ -4,11 +4,13 @@
     %section.profile
       = button_to 'Logout', logout_path, {:method => :delete, :class => 'btn btn-link'}
 
-  %header.row-fluid.clear-fix
-    %h1.pull-left Bucketlist
-    - if logged_in?
-      %h1.user-name.pull-left= current_user.name
-    = yield :header
+  %header.row
+    .col-xs-12
+      .header
+        %h1.pull-left Bucketlist
+        - if logged_in?
+          %h1.user-name.pull-left= current_user.name
+        = yield :header
 
   = yield
 

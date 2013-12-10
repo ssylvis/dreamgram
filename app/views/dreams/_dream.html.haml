@@ -1,30 +1,29 @@
 - height = DreamsHelper::IMAGE_HEIGHT
 - width = DreamsHelper::IMAGE_WIDTH
 
-%li.dream
-  .thumbnail{:style => "width: #{width}px"}
-    - if mode == :editing
-      .buttons.edit-buttons
-        = form_tag dream_path(dream), :method => 'delete' do
-          = button_tag :type => 'submit', :class => 'btn-link remove' do
-            %span.icon-stack
-              %i.icon-stack-base.icon-circle
-              %i.icon-remove.icon-light
-        = link_to edit_dream_path(dream), :class => 'edit' do
+.dream.thumbnail.pull-left{:style => "width: #{width}px"}
+  - if mode == :editing
+    .buttons.edit-buttons
+      = form_tag dream_path(dream), :method => 'delete' do
+        = button_tag :type => 'submit', :class => 'btn-link remove' do
           %span.icon-stack
             %i.icon-stack-base.icon-circle
-            %i.icon-info.icon-light
+            %i.icon-remove.icon-light
+      = link_to edit_dream_path(dream), :class => 'edit' do
+        %span.icon-stack
+          %i.icon-stack-base.icon-circle
+          %i.icon-info.icon-light
 
-    .buttons.completed-button
-      = form_tag dream_path(dream), :method => 'put' do
-        - classes = 'btn-link'
-        - classes += ' completed' if dream.completed?
-        = hidden_field_tag 'edit', 'true' if params[:edit].present?
-        = hidden_field_tag 'dream[completed]', !dream.completed?
-        = button_tag :type => 'submit', :class => classes do
-          %i.icon-ok-circle.icon-2x
+  .buttons.completed-button
+    = form_tag dream_path(dream), :method => 'put' do
+      - classes = 'btn-link'
+      - classes += ' completed' if dream.completed?
+      = hidden_field_tag 'edit', 'true' if params[:edit].present?
+      = hidden_field_tag 'dream[completed]', !dream.completed?
+      = button_tag :type => 'submit', :class => classes do
+        %i.icon-ok-circle.icon-2x
 
-    .image{:style => "height: #{height}px"}
-      - image_src = dream.image.blank? ? 'empty.png' : dream.image
-      = image_tag image_src, :style => image_style(dream)
-    .caption= dream.description
+  .image{:style => "height: #{height}px"}
+    - image_src = dream.image.blank? ? 'empty.png' : dream.image
+    = image_tag image_src, :style => image_style(dream)
+  .caption= dream.description

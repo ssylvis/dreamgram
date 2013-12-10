@@ -1,19 +1,19 @@
 - if @dream.image.present?
-  .dream-preview
+  .col-sm-offset-2.dream-preview
     = image_tag @dream.image, :id => 'cropbox', :style => "height: #{DreamsHelper::IMAGE_HEIGHT}px"
 
 = form_for @dream, :html => {:class => 'form-horizontal'} do |f|
-  .control-group
-    = f.label :description, 'Description:', :class => 'control-label'
-    .controls
-      = f.text_field :description, :class => 'span6'
-  .control-group
-    = f.label :image, 'Image URL:', :class => 'control-label'
-    .controls
+  .form-group
+    = f.label :description, 'Description:', :class => 'col-sm-2 control-label'
+    .col-sm-6
+      = f.text_field :description, :class => 'form-control'
+  .form-group
+    = f.label :image, 'Image URL:', :class => 'col-sm-2 control-label'
+    .col-sm-6
       - [:crop_x, :crop_y, :crop_w, :crop_h].each do |attribute|
         = f.hidden_field attribute, :id => attribute
-      = f.text_field :image, :class => 'span6'
-  .control-group
-    .controls
+      = f.text_field :image, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-6
       = f.submit "#{submit}", :class => 'btn btn-primary'
-      = link_to 'Cancel', dreams_path, :class => 'btn'
+      = link_to 'Cancel', dreams_path, :class => 'btn btn-default'

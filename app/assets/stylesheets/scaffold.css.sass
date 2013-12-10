@@ -1,18 +1,19 @@
 @import bootstrap
-@import bootstrap-responsive
 @import font-awesome
 
 body
   font-family: museo-sans
 
 header
-  border-top: 2px solid black
-  margin: 15px 8px 40px 8px
+  margin: 15px 8px 40px
 
   h1
     display: inline-block
     font-variant: small-caps
     font-weight: bold
+
+  .header
+    border-top: 2px solid black
 
   .user-name
     font-weight: normal
@@ -29,7 +30,7 @@ section.profile
 
   form
     position: absolute
-    right: -20px
+    right: -12px
     top: -15px
 
   .btn-link
@@ -41,13 +42,6 @@ section.profile
 .form-horizontal
   .control-label
     font-weight: bold
-    width: 90px
-
-  .controls
-    margin-left: 100px
-
-    p
-      padding: 5px 0
 
 // Portrait tablet and larger
 @media (min-width: 768px)

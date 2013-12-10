@@ -5,8 +5,15 @@
   a
     color: inherit
 
+  .buttons
+    font-size: 1em
+
+  .caption
+    height: 4em
+    overflow: hidden
+
   .completed-button
-    bottom: 30px
+    bottom: 60px
     position: absolute
     right: 10px
 
@@ -21,7 +28,7 @@
       color: rgb(32,32,32)
 
   .edit-buttons
-    left: -8px
+    left: -10px
     position: absolute
     top: -10px
 
@@ -40,39 +47,28 @@
       &:hover
         text-decoration: none
 
-  .thumbnail
-    border: none
-    border-radius: 0
-    box-shadow: none
+  .image
+    overflow: hidden
 
-    .buttons
-      font-size: 1em
-
-    .caption
-      height: 2em
-      overflow: hidden
-
-    .image
-      overflow: hidden
-
-      img
-        max-width: inherit
+    img
+      max-width: inherit
 
 .dream-preview
   margin: 0px 10px 20px
 
-// Portrait tablet and larger
-@media (min-width: 768px)
-  .dream .thumbnail
-    margin: 0 4px
+.dream.thumbnail
+  border: none
+  border-radius: 0
+  box-shadow: none
+  margin: 2px 8px
+
+// Portrait table and larger
+@media (min-width: 767px)
 
 // Portrait tablet and smaller
 @media (max-width: 767px)
   .dream
     float: left !important
-
-    .thumbnail
-      margin: 0
 
 // Landscape phone and smaller
 @media (max-width: 480px)

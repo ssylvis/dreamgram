@@ -1,14 +1,14 @@
 - @title = 'Signin'
 
 - unless flash.empty?
-  .alert.alert-error
+  .alert.alert-danger
     %strong Oops!
     = flash[:error]
 
 = form_for :session, :url => login_path, :html => {:class => 'form-horizontal'} do |f|
   = render :partial => 'shared/signin', :locals => {:f => f}
-  .control-group
-    %span.controls
+  .form-group
+    %span.col-sm-offset-2.col-sm-5
       = f.submit 'Signin', :class => 'btn btn-primary'
 
       %span.new-user

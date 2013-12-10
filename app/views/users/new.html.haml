@@ -1,16 +1,16 @@
 - @title = 'Signup'
 
 = form_for @user, :url => signup_path, :html => {:class => 'form-horizontal'} do |f|
-  .control-group
-    = f.label :name, 'Name:', :class => 'control-label'
-    .controls
-      = f.text_field :name
+  .form-group
+    = f.label :name, 'Name:', :class => 'col-sm-2 control-label'
+    .col-sm-4
+      = f.text_field :name, :class => 'form-control'
   = render :partial => 'shared/signin', :locals => {:f => f, :model => @user}
-  .control-group
-    = f.label :password_confirmation, 'Confirm:', :class => 'control-label'
-    .controls
-      = f.password_field :password_confirmation
-  .control-group
-    .controls
+  .form-group
+    = f.label :password_confirmation, 'Confirm:', :class => 'col-sm-2 control-label'
+    .col-sm-4
+      = f.password_field :password_confirmation, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-4
       = f.submit 'Signup', :class => 'btn btn-primary'
-      = link_to 'Cancel', root_url, :class => 'btn'
+      = link_to 'Cancel', root_url, :class => 'btn btn-default'

@@ -15,6 +15,6 @@
       = link_to new_dream_path, :class => 'new' do
         %i.icon-plus-sign.icon-2x
 
-%section.dreams.row-fluid
-  %ul.thumbnails
+%section.dreams.row
+  .col-xs-12
     = render :partial => 'dream', :collection => @dreams, :locals => {:mode => mode}
