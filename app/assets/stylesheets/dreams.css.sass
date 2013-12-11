@@ -1,7 +1,4 @@
 header
-  a
-    margin-left: 5px
-
   .buttons
     margin: 25px 0 10px
 
@@ -16,3 +13,14 @@ header
 
     i
       vertical-align: -18%
+
+// Landscape phone and larger
+@media (min-width: 480px)
+  header .buttons
+    float: right
+
+// Landscape phone and smaller
+@media (max-width: 480px)
+  header .buttons
+    float: none
+    margin: 0

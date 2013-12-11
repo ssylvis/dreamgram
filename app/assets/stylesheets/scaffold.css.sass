@@ -12,13 +12,14 @@ header
     font-size: 40px
     font-variant: small-caps
     font-weight: bold
+    white-space: nowrap
 
   .header
     border-top: 2px solid black
 
   .user-name
     font-weight: normal
-    margin-left: 22px
+    margin-left: 18px
 
 button, i
   text-decoration: none
@@ -53,6 +54,11 @@ section.profile
 @media (max-width: 767px)
   body
     margin: 20px
+
+// Landscape phone and larger
+@media (min-width: 480px)
+  header h1
+    float: left
 
 // Landscape phone and smaller
 @media (max-width: 480px)

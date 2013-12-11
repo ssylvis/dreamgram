@@ -7,9 +7,9 @@
   %header.row
     .col-xs-12
       .header
-        %h1.pull-left Bucketlist
+        %h1 Bucketlist
         - if logged_in?
-          %h1.user-name.pull-left= current_user.name
+          %h1.user-name= current_user.name
         = yield :header
 
   = yield

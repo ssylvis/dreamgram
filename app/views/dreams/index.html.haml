@@ -2,7 +2,7 @@
 - mode = params[:edit] ? :editing : :listing
 
 - content_for :header do
-  .buttons.pull-right
+  .buttons
     - case mode
     - when :editing
       = link_to 'Done', dreams_path, :class => 'btn-link done'
