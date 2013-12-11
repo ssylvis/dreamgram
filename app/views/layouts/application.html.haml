@@ -7,9 +7,9 @@
   %header.row
     .col-xs-12
       .header
-        %h1 Bucketlist
+        %h1 BUCKETLIST
         - if logged_in?
-          %h1.user-name= current_user.name
+          %h1.user-name= current_user.name.upcase
         = yield :header
 
   = yield
