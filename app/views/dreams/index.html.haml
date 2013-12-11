@@ -9,11 +9,11 @@
     - when :listing
       - edit_options = params.merge(:edit => true)
       = link_to dreams_path(edit_options), :class => 'edit' do
-        %span.icon-stack
-          %i.icon-circle.icon-stack-base
-          %i.icon-pencil.icon-light
+        %span.fa-stack
+          %i.fa.fa-circle.fa-stack-2x
+          %i.fa.fa-pencil.fa-inverse.fa-stack-1x
       = link_to new_dream_path, :class => 'new' do
-        %i.icon-plus-sign.icon-2x
+        %i.fa.fa-plus-circle.fa-2x
 
 %section.dreams.row
   .col-xs-12

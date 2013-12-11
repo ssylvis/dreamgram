@@ -6,13 +6,13 @@
     .buttons.edit-buttons
       = form_tag dream_path(dream), :method => 'delete' do
         = button_tag :type => 'submit', :class => 'btn-link remove' do
-          %span.icon-stack
-            %i.icon-stack-base.icon-circle
-            %i.icon-remove.icon-light
+          %span.fa-stack
+            %i.fa.fa-circle.fa-stack-2x
+            %i.fa.fa-times.fa-inverse.fa-stack-1x
       = link_to edit_dream_path(dream), :class => 'edit' do
-        %span.icon-stack
-          %i.icon-stack-base.icon-circle
-          %i.icon-info.icon-light
+        %span.fa-stack
+          %i.fa.fa-circle.fa-stack-2x
+          %i.fa.fa-info.fa-inverse.fa-stack-1x
 
   .buttons.completed-button
     = form_tag dream_path(dream), :method => 'put' do
@@ -21,7 +21,7 @@
       = hidden_field_tag 'edit', 'true' if params[:edit].present?
       = hidden_field_tag 'dream[completed]', !dream.completed?
       = button_tag :type => 'submit', :class => classes do
-        %i.icon-ok-circle.icon-2x
+        %i.fa.fa-check-circle-o.fa-2x
 
   .image{:style => "height: #{height}px"}
     - image_src = dream.image.blank? ? 'empty.png' : dream.image

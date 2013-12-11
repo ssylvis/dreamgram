@@ -16,7 +16,7 @@ end
 
 group :assets do
   gem 'coffee-rails'
-  gem 'font-awesome-rails', '~> 3.2.1.3'
+  gem 'font-awesome-rails', '~> 4.0.3.0'
   gem 'sass-rails'
   gem 'uglifier'
 end

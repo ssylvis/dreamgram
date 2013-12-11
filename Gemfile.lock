@@ -51,7 +51,7 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.0.2)
-    font-awesome-rails (3.2.1.3)
+    font-awesome-rails (4.0.3.0)
       railties (>= 3.2, < 5.0)
     haml (4.0.4)
       tilt
@@ -147,7 +147,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.1)
   bootstrap-sass (~> 3.0.3)
   coffee-rails
-  font-awesome-rails (~> 3.2.1.3)
+  font-awesome-rails (~> 4.0.3.0)
   haml-rails
   jquery-rails
   json
