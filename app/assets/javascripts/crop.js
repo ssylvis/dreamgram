@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
   $('#cropbox').Jcrop({
     onChange: updateCrop,
     onSelect: updateCrop,

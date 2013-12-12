@@ -2,17 +2,17 @@
 - width = DreamsHelper::IMAGE_WIDTH
 
 .dream.thumbnail.pull-left{:style => "width: #{width}px"}
-  - if mode == :editing
-    .buttons.edit-buttons
-      = form_tag dream_path(dream), :method => 'delete' do
-        = button_tag :type => 'submit', :class => 'btn-link remove' do
-          %span.fa-stack
-            %i.fa.fa-circle.fa-stack-2x
-            %i.fa.fa-times.fa-inverse.fa-stack-1x
-      = link_to edit_dream_path(dream), :class => 'edit' do
+  - attribute = (mode == :editing) ? {:class => 'show'} : {:style => 'display: none;'}
+  .buttons.edit-buttons{attribute}
+    = form_tag dream_path(dream), :method => 'delete' do
+      = button_tag :type => 'submit', :class => 'btn-link remove' do
         %span.fa-stack
           %i.fa.fa-circle.fa-stack-2x
-          %i.fa.fa-info.fa-inverse.fa-stack-1x
+          %i.fa.fa-times.fa-inverse.fa-stack-1x
+    = link_to edit_dream_path(dream), :class => 'edit' do
+      %span.fa-stack
+        %i.fa.fa-circle.fa-stack-2x
+        %i.fa.fa-info.fa-inverse.fa-stack-1x
 
   .buttons.completed-button
     = form_tag dream_path(dream), :method => 'put' do
