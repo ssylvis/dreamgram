@@ -25,5 +25,5 @@
 
   .image{:style => "height: #{height}px"}
     - image_src = dream.image.blank? ? 'empty.png' : dream.image
-    = image_tag image_src, :style => image_style(dream)
+    = image_tag image_src, :style => image_style(dream), :title => dream_image_title(dream)
   .caption= dream.description
