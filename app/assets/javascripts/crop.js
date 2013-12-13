@@ -1,9 +1,12 @@
 $(document).ready(function() {
+  var IMAGE_HEIGHT = 330
+  var IMAGE_WIDTH = 220
+
   $('#cropbox').Jcrop({
     onChange: updateCrop,
     onSelect: updateCrop,
-    setSelect: [ 0, 0, 220, 330 ],
-    aspectRatio: 220 / 330
+    setSelect: [ 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT ],
+    aspectRatio: IMAGE_WIDTH / IMAGE_HEIGHT
   });
 });
 
