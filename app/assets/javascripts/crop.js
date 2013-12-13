@@ -2,10 +2,15 @@ $(document).ready(function() {
   var IMAGE_HEIGHT = 330
   var IMAGE_WIDTH = 220
 
+  var crop_x = $('#crop_x').val() || 0;
+  var crop_y = $('#crop_y').val() || 0;
+  var crop_w = $('#crop_w').val() || IMAGE_WIDTH;
+  var crop_h = $('#crop_h').val() || IMAGE_HEIGHT;
+
   $('#cropbox').Jcrop({
     onChange: updateCrop,
     onSelect: updateCrop,
-    setSelect: [ 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT ],
+    setSelect: [ crop_x, crop_y, crop_x + crop_w, crop_y + crop_h ],
     aspectRatio: IMAGE_WIDTH / IMAGE_HEIGHT
   });
 });
