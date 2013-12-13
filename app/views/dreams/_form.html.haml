@@ -1,8 +1,9 @@
-- if @dream.image.present?
-  .col-sm-offset-2.dream-preview
-    = image_tag @dream.image, :id => 'cropbox', :style => "height: #{DreamsHelper::IMAGE_HEIGHT}px"
-
 = form_for @dream, :html => {:class => 'form-horizontal'} do |f|
+  - if @dream.image.present?
+    .form-group
+      .col-sm-offset-2.col-sm-6
+        = image_tag @dream.image, :id => 'cropbox',
+        :style => "height: #{DreamsHelper::IMAGE_HEIGHT}px"
   .form-group
     = f.label :description, 'Description:', :class => 'col-sm-2 control-label'
     .col-sm-6
