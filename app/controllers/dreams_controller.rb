@@ -5,7 +5,7 @@ class DreamsController < ApplicationController
   def create
     @dream = current_user.dreams.build(params[:dream])
     if @dream.save
-      redirect_to dreams_url
+      redirect_to dreams_url(params.slice(:edit))
     else
       render 'new'
     end
@@ -15,7 +15,7 @@ class DreamsController < ApplicationController
     @dream = find_dream(params[:id])
     @dream.destroy
 
-    redirect_to dreams_url(:edit => true)
+    redirect_to dreams_url(params.slice(:edit))
   end
 
   def edit
