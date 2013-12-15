@@ -1,20 +1,53 @@
 $(document).ready(function() {
-  var IMAGE_HEIGHT = 330
-  var IMAGE_WIDTH = 220
+  // define function for Jcrop callback to store plugin reference
+  var jcrop;
+  var storeJcrop = function() {
+    jcrop = this;
+  };
 
-  var crop_x = $("#crop_x").val() || 0;
-  var crop_y = $("#crop_y").val() || 0;
-  var crop_w = $("#crop_w").val() || IMAGE_WIDTH;
-  var crop_h = $("#crop_h").val() || IMAGE_HEIGHT;
+  initJcrop(storeJcrop, null);
 
-  $("#cropbox").Jcrop({
+  // update jcrop when image source changes
+  $("#dream_image").change(function() {
+    // remove Jcrop from target (and orphaned style attributes)
+    jcrop.destroy();
+    $("#dream_crop").removeAttr("style");
+
+    // update image source
+    var image_src = $(this).val();
+    $("#dream_crop").attr("src", image_src);
+
+    // add Jcrop back to image target
+    initJcrop(storeJcrop, true);
+  });
+});
+
+// initialize Jcrop and connect to the target image
+function initJcrop(storeJcrop, resetCrop) {
+  var IMAGE_HEIGHT = 330;
+  var IMAGE_WIDTH = 220;
+
+  var crop_x = setValue($("#crop_x").val(), 0, resetCrop);
+  var crop_y = setValue($("#crop_y").val(), 0, resetCrop);
+  var crop_w = setValue($("#crop_w").val(), IMAGE_WIDTH, resetCrop);
+  var crop_h = setValue($("#crop_h").val(), IMAGE_HEIGHT, resetCrop);
+
+  $("#dream_crop").attr("style", "height: " + IMAGE_HEIGHT + "px");
+  $("#dream_crop").Jcrop({
     onChange: updateCrop,
     onSelect: updateCrop,
     setSelect: [ crop_x, crop_y, crop_x + crop_w, crop_y + crop_h ],
     aspectRatio: IMAGE_WIDTH / IMAGE_HEIGHT
-  });
-});
+  },
+  storeJcrop);
+}
 
+// use the value or, if null, the default. if the reset flag is set, use the default.
+function setValue(value, defaultValue, reset) {
+  return (reset) ? defaultValue : value || defaultValue;
+}
+
+// update crop attributes with new values
 function updateCrop(coords) {
   $("#crop_x").val(coords.x);
   $("#crop_y").val(coords.y);

@@ -1,9 +1,10 @@
 = form_for @dream, :html => {:class => 'form-horizontal'} do |f|
-  - if @dream.image.present?
-    .form-group
-      .col-sm-offset-2.col-sm-6
-        = image_tag @dream.image, :id => 'cropbox',
-        :style => "height: #{DreamsHelper::IMAGE_HEIGHT}px"
+  .form-group
+    .col-sm-offset-2.col-sm-6
+      - if @dream.image.present?
+        = image_tag @dream.image, :id => 'dream_crop'
+      - else
+        = tag('img', :id => 'dream_crop')
   .form-group
     = f.label :description, 'Description:', :class => 'col-sm-2 control-label'
     .col-sm-6
