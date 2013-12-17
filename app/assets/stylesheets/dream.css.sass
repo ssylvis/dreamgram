@@ -13,13 +13,15 @@
     overflow: hidden
 
   .completed-button
-    bottom: 60px
+    bottom: 62px
     position: absolute
-    right: 10px
+    right: 8px
 
     button
-      color: rgb(245,245,245)
+      color: white
+      opacity: 0.8
       padding: 0
+      -webkit-text-stroke: 0.5px black
 
       &:hover
         text-decoration: none
@@ -47,6 +49,10 @@
       &:hover
         text-decoration: none
 
+    // both buttons
+    .fa-circle
+      -webkit-text-stroke: 1.5px white
+
   .image
     overflow: hidden
 
@@ -58,6 +64,13 @@
   border-radius: 0
   box-shadow: none
   margin: 2px 8px
+
+// target Firefox
+@-moz-document url-prefix()
+  .dream .completed-button button
+    text-shadow: 0.5px 0.5px 0 black, -0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px -0.5px 0 black
+  .dream .edit-buttons .fa-circle
+    text-shadow: 1px 1px 0 white, -1px -1px 0 white, -1px 1px 0 white, 1px -1px 0 white
 
 // Portrait table and larger
 @media (min-width: 767px)
