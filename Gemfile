@@ -12,6 +12,7 @@ gem 'json'
 gem 'rails', '~> 4.0.2'
 gem 'sass-rails'
 gem 'uglifier'
+gem 'unicorn'
 
 group :development, :test do
   gem 'pry-byebug'
