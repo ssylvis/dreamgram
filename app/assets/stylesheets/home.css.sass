@@ -1,0 +1,43 @@
+.dream-splash
+  .title
+    h1
+      font-weight: 300
+      margin: 0
+
+    h2
+      color: rgb(164,164,164)
+      font-weight: 300
+      margin: 5px 0 15px
+
+// Landscape phone and larger
+@media (min-width: 480px)
+  .dream-splash
+    position: relative
+
+    img
+      position: absolute
+      margin-right: 30px
+
+    .title
+      left: 220px
+      position: absolute
+      top: 10px
+
+      h1
+        font-size: 64px
+
+      h2
+        font-size: 30px
+
+// Landscape phone and smaller
+@media (max-width: 480px)
+  .dream-splash
+    img
+      margin-right: 20px
+
+    .title
+      h1
+        font-size: 40px
+
+      h2
+        font-size: 20px
