@@ -4,7 +4,7 @@ module DreamsHelper
 
   def dream_image_title(dream)
     if dream.completed_at
-      "#{dream.description} (completed #{distance_of_time_in_words_to_now(dream.completed_at)} ago)"
+      "#{dream.description} (completed #{time_ago_in_words(dream.completed_at)} ago)"
     else
       dream.description
     end
