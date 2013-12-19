@@ -9,16 +9,15 @@ $(document).ready(function() {
 
   // update jcrop when image source changes
   $("#dream_image").change(function() {
-    // remove Jcrop from target (and orphaned style attributes)
-    jcrop.destroy();
-    $("#dream_crop").removeAttr("style");
+    // remove Jcrop from target
+    // jcrop.destroy();
 
     // update image source
     var image_src = $(this).val();
-    $("#dream_crop").attr("src", image_src);
+    jcrop.setImage(image_src);
 
     // add Jcrop back to image target
-    initJcrop(storeJcrop, true);
+    // initJcrop(storeJcrop, true);
   });
 });
 
@@ -32,12 +31,14 @@ function initJcrop(storeJcrop, resetCrop) {
   var crop_w = setValue($("#crop_w").val(), IMAGE_WIDTH, resetCrop);
   var crop_h = setValue($("#crop_h").val(), IMAGE_HEIGHT, resetCrop);
 
-  $("#dream_crop").attr("style", "height: " + IMAGE_HEIGHT + "px");
-  $("#dream_crop").Jcrop({
+  dream_crop = $("#dream_crop");
+  dream_crop.Jcrop({
+    aspectRatio: IMAGE_WIDTH / IMAGE_HEIGHT,
+    boxHeight: IMAGE_HEIGHT,
+    boxWidth: 0,
     onChange: updateCrop,
     onSelect: updateCrop,
-    setSelect: [ crop_x, crop_y, crop_x + crop_w, crop_y + crop_h ],
-    aspectRatio: IMAGE_WIDTH / IMAGE_HEIGHT
+    setSelect: [ crop_x, crop_y, crop_x + crop_w, crop_y + crop_h ]
   },
   storeJcrop);
 }

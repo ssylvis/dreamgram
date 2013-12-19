@@ -13,10 +13,11 @@ module DreamsHelper
 
   def image_style(dream)
     if dream.cropped?
-      ratio = IMAGE_HEIGHT / dream.crop_h.to_f
-      height = IMAGE_HEIGHT * ratio
-      left = dream.crop_x * ratio
-      top = dream.crop_y * ratio
+      ratio_h = IMAGE_HEIGHT / dream.crop_h.to_f
+      ratio_w = IMAGE_WIDTH / dream.crop_w.to_f
+      height = IMAGE_HEIGHT
+      left = dream.crop_x * ratio_h
+      top = dream.crop_y * ratio_w
       "height: #{height}px; margin: #{-top}px 0 0 #{-left}px"
     else
       "height: #{IMAGE_HEIGHT}px"
