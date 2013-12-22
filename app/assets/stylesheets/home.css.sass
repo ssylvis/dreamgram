@@ -10,10 +10,39 @@
       margin: 5px 0 15px
 
 // Portrait tablet and larger
-@media (min-width: 767px)
+@media (min-width: 768px)
+  .dream-splash
+    margin-left: -320px
+
+    img
+      margin-right: 30px
+
+    .title
+      h1
+        font-size: 64px
+
+      h2
+        font-size: 30px
+
+// Portrait tablet and smaller
+@media (max-width: 767px)
+  .dream-splash
+    margin-left: -260px
+
+    img
+      margin-right: 20px
+
+    .title
+      h1
+        font-size: 40px
+
+      h2
+        font-size: 20px
+
+// Portrait phone and larger
+@media (min-width: 480px)
   .dream-splash
     left: 50%
-    margin-left: -320px
     margin-top: -200px
     position: absolute
     top: 50%
@@ -31,21 +60,7 @@
       position: absolute
       top: 10px
 
-      h1
-        font-size: 64px
-
-      h2
-        font-size: 30px
-
-// Portrait tablet and smaller
-@media (max-width: 767px)
+// Portrait phone and smaller
+@media (max-width: 479px)
   .dream-splash
-    img
-      margin-right: 20px
-
-    .title
-      h1
-        font-size: 40px
-
-      h2
-        font-size: 20px
+    margin-left: 0
