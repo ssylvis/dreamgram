@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.0.0'
 
 gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'bootstrap-sass', '~> 3.0.3'
@@ -9,7 +9,7 @@ gem 'json'
 gem 'rails', '~> 3.2.13'
 
 group :development, :test do
-  gem 'pry-debugger'
+  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'sqlite3', '~> 1.3.7'
 end
