@@ -6,7 +6,7 @@
     = flash[:error]
 
 = form_for :session, :url => login_path, :html => {:class => 'form-horizontal'} do |f|
-  = render :partial => 'shared/signin', :locals => {:form => f}
+  = render :partial => 'shared/signin', :locals => {:form => f, :autofocus => true}
   .form-group
     %span.col-sm-offset-2.col-sm-5
       = f.submit 'Signin', :class => 'btn btn-primary'

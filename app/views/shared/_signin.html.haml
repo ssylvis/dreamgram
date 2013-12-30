@@ -1,9 +1,10 @@
+- autofocus ||= nil
 - model ||= nil
 
 - form_group_for(model, :email) do
   = form.label :email, 'Email:', :class => 'col-sm-2 control-label'
   .col-sm-4
-    = form.text_field :email, :class => 'form-control'
+    = form.text_field :email, :autofocus => autofocus, :class => 'form-control'
     - error_for model, :email
 - form_group_for(model, :password) do
   = form.label :password, 'Password:', :class => 'col-sm-2 control-label'

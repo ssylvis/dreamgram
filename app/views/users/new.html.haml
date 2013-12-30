@@ -4,7 +4,7 @@
   .form-group
     = f.label :name, 'Name:', :class => 'col-sm-2 control-label'
     .col-sm-4
-      = f.text_field :name, :class => 'form-control'
+      = f.text_field :name, :autofocus => true, :class => 'form-control'
   = render :partial => 'shared/signin', :locals => {:form => f, :model => @user}
   .form-group
     = f.label :password_confirmation, 'Confirm:', :class => 'col-sm-2 control-label'
