@@ -1,15 +1,15 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name
-  attr_accessible :password, :password_confirmation
-
   has_many :dreams, :dependent => :destroy
   has_secure_password
 
-  before_save :sanitize_email
+  attr_accessible :email, :name
+  attr_accessible :password, :password_confirmation
 
   validates :email, :uniqueness => true
   validates :name, :presence => true
   validates :password, :length => { :minimum => 1 }
+
+  before_save :sanitize_email
 
 private
 
