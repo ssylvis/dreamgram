@@ -10,7 +10,6 @@
   .form-group
     %span.col-sm-offset-2.col-sm-5
       = f.submit 'Signin', :class => 'btn btn-primary'
-
-      %span.new-user
+      %span.secondary-link
         New user?
         = link_to "Register for an account.", signup_path
