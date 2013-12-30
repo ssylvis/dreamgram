@@ -1,12 +1,12 @@
 - model ||= nil
 
 - form_group_for(model, :email) do
-  = f.label :email, 'Email:', :class => 'col-sm-2 control-label'
+  = form.label :email, 'Email:', :class => 'col-sm-2 control-label'
   .col-sm-4
-    = f.text_field :email, :class => 'form-control'
+    = form.text_field :email, :class => 'form-control'
     - error_for model, :email
 - form_group_for(model, :password) do
-  = f.label :password, 'Password:', :class => 'col-sm-2 control-label'
+  = form.label :password, 'Password:', :class => 'col-sm-2 control-label'
   .col-sm-4
-    = f.password_field :password, :class => 'form-control'
+    = form.password_field :password, :class => 'form-control'
     - error_for model, :password
