@@ -61,7 +61,7 @@ module Dreamgram
     # Enable the asset pipeline
     config.assets.enabled = true
 
-    # Do not initialize the application on precompile
+    # Do not initialize the application when precompiling assets
     config.assets.initialize_on_precompile = false
 
     # Version of your assets, change this if you want to expire all your assets
