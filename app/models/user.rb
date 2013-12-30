@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   before_save :sanitize_email
 
   validates :email, :uniqueness => true
+  validates :name, :presence => true
   validates :password, :length => { :minimum => 1 }
 
 private
