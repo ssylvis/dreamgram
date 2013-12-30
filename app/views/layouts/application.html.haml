@@ -1,14 +1,14 @@
 - content_for :body do
-  - if logged_in?
+  - if user_signed_in?
     %section.profile
-      = button_to 'Logout', logout_path, {:method => :delete, :class => 'btn-link'}
+      = button_to 'Logout', destroy_user_session_path, :method => :delete, :class => 'btn-link'
 
   %header.row
     .col-xs-12
       .header
         %h1
           = link_to 'DREAMGRAM', dreams_path
-        - if logged_in?
+        - if user_signed_in?
           %h1.user-name= current_user.name.upcase
         = yield :header
 

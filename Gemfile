@@ -3,6 +3,7 @@ ruby '2.0.0'
 
 gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'bootstrap-sass', '~> 3.0.3'
+gem 'devise', '~> 3.2.2'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'json'

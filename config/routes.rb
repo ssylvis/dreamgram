@@ -2,17 +2,11 @@ Dreamgram::Application.routes.draw do
   # Welcome page
   get "home/index"
 
-  # Login/out pages
-  get 'login', :to => 'sessions#new'
-  post 'login', :to => 'sessions#create'
-  delete 'logout', :to => 'sessions#destroy'
-  get 'signup', :to => 'users#new'
-  post 'signup', :to => 'users#create'
+  # Devise/user resources
+  devise_for :users, :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "signup" }
 
   # REST resources
   resources :dreams, :except => [:show]
-  resources :sessions, :only => [:create, :destroy, :new]
-  resources :users, :only => [:create, :destroy, :new]
 
   # Show welcome page by default
   root :to => 'home#index'
