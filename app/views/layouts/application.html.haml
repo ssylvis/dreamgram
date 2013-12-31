@@ -1,7 +1,9 @@
 - content_for :body do
   - if user_signed_in?
     %section.profile
-      = button_to 'Logout', destroy_user_session_path, :method => :delete, :class => 'btn-link'
+      .navigation
+        = link_to 'Account', edit_user_registration_path, :class => 'btn-link'
+        = button_to 'Logout', destroy_user_session_path, :method => :delete, :class => 'btn-link'
 
   %header.row
     .col-xs-12

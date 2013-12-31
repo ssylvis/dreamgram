@@ -4,6 +4,7 @@ Dreamgram::Application.routes.draw do
 
   # Devise/user resources
   devise_for :users, :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "signup" }
+  get 'users', :to => 'dreams#index', :as => :user_root
 
   # REST resources
   resources :dreams, :except => [:show]

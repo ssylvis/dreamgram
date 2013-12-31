@@ -1,0 +1,38 @@
+- @title = 'Edit Account'
+
+%h4= 'Update Account'
+= form_for @user, :url => user_registration_path, :method => :put, :html => {:class => 'form-horizontal'} do |f|
+  - form_group_for(@user, :name) do
+    = f.label :name, 'Name:', :class => 'col-sm-2 control-label'
+    .col-sm-4
+      = f.text_field :name, :autofocus => true, :class => 'form-control'
+      - error_for @user, :name
+  - form_group_for(@user, :email) do
+    = f.label :email, 'Email:', :class => 'col-sm-2 control-label'
+    .col-sm-4
+      = f.text_field :email, :class => 'form-control'
+      - error_for @user, :email
+  - form_group_for(@user, :current_password) do
+    = f.label :current_password, 'Current password:', :class => 'col-sm-2 control-label'
+    .col-sm-4
+      = f.password_field :current_password, :class => 'form-control'
+      - error_for @user, :current_password
+  - form_group_for(@user, :password) do
+    = f.label :password, 'New password:', :class => 'col-sm-2 control-label'
+    .col-sm-4
+      = f.password_field :password, :class => 'form-control'
+      - error_for @user, :password
+  .form-group
+    = f.label :password_confirmation, 'Confirm password:', :class => 'col-sm-2 control-label'
+    .col-sm-4
+      = f.password_field :password_confirmation, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-4
+      = f.submit 'Update', :class => 'btn btn-primary'
+      = link_to 'Cancel', dreams_url, :class => 'btn btn-default'
+
+%h4= 'Delete Account'
+= form_for @user, :url => user_registration_path, :method => 'delete', :html => {:class => 'form-horizontal'} do |f|
+  .form-group
+    .col-sm-offset-2.col-sm-4
+      = f.submit 'Delete Account', :class => 'btn btn-danger'
