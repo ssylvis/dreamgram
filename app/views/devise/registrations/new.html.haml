@@ -1,6 +1,7 @@
 - @title = 'Signup'
 
 = form_for @user, :url => user_registration_path, :html => {:class => 'form-horizontal'} do |f|
+  = f.hidden_field :remember_me, :value => true
   - form_group_for(@user, :name) do
     = f.label :name, 'Name:', :class => 'col-sm-2 control-label'
     .col-sm-4

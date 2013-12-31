@@ -6,6 +6,7 @@
     = flash[:alert]
 
 = form_for :user, :url => new_user_session_path, :html => {:class => 'form-horizontal'} do |f|
+  = f.hidden_field :remember_me, :value => true
   = render :partial => 'devise/shared/credentials', :locals => {:form => f, :autofocus => true}
   .form-group
     %span.col-sm-offset-2.col-sm-5
