@@ -6,7 +6,7 @@
     .col-sm-4
       = f.text_field :name, :autofocus => true, :class => 'form-control'
       - error_for @user, :name
-  = render :partial => 'devise/shared/signin', :locals => {:form => f, :model => @user}
+  = render :partial => 'devise/shared/credentials', :locals => {:form => f, :model => @user}
   .form-group
     = f.label :password_confirmation, 'Confirm:', :class => 'col-sm-2 control-label'
     .col-sm-4

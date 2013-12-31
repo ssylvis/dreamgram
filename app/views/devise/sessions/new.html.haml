@@ -6,7 +6,7 @@
     = flash[:alert]
 
 = form_for :user, :url => new_user_session_path, :html => {:class => 'form-horizontal'} do |f|
-  = render :partial => 'devise/shared/signin', :locals => {:form => f, :autofocus => true}
+  = render :partial => 'devise/shared/credentials', :locals => {:form => f, :autofocus => true}
   .form-group
     %span.col-sm-offset-2.col-sm-5
       = f.submit 'Signin', :class => 'btn btn-primary'
