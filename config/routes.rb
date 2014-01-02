@@ -1,4 +1,6 @@
 Dreamgram::Application.routes.draw do
+  devise_for :users
+
   # Welcome page
   get "home/index"
 

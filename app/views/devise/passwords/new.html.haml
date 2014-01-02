@@ -1,0 +1,11 @@
+- @title = 'Forgot your password?'
+
+= form_for @user, :url => user_password_path, :html => {:class => 'form-horizontal'} do |f|
+  - form_group_for(@user, :email) do
+    = f.label :email, 'Email:', :class => 'col-sm-2 control-label'
+    .col-sm-4
+      = f.text_field :email, :autofocus => true, :class => 'form-control'
+      - error_for @user, :email
+  .form-group
+    .col-sm-offset-2.col-sm-4
+      = f.submit "Reset Password", :class => 'btn btn-primary'

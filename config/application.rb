@@ -39,6 +39,9 @@ module Dreamgram
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
+    # Configure Action Mailer defaults
+    config.action_mailer.delivery_method = :sendmail
+
     # Do not wrap fields with an error in div
     config.action_view.field_error_proc = Proc.new { |html_tag, instance|
       html_tag
