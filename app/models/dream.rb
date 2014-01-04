@@ -1,8 +1,6 @@
 class Dream < ActiveRecord::Base
-  attr_accessible :completed_at, :description, :image
-  attr_accessible :crop_x, :crop_y, :crop_w, :crop_h
-
   belongs_to :user
+
   validates :user_id, :presence => true
 
   scope :completed, ->(state) { find_by_state(state) }
@@ -25,7 +23,7 @@ private
     when DreamState::ACTIVE
       where(:completed_at => nil).order_by_creation
     when DreamState::FULFILLED
-      where(self.arel_table[:completed_at].not_eq(nil)).order_by_creation
+      where.not(:completed_at => nil).order_by_creation
     end
   end
 end

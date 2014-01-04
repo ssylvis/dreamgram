@@ -5,11 +5,6 @@ class User < ActiveRecord::Base
 
   has_many :dreams, :dependent => :destroy
 
-  attr_accessible :email
-  attr_accessible :name
-  attr_accessible :password, :password_confirmation
-  attr_accessible :remember_me
-
   validates :name, :presence => true
 
   def reached_dreams_limit?
