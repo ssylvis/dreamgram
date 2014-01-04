@@ -4,7 +4,8 @@ module DreamsHelper
 
   def dream_image_title(dream)
     if dream.completed_at
-      "#{dream.description} (completed #{time_ago_in_words(dream.completed_at)} ago)"
+      completed_ago = t('dream.completed_ago', :time => time_ago_in_words(dream.completed_at))
+      "#{dream.description} (#{completed_ago})"
     else
       dream.description
     end

@@ -25,7 +25,7 @@ class DreamsController < ApplicationController
   def index
     @dreams = current_user.dreams.completed(DreamState::ALL)
     @reached_dreams_limit = current_user.reached_dreams_limit?
-    flash[:warning] = "You have reached the dreams limit for the free account." if current_user.reached_dreams_limit?
+    flash[:warning] = I18n.t("user.reached_dreams_limit") if current_user.reached_dreams_limit?
   end
 
   def new
@@ -48,7 +48,7 @@ private
   end
 
   def maximum_dreams_limit
-    raise "You have reached the dreams limit for the free account." if current_user.reached_dreams_limit?
+    raise I18n.t("user.reached_dreams_limit") if current_user.reached_dreams_limit?
   end
 
   def parse_completed

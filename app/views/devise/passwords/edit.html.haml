@@ -1,16 +1,16 @@
-- @title = 'Change your password'
+- @title = t('.title')
 
 = form_for @user, :url => user_password_path, :method => :put, :html => {:class => 'form-horizontal'} do |f|
   = f.hidden_field :reset_password_token
   - form_group_for(@user, :password) do
-    = f.label :password, 'New password:', :class => 'col-sm-2 control-label'
+    = f.label :password, t('.password'), :class => 'col-sm-2 control-label'
     .col-sm-4
       = f.password_field :password, :class => 'form-control'
       - error_for @user, :password
   .form-group
-    = f.label :password_confirmation, 'Confirm password:', :class => 'col-sm-2 control-label'
+    = f.label :password_confirmation, t('.password_confirmation'), :class => 'col-sm-2 control-label'
     .col-sm-4
       = f.password_field :password_confirmation, :class => 'form-control'
   .form-group
     .col-sm-offset-2.col-sm-4
-      = f.submit 'Update Password', :class => 'btn btn-primary'
+      = f.submit t('.submit'), :class => 'btn btn-primary'

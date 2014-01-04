@@ -7,3 +7,49 @@ en:
       invalid: "Invalid email or password."
       not_found_in_database: "Invalid email or password."
       unauthenticated: "You need to sign in or sign up before continuing."
+
+    passwords:
+      edit:
+        password: "New password:"
+        password_confirmation: "Confirm password:"
+        submit: "Update Password"
+        title: "Reset Password"
+      new:
+        email: "Email:"
+        submit: "Reset Password"
+        title: "Forgot Password"
+
+    registrations:
+      edit:
+        cancel: "Cancel"
+        current_password: "Current password:"
+        delete: "Delete Account"
+        delete_header: "Delete Account"
+        email: "Email:"
+        name: "Name:"
+        password: "New password:"
+        password_confirmation: "Confirm password:"
+        title: "Account Settings"
+        update: "Update"
+        update_header: "Update Account"
+      new:
+        already_registered: "Already registered?"
+        password_confirmation: "Confirm password:"
+        name: "Name:"
+        signin: "Sign in."
+        submit: "Sign Up"
+        title: "Sign Up"
+
+    sessions:
+      new:
+        forgot_password: "Forgot your password?"
+        new_user: "New user?"
+        register: "Register for an account."
+        submit: "Sign In"
+        title: "Sign In"
+
+    shared:
+      credentials:
+        email: "Email:"
+        password: "Password:"
+

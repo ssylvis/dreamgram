@@ -3,8 +3,6 @@
     .content
       = image_tag 'dreamgram.gif'
       .title
-        %h1
-          Dreamgram
-        %h2
-          What's in your bucket list?
-        = link_to 'Get Started', dreams_path, :class => 'btn btn-primary'
+        %h1= t('.title')
+        %h2= t('.subtitle')
+        = link_to t('.signup'), new_user_registration_path, :class => 'btn btn-primary'

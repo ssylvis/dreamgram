@@ -1,4 +1,4 @@
-- @title = 'Signin'
+- @title = t('.title')
 
 - if flash[:alert].present?
   .alert.alert-danger
@@ -10,10 +10,10 @@
   = render :partial => 'devise/shared/credentials', :locals => {:form => f, :autofocus => true}
   .form-group
     %span.col-sm-offset-2.col-sm-5
-      = f.submit 'Signin', :class => 'btn btn-primary'
+      = f.submit t('.submit'), :class => 'btn btn-primary'
       %span.secondary-link
-        = link_to "Forgot your password?", new_user_password_path
+        = link_to t('.forgot_password'), new_user_password_path
   .form-group
     .col-sm-offset-2.col-sm-5
-      New user?
-      = link_to "Register for an account.", new_user_registration_path
+      = t('.new_user')
+      = link_to t('.register'), new_user_registration_path

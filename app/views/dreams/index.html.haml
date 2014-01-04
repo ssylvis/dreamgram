@@ -1,11 +1,11 @@
-- @title = 'Dreams'
+- @title = t('.title')
 - mode = params[:edit] && @dreams.present? ? :editing : :listing
 
 - content_for :header do
   .buttons
     - case mode
     - when :editing
-      = link_to 'Done', dreams_path, :class => 'btn-link done'
+      = link_to t('.done'), dreams_path, :class => 'btn-link done'
     - when :listing
       - if @dreams.present?
         - edit_options = params.merge(:edit => true)
@@ -27,6 +27,5 @@
       = render :partial => 'dream', :collection => @dreams, :locals => {:mode => mode}
     - else
       .alert.alert-info.text-center
-        No dreams yet! Get started by
-        = link_to "adding a dream", new_dream_path, :class => 'alert-link'
-        now.
+        - add_link = link_to t('.adding_dream'), new_dream_path, :class => 'alert-link'
+        = raw t('.no_dreams', :link => add_link)

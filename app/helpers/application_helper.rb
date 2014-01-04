@@ -1,5 +1,6 @@
 module ApplicationHelper
   def page_title(page)
-    page.present? ? "Dreamgram - #{page}" : 'Dreamgram'
+    title = t('layouts.title')
+    page.present? ? "#{title} - #{page}" : title
   end
 end

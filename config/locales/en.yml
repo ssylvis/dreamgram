@@ -1,5 +1,36 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-    
+  dream:
+    completed_ago: "completed %{time} ago"
+
+  dreams:
+    edit:
+      submit: "Update"
+      title: "Edit Dream"
+    form:
+      cancel: "Cancel"
+      description: "Description:"
+      image_url: "Image URL:"
+    index:
+      adding_dream: "adding a dream"
+      done: "Done"
+      no_dreams: "No dreams yet! Get started by %{link} now."
+      title: "Dreams"
+    new:
+      submit: "Create"
+      title: "Create Dream"
+
+  home:
+    index:
+      signup: "Get Started"
+      subtitle: "What's in your bucket list?"
+      title: "Dreamgram"
+
+  layouts:
+    title: "Dreamgram"
+    application:
+      account: "Account"
+      header: "Dreamgram"
+      logout: "Logout"
+
+  user:
+    reached_dreams_limit: "You have reached the dreams limit for the free account."
