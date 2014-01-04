@@ -13,8 +13,13 @@
           %span.fa-stack
             %i.fa.fa-circle.fa-stack-2x
             %i.fa.fa-pencil.fa-inverse.fa-stack-1x
-      = link_to new_dream_path, :class => 'new' do
-        %i.fa.fa-plus-circle.fa-2x
+      - unless @reached_dreams_limit
+        = link_to new_dream_path, :class => 'new' do
+          %i.fa.fa-plus-circle.fa-2x
+
+- if flash[:warning].present?
+  .alert.alert-warning
+    = flash[:warning]
 
 %section.dreams.row
   .col-xs-12

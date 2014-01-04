@@ -1,5 +1,6 @@
 class DreamsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :maximum_dreams_limit, :only => :create
   before_filter :parse_completed, :only => :update
 
   def create
@@ -14,7 +15,6 @@ class DreamsController < ApplicationController
   def destroy
     @dream = find_dream(params[:id])
     @dream.destroy
-
     redirect_to dreams_url(params.slice(:edit))
   end
 
@@ -24,6 +24,8 @@ class DreamsController < ApplicationController
 
   def index
     @dreams = current_user.dreams.completed(DreamState::ALL)
+    @reached_dreams_limit = current_user.reached_dreams_limit?
+    flash[:warning] = "You have reached the dreams limit for the free account." if current_user.reached_dreams_limit?
   end
 
   def new
@@ -43,6 +45,10 @@ private
 
   def find_dream(id)
     current_user.dreams.find(id)
+  end
+
+  def maximum_dreams_limit
+    raise "You have reached the dreams limit for the free account." if current_user.reached_dreams_limit?
   end
 
   def parse_completed
