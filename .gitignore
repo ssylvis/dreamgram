@@ -15,4 +15,5 @@
 /tmp
 
 # Ignore locally installed gems
+/vendor/bundle
 /vendor/cache
