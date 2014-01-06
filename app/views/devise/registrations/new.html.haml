@@ -1,13 +1,13 @@
 - @title = t('.title')
 
-= form_for @user, :url => user_registration_path, :html => {:class => 'form-horizontal'} do |f|
+= form_for @account, :url => account_registration_path, :html => {:class => 'form-horizontal'} do |f|
   = f.hidden_field :remember_me, :value => true
-  - form_group_for(@user, :name) do
+  - form_group_for(@account, :name) do
     = f.label :name, t('.name'), :class => 'col-sm-2 control-label'
     .col-sm-4
       = f.text_field :name, :autofocus => true, :class => 'form-control'
-      - error_for @user, :name
-  = render :partial => 'devise/shared/credentials', :locals => {:form => f, :model => @user}
+      - error_for @account, :name
+  = render :partial => 'devise/shared/credentials', :locals => {:form => f, :model => @account}
   .form-group
     = f.label :password_confirmation, t('.password_confirmation'), :class => 'col-sm-2 control-label'
     .col-sm-4
@@ -17,6 +17,6 @@
       = f.submit t('.submit'), :class => 'btn btn-primary'
   .form-group
     .col-sm-offset-2.col-sm-4
-      = link_to new_user_session_path, :class => 'secondary-link' do
+      = link_to new_account_session_path, :class => 'secondary-link' do
         = t('.signin')
         %i.fa.fa-chevron-circle-right

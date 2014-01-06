@@ -1,12 +1,12 @@
 - @title = t('.title')
 
-= form_for @user, :url => user_password_path, :method => :patch, :html => {:class => 'form-horizontal'} do |f|
+= form_for @account, :url => account_password_path, :method => :patch, :html => {:class => 'form-horizontal'} do |f|
   = f.hidden_field :reset_password_token
-  - form_group_for(@user, :password) do
+  - form_group_for(@account, :password) do
     = f.label :password, t('.password'), :class => 'col-sm-2 control-label'
     .col-sm-4
       = f.password_field :password, :class => 'form-control'
-      - error_for @user, :password
+      - error_for @account, :password
   .form-group
     = f.label :password_confirmation, t('.password_confirmation'), :class => 'col-sm-2 control-label'
     .col-sm-4

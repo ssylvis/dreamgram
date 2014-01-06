@@ -1,4 +1,7 @@
 en:
+  account:
+    reached_dreams_limit: "You have reached the dreams limit for the free account."
+
   dream:
     completed_ago: "completed %{time} ago"
 
@@ -31,6 +34,3 @@ en:
       account: "Account"
       header: "Dreamgram"
       logout: "Logout"
-
-  user:
-    reached_dreams_limit: "You have reached the dreams limit for the free account."

@@ -5,7 +5,7 @@
     %strong Oops!
     = flash[:alert]
 
-= form_for :user, :url => new_user_session_path, :html => {:class => 'form-horizontal'} do |f|
+= form_for :account, :url => new_account_session_path, :html => {:class => 'form-horizontal'} do |f|
   = f.hidden_field :remember_me, :value => true
   = render :partial => 'devise/shared/credentials', :locals => {:form => f, :autofocus => true}
   .form-group
@@ -13,9 +13,9 @@
       = f.submit t('.submit'), :class => 'btn btn-primary'
   .form-group
     .col-sm-offset-2.col-sm-5
-      = link_to new_user_password_path, :class => 'secondary-link' do
+      = link_to new_account_password_path, :class => 'secondary-link' do
         = t('.forgot_password')
         %i.fa.fa-chevron-circle-right
-      = link_to new_user_registration_path, :class => 'secondary-link' do
+      = link_to new_account_registration_path, :class => 'secondary-link' do
         = t('.register')
         %i.fa.fa-chevron-circle-right

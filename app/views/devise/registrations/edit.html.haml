@@ -1,27 +1,27 @@
 - @title = t('.title')
 
 %h4= t('.update_header')
-= form_for @user, :url => user_registration_path, :method => :patch, :html => {:class => 'form-horizontal'} do |f|
-  - form_group_for(@user, :name) do
+= form_for @account, :url => account_registration_path, :method => :patch, :html => {:class => 'form-horizontal'} do |f|
+  - form_group_for(@account, :name) do
     = f.label :name, t('.name'), :class => 'col-sm-2 control-label'
     .col-sm-4
       = f.text_field :name, :autofocus => true, :class => 'form-control'
-      - error_for @user, :name
-  - form_group_for(@user, :email) do
+      - error_for @account, :name
+  - form_group_for(@account, :email) do
     = f.label :email, t('.email'), :class => 'col-sm-2 control-label'
     .col-sm-4
       = f.text_field :email, :class => 'form-control'
-      - error_for @user, :email
-  - form_group_for(@user, :current_password) do
+      - error_for @account, :email
+  - form_group_for(@account, :current_password) do
     = f.label :current_password, t('.current_password'), :class => 'col-sm-2 control-label'
     .col-sm-4
       = f.password_field :current_password, :class => 'form-control'
-      - error_for @user, :current_password
-  - form_group_for(@user, :password) do
+      - error_for @account, :current_password
+  - form_group_for(@account, :password) do
     = f.label :password, t('.password'), :class => 'col-sm-2 control-label'
     .col-sm-4
       = f.password_field :password, :class => 'form-control'
-      - error_for @user, :password
+      - error_for @account, :password
   .form-group
     = f.label :password_confirmation, t('.password_confirmation'), :class => 'col-sm-2 control-label'
     .col-sm-4
@@ -32,7 +32,7 @@
       = link_to t('.cancel'), dreams_url, :class => 'btn btn-default'
 
 %h4= t('.delete_header')
-= form_for @user, :url => user_registration_path, :method => 'delete', :html => {:class => 'form-horizontal'} do |f|
+= form_for @account, :url => account_registration_path, :method => 'delete', :html => {:class => 'form-horizontal'} do |f|
   .form-group
     .col-sm-offset-2.col-sm-4
       = f.submit t('.delete'), :class => 'btn btn-danger'

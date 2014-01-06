@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class Account < ActiveRecord::Base
   FREE_ACCOUNT_DREAMS_LIMIT = 10
 
   devise :database_authenticatable, :recoverable, :registerable, :rememberable, :validatable
