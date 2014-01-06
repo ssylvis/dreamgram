@@ -9,16 +9,16 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140102045509) do
+ActiveRecord::Schema.define(version: 20140106061415) do
 
-  create_table "dreams", :force => true do |t|
-    t.string   "description",                 :null => false
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+  create_table "dreams", force: true do |t|
+    t.string   "description",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "image"
-    t.integer  "user_id",      :default => 0, :null => false
+    t.integer  "user_id",      null: false
     t.datetime "completed_at"
     t.integer  "crop_x"
     t.integer  "crop_y"
@@ -26,20 +26,20 @@ ActiveRecord::Schema.define(:version => 20140102045509) do
     t.integer  "crop_h"
   end
 
-  add_index "dreams", ["user_id"], :name => "index_dreams_on_user_id"
+  add_index "dreams", ["user_id"], name: "index_dreams_on_user_id"
 
-  create_table "users", :force => true do |t|
-    t.string   "email",                  :null => false
-    t.string   "name",                   :null => false
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
-    t.string   "encrypted_password",     :null => false
+  create_table "users", force: true do |t|
+    t.string   "email",                  null: false
+    t.string   "name",                   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "encrypted_password",     null: false
     t.datetime "remember_created_at"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
   end
 
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
