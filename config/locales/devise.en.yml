@@ -33,18 +33,16 @@ en:
         update: "Update"
         update_header: "Update Account"
       new:
-        already_registered: "Already registered?"
         password_confirmation: "Confirm password:"
         name: "Name:"
-        signin: "Sign in."
+        signin: "Sign in"
         submit: "Sign Up"
         title: "Sign Up"
 
     sessions:
       new:
-        forgot_password: "Forgot your password?"
-        new_user: "New user?"
-        register: "Register for an account."
+        forgot_password: "Forgot password?"
+        register: "Register for account"
         submit: "Sign In"
         title: "Sign In"
 

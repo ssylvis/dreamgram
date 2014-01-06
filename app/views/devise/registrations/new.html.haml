@@ -13,8 +13,10 @@
     .col-sm-4
       = f.password_field :password_confirmation, :class => 'form-control'
   .form-group
-    %span.col-sm-offset-2.col-sm-4
+    .col-sm-offset-2.col-sm-4
       = f.submit t('.submit'), :class => 'btn btn-primary'
-      %span.secondary-link
-        = t('.already_registered')
-        = link_to t('.signin'), new_user_session_path
+  .form-group
+    .col-sm-offset-2.col-sm-4
+      = link_to new_user_session_path, :class => 'secondary-link' do
+        = t('.signin')
+        %i.fa.fa-chevron-circle-right

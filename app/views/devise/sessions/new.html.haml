@@ -9,11 +9,13 @@
   = f.hidden_field :remember_me, :value => true
   = render :partial => 'devise/shared/credentials', :locals => {:form => f, :autofocus => true}
   .form-group
-    %span.col-sm-offset-2.col-sm-5
+    .col-sm-offset-2.col-sm-5
       = f.submit t('.submit'), :class => 'btn btn-primary'
-      %span.secondary-link
-        = link_to t('.forgot_password'), new_user_password_path
   .form-group
     .col-sm-offset-2.col-sm-5
-      = t('.new_user')
-      = link_to t('.register'), new_user_registration_path
+      = link_to new_user_password_path, :class => 'secondary-link' do
+        = t('.forgot_password')
+        %i.fa.fa-chevron-circle-right
+      = link_to new_user_registration_path, :class => 'secondary-link' do
+        = t('.register')
+        %i.fa.fa-chevron-circle-right
