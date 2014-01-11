@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
 
 protected
 
+  def after_sign_in_path_for(resource)
+    dreams_path
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:account_update).push(*UPDATE_PARAMS)
     devise_parameter_sanitizer.for(:sign_up).push(*SIGN_UP_PARAMS)
