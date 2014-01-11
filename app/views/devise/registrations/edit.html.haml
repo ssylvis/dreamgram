@@ -17,7 +17,8 @@
   - if @account.pending_reconfirmation?
     .form-group
       .col-sm-offset-2.col-sm-4
-        = t('.unverified_email', :email => @account.unconfirmed_email)
+        .alert.alert-warning
+          = t('.unverified_email', :email => @account.unconfirmed_email)
   - form_group_for(@account, :current_password) do
     = f.label :current_password, t('.current_password'), :class => 'col-sm-2 control-label'
     .col-sm-4
