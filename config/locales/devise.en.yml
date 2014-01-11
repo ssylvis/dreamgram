@@ -2,6 +2,10 @@
 
 en:
   devise:
+    confirmations:
+      confirmed: "Thank you! Your account has been confirmed."
+      send_instructions: "An email has been sent with instructions on how to confirm your account."
+
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not yet activated."
@@ -9,8 +13,11 @@ en:
       not_found_in_database: "Invalid email or password."
       timeout: "Your session expired. Please sign in again to continue."
       unauthenticated: "You need to be signed in before continuing."
+      unconfirmed: "You must confirm your account before continuing."
 
     mailer:
+      confirmation_instructions:
+        subject: "Confirmation instructions"
       reset_password_instructions:
         subject: "Reset password instructions"
 
@@ -24,6 +31,9 @@ en:
       destroyed: "Your account was successfully cancelled."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully, but an admin still needs to activate your account."
+      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow
+        the link to activate your account."
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address."
       updated: "You updated your account successfully."
     sessions:
       signed_in: ""
@@ -31,6 +41,8 @@ en:
 
   errors:
     messages:
+      already_confirmed: "was already confirmed, please try signing in"
+      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
       expired: "has expired, please request a new one"
       not_found: "not found"
       not_locked: "was not locked"

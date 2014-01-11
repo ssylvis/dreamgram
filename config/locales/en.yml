@@ -3,6 +3,12 @@ en:
     reached_dreams_limit: "You have reached the dreams limit for the free account."
 
   devise:
+    confirmations:
+      new:
+        email: "Email:"
+        submit: "Resend Confirmation Email"
+        title: "Confirm Email"
+
     passwords:
       edit:
         password: "New password:"

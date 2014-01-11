@@ -3,7 +3,8 @@ Dreamgram::Application.routes.draw do
   get 'home/index'
 
   # Devise/account resources
-  devise_for :account, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup' }
+  devise_for :account, :controllers => { :registrations => :registrations },
+    :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup' }
 
   # REST resources
   resources :dreams, :except => [:show]
