@@ -28,10 +28,11 @@
     .col-sm-4
       = f.password_field :password, :class => 'form-control'
       - error_for @account, :password
-  .form-group
+  - form_group_for(@account, :password_confirmation) do
     = f.label :password_confirmation, t('.password_confirmation'), :class => 'col-sm-2 control-label'
     .col-sm-4
       = f.password_field :password_confirmation, :class => 'form-control'
+      - error_for @account, :password_confirmation
   .form-group
     .col-sm-offset-2.col-sm-4
       = f.submit t('.update'), :class => 'btn btn-primary'
