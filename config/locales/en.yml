@@ -2,6 +2,52 @@ en:
   account:
     reached_dreams_limit: "You have reached the dreams limit for the free account."
 
+  devise:
+    passwords:
+      edit:
+        password: "New password:"
+        password_confirmation: "Confirm password:"
+        submit: "Update Password"
+        title: "Reset Password"
+      new:
+        email: "Email:"
+        submit: "Reset Password"
+        title: "Forgot Password"
+
+    registrations:
+      edit:
+        cancel: "Cancel"
+        current_password: "Current password:"
+        delete: "Delete Account"
+        delete_header: "Delete Account"
+        email: "Email:"
+        name: "Name:"
+        password: "New password:"
+        password_confirmation: "Confirm password:"
+        title: "Account Settings"
+        unverified_email: "Unverified email: %{email}"
+        update: "Update"
+        update_header: "Update Account"
+      new:
+        password_confirmation: "Confirm password:"
+        name: "Name:"
+        signin: "Sign in"
+        submit: "Sign Up"
+        title: "Sign Up"
+
+    sessions:
+      new:
+        confirm_email: "Resend email confirmation"
+        forgot_password: "Forgot password?"
+        register: "Register for account"
+        submit: "Sign In"
+        title: "Sign In"
+
+    shared:
+      credentials:
+        email: "Email:"
+        password: "Password:"
+
   dream:
     completed_ago: "completed %{time} ago"
 

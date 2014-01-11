@@ -4,50 +4,36 @@ en:
   devise:
     failure:
       already_authenticated: "You are already signed in."
+      inactive: "Your account is not yet activated."
       invalid: "Invalid email or password."
       not_found_in_database: "Invalid email or password."
-      unauthenticated: "You need to sign in or sign up before continuing."
+      timeout: "Your session expired. Please sign in again to continue."
+      unauthenticated: "You need to be signed in before continuing."
+
+    mailer:
+      reset_password_instructions:
+        subject: "Reset password instructions"
 
     passwords:
-      edit:
-        password: "New password:"
-        password_confirmation: "Confirm password:"
-        submit: "Update Password"
-        title: "Reset Password"
-      new:
-        email: "Email:"
-        submit: "Reset Password"
-        title: "Forgot Password"
+      no_token: "The reset passsword link is incomplete. Please follow the link (or copy it in its entirety) again."
+      send_instructions: "An email has been sent with instructions on how to reset your password."
+      updated: "Your password was changed successfully!"
+      updated_not_active: "Your password was changed successfully!"
 
     registrations:
-      edit:
-        cancel: "Cancel"
-        current_password: "Current password:"
-        delete: "Delete Account"
-        delete_header: "Delete Account"
-        email: "Email:"
-        name: "Name:"
-        password: "New password:"
-        password_confirmation: "Confirm password:"
-        title: "Account Settings"
-        update: "Update"
-        update_header: "Update Account"
-      new:
-        password_confirmation: "Confirm password:"
-        name: "Name:"
-        signin: "Sign in"
-        submit: "Sign Up"
-        title: "Sign Up"
-
+      destroyed: "Your account was successfully cancelled."
+      signed_up: "Welcome! You have signed up successfully."
+      signed_up_but_inactive: "You have signed up successfully, but an admin still needs to activate your account."
+      updated: "You updated your account successfully."
     sessions:
-      new:
-        forgot_password: "Forgot password?"
-        register: "Register for account"
-        submit: "Sign In"
-        title: "Sign In"
+      signed_in: ""
+      signed_out: ""
 
-    shared:
-      credentials:
-        email: "Email:"
-        password: "Password:"
-
+  errors:
+    messages:
+      expired: "has expired, please request a new one"
+      not_found: "not found"
+      not_locked: "was not locked"
+      not_saved:
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
