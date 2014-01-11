@@ -1,9 +1,6 @@
 - @title = t('.title')
 
-- if flash[:alert].present?
-  .alert.alert-danger
-    %strong Oops!
-    = flash[:alert]
+= render :partial => 'shared/notices'
 
 = form_for :account, :url => new_account_session_path, :html => {:class => 'form-horizontal'} do |f|
   = f.hidden_field :remember_me, :value => true

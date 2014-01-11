@@ -1,5 +1,7 @@
 - @title = t('.title')
 
+= render :partial => 'shared/notices'
+
 = form_for @account, :url => account_password_path, :html => {:class => 'form-horizontal'} do |f|
   - form_group_for(@account, :email) do
     = f.label :email, t('.email'), :class => 'col-sm-2 control-label'

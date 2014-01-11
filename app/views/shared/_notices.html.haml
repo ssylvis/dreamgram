@@ -1,0 +1,13 @@
+- show ||= [:alert, :notice, :warning]
+- show = [show] unless show.respond_to?(:include?)
+
+- if flash[:alert].present? && show.include?(:alert)
+  .alert.alert-danger
+    %strong Oops!
+    = flash[:alert]
+- if flash[:warning].present? && show.include?(:warning)
+  .alert.alert-warning
+    = flash[:warning]
+- if flash[:notice].present? && show.include?(:notice)
+  .alert.alert-info
+    = flash[:notice]

@@ -17,9 +17,7 @@
         = link_to new_dream_path, :class => 'new' do
           %i.fa.fa-plus-circle.fa-2x
 
-- if flash[:warning].present?
-  .alert.alert-warning
-    = flash[:warning]
+= render :partial => 'shared/notices', :locals => {:show => :warning}
 
 %section.dreams.row
   .col-xs-12
