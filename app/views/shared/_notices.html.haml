@@ -1,4 +1,4 @@
-- show ||= [:alert, :notice, :warning]
+- show ||= [:alert, :notice, :success, :warning]
 - show = [show] unless show.respond_to?(:include?)
 
 - if flash[:alert].present? && show.include?(:alert)
@@ -9,6 +9,10 @@
   .alert.alert-info
     %i.fa.fa-info-circle
     = flash[:notice]
+- if flash[:success].present? && show.include?(:success)
+  .alert.alert-success
+    %i.fa.fa-check-circle
+    = flash[:success]
 - if flash[:warning].present? && show.include?(:warning)
   .alert.alert-warning
     %i.fa.fa-exclamation-circle
