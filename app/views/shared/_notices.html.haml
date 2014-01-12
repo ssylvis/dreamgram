@@ -3,11 +3,13 @@
 
 - if flash[:alert].present? && show.include?(:alert)
   .alert.alert-danger
-    %strong Oops!
+    %i.fa.fa-exclamation-triangle
     = flash[:alert]
-- if flash[:warning].present? && show.include?(:warning)
-  .alert.alert-warning
-    = flash[:warning]
 - if flash[:notice].present? && show.include?(:notice)
   .alert.alert-info
+    %i.fa.fa-info-circle
     = flash[:notice]
+- if flash[:warning].present? && show.include?(:warning)
+  .alert.alert-warning
+    %i.fa.fa-exclamation-circle
+    = flash[:warning]
