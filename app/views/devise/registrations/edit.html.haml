@@ -18,6 +18,7 @@
     .form-group
       .col-sm-offset-2.col-sm-4
         .alert.alert-warning
+          %i.fa.fa-exclamation-circle
           = t('.unverified_email', :email => @account.unconfirmed_email)
   - form_group_for(@account, :current_password) do
     = f.label :current_password, t('.current_password'), :class => 'col-sm-2 control-label'
