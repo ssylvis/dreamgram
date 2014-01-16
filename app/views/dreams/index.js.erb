@@ -1,0 +1,16 @@
+var headerButtons = $(".header .buttons");
+var dreamButtons = $(".dream .edit-buttons");
+
+<% if params[:edit] -%>
+  headerButtons.find(".editing").show();
+  headerButtons.find(".listing").hide();
+
+  dreamButtons.addClass("show");
+  dreamButtons.removeAttr("style")
+<% else -%>
+  headerButtons.find(".editing").hide();
+  headerButtons.find(".listing").show();
+
+  dreamButtons.removeClass("show");
+  dreamButtons.hide();
+<% end -%>

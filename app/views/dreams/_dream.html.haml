@@ -2,8 +2,7 @@
 - width = DreamsHelper::IMAGE_WIDTH
 
 .dream.thumbnail.pull-left{:style => "width: #{width}px"}
-  - attribute = (mode == :editing) ? {:class => 'show'} : {:style => 'display: none;'}
-  .buttons.edit-buttons{attribute}
+  .buttons.edit-buttons{:style => 'display: none'}
     = form_tag dream_path(dream), :method => 'delete' do
       = button_tag :type => 'submit', :class => 'btn-link remove' do
         %span.fa-stack

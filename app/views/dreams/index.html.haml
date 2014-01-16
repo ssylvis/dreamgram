@@ -1,15 +1,12 @@
 - @title = t('.title')
-- mode = params[:edit] && @dreams.present? ? :editing : :listing
 
 - content_for :header do
   .buttons
-    - case mode
-    - when :editing
-      = link_to t('.done'), dreams_path, :class => 'btn-link done'
-    - when :listing
+    .editing{:style => 'display: none'}
+      = link_to t('.done'), dreams_path, :remote => true, :class => 'btn-link done'
+    .listing{:style => 'display: block'}
       - if @dreams.present?
-        - edit_options = params.merge(:edit => true)
-        = link_to dreams_path(edit_options), :class => 'edit' do
+        = link_to dreams_path(:edit => true), :remote => true, :class => 'edit' do
           %span.fa-stack
             %i.fa.fa-circle.fa-stack-2x
             %i.fa.fa-pencil.fa-inverse.fa-stack-1x
@@ -22,7 +19,7 @@
 %section.dreams.row
   .col-xs-12
     - if @dreams.present?
-      = render :partial => 'dream', :collection => @dreams, :locals => {:mode => mode}
+      = render @dreams
     - else
       .alert.alert-info.text-center
         - add_link = link_to t('.adding_dream'), new_dream_path, :class => 'alert-link'
