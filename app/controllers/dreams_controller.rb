@@ -40,10 +40,8 @@ class DreamsController < ApplicationController
 
   def update
     @dream = find_dream(params[:id])
-    if @dream.update(update_params)
-      redirect_to dreams_url(params.slice(:edit))
-    else
-      render 'edit'
+    unless @dream.update(update_params)
+      flash.now[:alert] = I18n.t(".request_failed")
     end
   end
 

@@ -1,0 +1,6 @@
+<% if @dream.errors.any? -%>
+  var notice = $("<%= escape_javascript(render(:partial => "shared/notices")) %>");
+  $(".notices").empty().append(notice);
+<% else -%>
+  $("#dream_<%= @dream.id %> .completed-button button").toggleClass("completed");
+<% end -%>
