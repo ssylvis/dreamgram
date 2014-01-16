@@ -9,7 +9,7 @@ class DreamsController < ApplicationController
   def create
     @dream = current_account.dreams.build(create_params)
     if @dream.save
-      redirect_to dreams_url(params.slice(:edit))
+      redirect_to dreams_url
     else
       render 'new'
     end
