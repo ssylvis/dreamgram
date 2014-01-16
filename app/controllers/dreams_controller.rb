@@ -6,6 +6,8 @@ class DreamsController < ApplicationController
   before_filter :parse_completed, :only => :update
   before_filter :require_dream_param, :only => [:create, :update]
 
+  respond_to :html, :js
+
   def create
     @dream = current_account.dreams.build(create_params)
     if @dream.save
@@ -17,8 +19,9 @@ class DreamsController < ApplicationController
 
   def destroy
     @dream = find_dream(params[:id])
-    @dream.destroy
-    redirect_to dreams_url(params.slice(:edit))
+    unless @dream.destroy
+      flash.now[:alert] = I18n.t(".request_failed")
+    end
   end
 
   def edit

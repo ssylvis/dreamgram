@@ -19,9 +19,10 @@
 
 %section.dreams.row
   .col-xs-12
+    - display_style = @dreams.present? ? 'display: none' : 'display: block'
+    .alert.alert-info.text-center{:style => display_style}
+      - add_link = link_to t('.adding_dream'), new_dream_path, :class => 'alert-link'
+      = t('.no_dreams_html', :link => add_link)
+
     - if @dreams.present?
       = render @dreams
-    - else
-      .alert.alert-info.text-center
-        - add_link = link_to t('.adding_dream'), new_dream_path, :class => 'alert-link'
-        = t('.no_dreams_html', :link => add_link)
