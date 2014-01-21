@@ -1,5 +1,5 @@
 - show ||= [:alert, :notice, :success, :warning]
-- show = [show] unless show.respond_to?(:include?)
+- show = Array.wrap(show)
 
 - if flash[:alert].present? && show.include?(:alert)
   .alert.alert-danger

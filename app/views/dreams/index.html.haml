@@ -14,7 +14,8 @@
         = link_to new_dream_path, :class => 'new' do
           %i.fa.fa-plus-circle.fa-2x
 
-= render :partial => 'shared/notices', :locals => {:show => :warning}
+.notices
+  = render :partial => 'shared/notices', :locals => {:show => [:alert, :warning]}
 
 %section.dreams.row
   .col-xs-12
