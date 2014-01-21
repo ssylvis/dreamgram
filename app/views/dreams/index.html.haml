@@ -23,4 +23,4 @@
     - else
       .alert.alert-info.text-center
         - add_link = link_to t('.adding_dream'), new_dream_path, :class => 'alert-link'
-        = raw t('.no_dreams', :link => add_link)
+        = t('.no_dreams_html', :link => add_link)
