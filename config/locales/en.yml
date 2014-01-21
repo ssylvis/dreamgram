@@ -1,4 +1,6 @@
 en:
+  request_failed: "Oh no! There was an issue processing your request. Please try again in a minute."
+
   account:
     reached_dreams_limit: "You have reached the dreams limit for the free account."
 
