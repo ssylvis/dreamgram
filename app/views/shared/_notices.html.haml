@@ -2,18 +2,22 @@
 - show = Array.wrap(show)
 
 - if flash[:alert].present? && show.include?(:alert)
-  .alert.alert-danger
+  .alert.alert-danger.alert-dismissable
     %i.fa.fa-exclamation-triangle
+    - dismiss_button
     = flash[:alert]
 - if flash[:notice].present? && show.include?(:notice)
-  .alert.alert-info
+  .alert.alert-info.alert-dismissable
     %i.fa.fa-info-circle
+    - dismiss_button
     = flash[:notice]
 - if flash[:success].present? && show.include?(:success)
-  .alert.alert-success
+  .alert.alert-success.alert-dismissable
     %i.fa.fa-check-circle
+    - dismiss_button
     = flash[:success]
 - if flash[:warning].present? && show.include?(:warning)
-  .alert.alert-warning
+  .alert.alert-warning.alert-dismissable
     %i.fa.fa-exclamation-circle
+    - dismiss_button
     = flash[:warning]
