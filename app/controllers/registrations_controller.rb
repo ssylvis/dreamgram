@@ -1,5 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  respond_to :html, :js
+
 protected
 
   def after_inactive_sign_up_path_for(resource)
@@ -11,11 +13,13 @@ protected
   end
 
   def update_resource(resource, params)
-    if needs_password?(params)
-      resource.update_with_password(params)
-    else
-      resource.update_without_password(params)
-    end
+    updated =
+      if needs_password?(params)
+        resource.update_with_password(params)
+      else
+        resource.update_without_password(params)
+      end
+    flash.now[:notice] = find_message(:updated) if updated
   end
 
 private

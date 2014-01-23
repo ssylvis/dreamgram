@@ -1,0 +1,6 @@
+var notice = $("<%= escape_javascript(render(:partial => "shared/notices")) %>");
+$(".notices").empty().append(notice);
+<% unless @account.errors.any? -%>
+  var accountName = "<%= escape_javascript(@account.name.upcase) %>";
+  $(".header .account-name").html(accountName);
+<% end -%>

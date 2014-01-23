@@ -1,9 +1,11 @@
 - @title = t('.title')
 
-= render :partial => 'shared/notices'
+.notices
+  = render :partial => 'shared/notices'
 
 %h4= t('.update_header')
-= form_for @account, :url => account_registration_path, :method => :patch, :html => {:class => 'form-horizontal'} do |f|
+= form_for @account, :url => account_registration_path, :method => :patch, :remote => true,
+    :html => {:class => 'form-horizontal'} do |f|
   - form_group_for(@account, :name) do
     = f.label :name, t('.name'), :class => 'col-sm-2 control-label'
     .col-sm-4
@@ -25,7 +27,8 @@
       = f.submit t('.update_account'), :class => 'btn btn-primary'
 
 %h4= t('.password_header')
-= form_for @account, :url => account_registration_path, :method => :patch, :html => {:class => 'form-horizontal'} do |f|
+= form_for @account, :url => account_registration_path, :method => :patch, :remote => true,
+    :html => {:class => 'form-horizontal'} do |f|
   - form_group_for(@account, :current_password) do
     = f.label :current_password, t('.current_password'), :class => 'col-sm-2 control-label'
     .col-sm-4
@@ -46,7 +49,8 @@
       = f.submit t('.update_password'), :class => 'btn btn-primary'
 
 %h4= t('.delete_header')
-= form_for @account, :url => account_registration_path, :method => 'delete', :html => {:class => 'form-horizontal'} do |f|
+= form_for @account, :url => account_registration_path, :method => 'delete',
+    :html => {:class => 'form-horizontal'} do |f|
   .form-group
     .col-sm-offset-2.col-sm-4
       = f.submit t('.delete'), :class => 'btn btn-danger'
