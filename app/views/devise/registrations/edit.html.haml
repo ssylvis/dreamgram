@@ -20,6 +20,12 @@
         .alert.alert-warning
           %i.fa.fa-exclamation-circle
           = t('.unverified_email', :email => @account.unconfirmed_email)
+  .form-group
+    .col-sm-offset-2.col-sm-4
+      = f.submit t('.update_account'), :class => 'btn btn-primary'
+
+%h4= t('.password_header')
+= form_for @account, :url => account_registration_path, :method => :patch, :html => {:class => 'form-horizontal'} do |f|
   - form_group_for(@account, :current_password) do
     = f.label :current_password, t('.current_password'), :class => 'col-sm-2 control-label'
     .col-sm-4
@@ -37,8 +43,7 @@
       - error_for @account, :password_confirmation
   .form-group
     .col-sm-offset-2.col-sm-4
-      = f.submit t('.update'), :class => 'btn btn-primary'
-      = link_to t('.cancel'), dreams_url, :class => 'btn btn-default'
+      = f.submit t('.update_password'), :class => 'btn btn-primary'
 
 %h4= t('.delete_header')
 = form_for @account, :url => account_registration_path, :method => 'delete', :html => {:class => 'form-horizontal'} do |f|

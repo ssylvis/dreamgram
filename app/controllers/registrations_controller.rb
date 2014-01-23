@@ -9,4 +9,18 @@ protected
   def after_update_path_for(resource)
     dreams_path
   end
+
+  def update_resource(resource, params)
+    if needs_password?(params)
+      resource.update_with_password(params)
+    else
+      resource.update_without_password(params)
+    end
+  end
+
+private
+
+  def needs_password?(params)
+    params[:password].present?
+  end
 end

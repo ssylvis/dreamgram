@@ -32,10 +32,12 @@ en:
         name: "Name:"
         password: "New password:"
         password_confirmation: "Confirm password:"
+        password_header: "Update Password"
         title: "Account Settings"
         unverified_email: "Unverified email: %{email}"
-        update: "Update"
+        update_account: "Update Account"
         update_header: "Update Account"
+        update_password: "Update Password"
       new:
         password_confirmation: "Confirm password:"
         name: "Name:"
