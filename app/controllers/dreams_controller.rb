@@ -40,7 +40,9 @@ class DreamsController < ApplicationController
 
   def update
     @dream = find_dream(params[:id])
-    unless @dream.update(update_params)
+    if @dream.update(update_params)
+      respond_with @dream, :location => dreams_url
+    else
       flash.now[:alert] = I18n.t(".request_failed")
     end
   end
