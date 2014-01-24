@@ -4,7 +4,7 @@
   = render :partial => 'shared/notices'
 
 %h4= t('.update_header')
-= form_for @account, :url => account_registration_path, :method => :patch, :remote => true,
+= form_for @account, :url => account_registration_path, :method => :patch,
     :html => {:class => 'form-horizontal'} do |f|
   - form_group_for(@account, :name) do
     = f.label :name, t('.name'), :class => 'col-sm-2 control-label'
@@ -27,7 +27,7 @@
       = f.submit t('.update_account'), :class => 'btn btn-primary'
 
 %h4= t('.password_header')
-= form_for @account, :url => account_registration_path, :method => :patch, :remote => true,
+= form_for @account, :url => account_registration_path, :method => :patch,
     :html => {:class => 'form-horizontal'} do |f|
   - form_group_for(@account, :current_password) do
     = f.label :current_password, t('.current_password'), :class => 'col-sm-2 control-label'
