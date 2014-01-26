@@ -1,8 +1,6 @@
-- content_for :body do
-  .dream-splash
-    .content
-      = image_tag 'dreamgram.gif'
-      .title
-        %h1= t('.title')
-        %h2= t('.subtitle')
-        = link_to t('.signup'), new_account_registration_path, :class => 'btn btn-primary'
+.dream-splash
+  = image_tag 'dreamgram.gif'
+  .title
+    %h1= t('.title')
+    %h2= t('.subtitle')
+    = link_to t('.signup'), new_account_registration_path, :class => 'btn btn-primary'
