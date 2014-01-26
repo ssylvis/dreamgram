@@ -80,6 +80,7 @@ en:
 
   home:
     index:
+      login: "Login"
       signup: "Get Started"
       subtitle: "What's in your bucket list?"
       title: "Dreamgram"
