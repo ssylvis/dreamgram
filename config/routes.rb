@@ -10,7 +10,7 @@ Dreamgram::Application.routes.draw do
   end
 
   unauthenticated :account do
-    root :to => 'home#index'
+    root :to => 'home#show'
   end
 
   # REST resources

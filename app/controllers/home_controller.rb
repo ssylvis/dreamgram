@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   layout 'home'
 
-  def index
+  def show
   end
 end

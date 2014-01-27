@@ -79,15 +79,15 @@ en:
       title: "Create Dream"
 
   home:
-    index:
+    show:
       login: "Login"
       signup: "Get Started"
       subtitle: "What's in your bucket list?"
       title: "Dreamgram"
 
   layouts:
-    title: "Dreamgram"
     application:
       account: "Account"
       header: "Dreamgram"
       logout: "Logout"
+    title: "Dreamgram"
