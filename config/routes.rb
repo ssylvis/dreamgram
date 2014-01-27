@@ -6,7 +6,7 @@ Dreamgram::Application.routes.draw do
     :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup' }
 
   authenticated :account do
-    root :to => 'dreams#index', :as => :account_root
+    root :to => 'users#show', :as => :account_root
   end
 
   unauthenticated :account do
@@ -14,5 +14,5 @@ Dreamgram::Application.routes.draw do
   end
 
   # REST resources
-  resources :dreams, :except => [:show]
+  resources :dreams, :except => [:index, :show]
 end

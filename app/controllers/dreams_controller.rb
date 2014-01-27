@@ -28,12 +28,6 @@ class DreamsController < ApplicationController
     @dream = find_dream(params[:id])
   end
 
-  def index
-    @dreams = current_account.dreams.completed(DreamState::ALL)
-    @reached_dreams_limit = current_account.reached_dreams_limit?
-    flash[:warning] = I18n.t("account.reached_dreams_limit") if current_account.reached_dreams_limit?
-  end
-
   def new
     @dream = Dream.new
   end

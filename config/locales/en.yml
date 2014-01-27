@@ -69,11 +69,6 @@ en:
       cancel: "Cancel"
       description: "Description:"
       image_url: "Image URL:"
-    index:
-      adding_dream: "adding a dream"
-      done: "Done"
-      no_dreams_html: "No dreams yet! Get started by %{link} now."
-      title: "Dreams"
     new:
       submit: "Create"
       title: "Create Dream"
@@ -91,3 +86,10 @@ en:
       header: "Dreamgram"
       logout: "Logout"
     title: "Dreamgram"
+
+  users:
+    show:
+      adding_dream: "adding a dream"
+      done: "Done"
+      no_dreams_html: "No dreams yet! Get started by %{link} now."
+      title: "Dreams"
