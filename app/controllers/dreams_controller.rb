@@ -11,7 +11,7 @@ class DreamsController < ApplicationController
   def create
     @dream = current_account.dreams.build(create_params)
     if @dream.save
-      redirect_to dreams_url
+      redirect_to account_root_path
     else
       render 'new'
     end
@@ -41,7 +41,7 @@ class DreamsController < ApplicationController
   def update
     @dream = find_dream(params[:id])
     if @dream.update(update_params)
-      respond_with @dream, :location => dreams_url
+      respond_with @dream, :location => account_root_path
     else
       flash.now[:alert] = I18n.t(".request_failed")
     end

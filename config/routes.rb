@@ -1,16 +1,18 @@
 Dreamgram::Application.routes.draw do
-  # Welcome page
-  get 'home/index'
-
   # Devise/account resources
   devise_for :account,
     :controllers => { :registrations => :registrations },
     :path => '',
     :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup' }
 
+  authenticated :account do
+    root :to => 'dreams#index', :as => :account_root
+  end
+
+  unauthenticated :account do
+    root :to => 'home#index'
+  end
+
   # REST resources
   resources :dreams, :except => [:show]
-
-  # Show welcome page by default
-  root :to => 'home#index'
 end

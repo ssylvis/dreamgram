@@ -9,7 +9,7 @@
     .col-xs-12
       .header
         %h1
-          = link_to t('.header').upcase, dreams_path
+          = link_to t('.header').upcase, account_root_path
         - if account_signed_in?
           %h1.account-name= current_account.name.upcase
         = yield :header
