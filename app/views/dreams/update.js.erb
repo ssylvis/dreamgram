@@ -3,4 +3,6 @@
   $(".notices").empty().append(notice);
 <% else -%>
   $("#dream_<%= @dream.id %> .completed-button button").toggleClass("completed");
+  $("#dream_<%= @dream.id %> .completed-button #dream_completed").attr("value", "<%= !@dream.completed? %>");
+  $("#dream_<%= @dream.id %> img").attr("title", "<%= dream_image_title(@dream) %>");
 <% end -%>
