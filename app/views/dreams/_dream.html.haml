@@ -2,24 +2,29 @@
 - width = DreamsHelper::IMAGE_WIDTH
 
 .dream.thumbnail.pull-left{:id => "dream_#{dream.id}", :style => "width: #{width}px"}
-  .buttons.edit-buttons{:style => 'display: none'}
-    = form_tag dream_path(dream), :method => 'delete', :remote => true do
-      = button_tag :type => 'submit', :class => 'btn-link remove' do
+  - if owned_by_account?(@account)
+    .buttons.edit-buttons{:style => 'display: none'}
+      = form_tag dream_path(dream), :method => 'delete', :remote => true do
+        = button_tag :type => 'submit', :class => 'btn-link remove' do
+          %span.fa-stack
+            %i.fa.fa-circle.fa-stack-2x
+            %i.fa.fa-times.fa-inverse.fa-stack-1x
+      = link_to edit_dream_path(dream), :class => 'edit' do
         %span.fa-stack
           %i.fa.fa-circle.fa-stack-2x
-          %i.fa.fa-times.fa-inverse.fa-stack-1x
-    = link_to edit_dream_path(dream), :class => 'edit' do
-      %span.fa-stack
-        %i.fa.fa-circle.fa-stack-2x
-        %i.fa.fa-info.fa-inverse.fa-stack-1x
+          %i.fa.fa-info.fa-inverse.fa-stack-1x
 
   .buttons.completed-button
-    = form_tag dream_path(dream), :method => 'put', :remote => true do
-      - classes = 'btn-link'
-      - classes += ' completed' if dream.completed?
-      = hidden_field_tag 'edit', 'true' if params[:edit].present?
-      = hidden_field_tag 'dream[completed]', !dream.completed?
-      = button_tag :type => 'submit', :class => classes do
+    - button_classes = 'btn-link'
+    - button_classes += ' completed' if dream.completed?
+    - if owned_by_account?(@account)
+      = form_tag dream_path(dream), :method => 'put', :remote => true do
+        = hidden_field_tag 'edit', 'true' if params[:edit].present?
+        = hidden_field_tag 'dream[completed]', !dream.completed?
+        = button_tag :type => 'submit', :class => button_classes do
+          %i.fa.fa-check-circle-o.fa-2x
+    - else
+      = button_tag :class => button_classes do
         %i.fa.fa-check-circle-o.fa-2x
 
   .image{:style => "height: #{height}px"}

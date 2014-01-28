@@ -1,18 +1,19 @@
 - @title = t('.title')
 
-- content_for :header do
-  .buttons
-    .editing{:style => 'display: none'}
-      = link_to t('.done'), account_root_path, :remote => true, :class => 'btn-link done'
-    .listing{:style => 'display: block'}
-      - if @dreams.present?
-        = link_to account_root_path(:edit => true), :remote => true, :class => 'edit' do
-          %span.fa-stack
-            %i.fa.fa-circle.fa-stack-2x
-            %i.fa.fa-pencil.fa-inverse.fa-stack-1x
-      - unless @reached_dreams_limit
-        = link_to new_dream_path, :class => 'new' do
-          %i.fa.fa-plus-circle.fa-2x
+- if owned_by_account?(@account)
+  - content_for :header do
+    .buttons
+      .editing{:style => 'display: none'}
+        = link_to t('.done'), account_root_path, :remote => true, :class => 'btn-link done'
+      .listing{:style => 'display: block'}
+        - if @dreams.present?
+          = link_to account_root_path(:edit => true), :remote => true, :class => 'edit' do
+            %span.fa-stack
+              %i.fa.fa-circle.fa-stack-2x
+              %i.fa.fa-pencil.fa-inverse.fa-stack-1x
+        - unless @reached_dreams_limit
+          = link_to new_dream_path, :class => 'new' do
+            %i.fa.fa-plus-circle.fa-2x
 
 .notices
   = render :partial => 'shared/notices', :locals => {:show => [:alert, :warning]}
@@ -21,8 +22,11 @@
   .col-xs-12
     - display_style = @dreams.present? ? 'display: none' : 'display: block'
     .alert.alert-info.text-center{:style => display_style}
-      - add_link = link_to t('.adding_dream'), new_dream_path, :class => 'alert-link'
-      = t('.no_dreams_html', :link => add_link)
+      - if owned_by_account?(@account)
+        - add_link = link_to t('.adding_dream'), new_dream_path, :class => 'alert-link'
+        = t('.no_dreams_owner_html', :link => add_link)
+      - else
+        = t('.no_dreams_html')
 
     - if @dreams.present?
       = render @dreams

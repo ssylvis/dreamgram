@@ -2,6 +2,7 @@ class DreamsController < ApplicationController
   DREAM_PARAMS = [:description, :image, :crop_x, :crop_y, :crop_w, :crop_h]
 
   before_filter :authenticate_account!
+  before_filter :find_account
   before_filter :maximum_dreams_limit, :only => :create
   before_filter :parse_completed, :only => :update
   before_filter :require_dream_param, :only => [:create, :update]
@@ -45,6 +46,10 @@ private
 
   def create_params
     params[:dream].permit(DREAM_PARAMS)
+  end
+
+  def find_account
+    @account = current_account
   end
 
   def find_dream(id)

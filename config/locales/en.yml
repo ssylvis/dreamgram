@@ -91,5 +91,6 @@ en:
     show:
       adding_dream: "adding a dream"
       done: "Done"
-      no_dreams_html: "What's on your bucketlist? Get started by %{link} now."
+      no_dreams_html: "The bucketlist is empty! Come back after a dream is added."
+      no_dreams_owner_html: "What's on your bucketlist? Get started by %{link} now."
       title: "Dreams"

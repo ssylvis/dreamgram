@@ -15,4 +15,5 @@ Dreamgram::Application.routes.draw do
 
   # REST resources
   resources :dreams, :except => [:index, :show]
+  resources :users, :param => :uid, :only => [:show]
 end

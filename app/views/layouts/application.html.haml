@@ -10,8 +10,8 @@
       .header
         %h1
           = link_to t('.header').upcase, account_root_path
-        - if account_signed_in?
-          %h1.account-name= current_account.name.upcase
+        - if @account.persisted?
+          %h1.account-name= @account.name.upcase
         = yield :header
 
   = yield
