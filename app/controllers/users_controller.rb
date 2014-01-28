@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_account!
   before_filter :find_account
 
   def show
@@ -11,6 +10,11 @@ class UsersController < ApplicationController
 private
 
   def find_account
-    @account = params[:uid].nil? ? current_account : Account.find_by_uid(params[:uid].to_s)
+    if params[:uid].nil?
+      authenticate_account!
+      @account = current_account
+    else
+      @account = Account.find_by_uid(params[:uid].to_s)
+    end
   end
 end
