@@ -7,6 +7,10 @@
         = link_to t('.done'), account_root_path, :remote => true, :class => 'btn-link done'
       .listing{:style => 'display: block'}
         - if @dreams.present?
+          = link_to '#share_modal', :'data-toggle' => "modal", :class => 'share' do
+            %span.fa-stack
+              %i.fa.fa-circle.fa-stack-2x
+              %i.fa.fa-share.fa-inverse.fa-stack-1x
           = link_to account_root_path(:edit => true), :remote => true, :class => 'edit' do
             %span.fa-stack
               %i.fa.fa-circle.fa-stack-2x
@@ -30,3 +34,15 @@
 
     - if @dreams.present?
       = render @dreams
+
+<!-- share_modal -->
+.modal{:id => 'share_modal', :tabindex => '-1', :role => 'dialog'}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{:type => 'button', :'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
+          &times;
+        %h4.modal-title= t('.share_title')
+      .modal-body
+        %form
+          = text_field_tag :link, user_url(:uid => @account.uid), :class => 'form-control'
