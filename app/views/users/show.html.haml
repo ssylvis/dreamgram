@@ -7,10 +7,19 @@
         = link_to t('.done'), account_root_path, :remote => true, :class => 'btn-link done'
       .listing{:style => 'display: block'}
         - if @dreams.present?
-          = link_to '#share_modal', :'data-toggle' => "modal", :class => 'share' do
-            %span.fa-stack
-              %i.fa.fa-circle.fa-stack-2x
-              %i.fa.fa-share.fa-inverse.fa-stack-1x
+          .social
+            = link_to facebook_share_link(@account), :class => 'facebook', :target => '_blank' do
+              %span.fa-stack
+                %i.fa.fa-circle.fa-stack-2x
+                %i.fa.fa-facebook.fa-inverse.fa-stack-1x
+            = link_to twitter_share_link(@account), :class => 'twitter', :target => '_blank' do
+              %span.fa-stack
+                %i.fa.fa-circle.fa-stack-2x
+                %i.fa.fa-twitter.fa-inverse.fa-stack-1x
+            = link_to '#share_modal', :'data-toggle' => "modal", :class => 'share' do
+              %span.fa-stack
+                %i.fa.fa-circle.fa-stack-2x
+                %i.fa.fa-share.fa-inverse.fa-stack-1x
           = link_to account_root_path(:edit => true), :remote => true, :class => 'edit' do
             %span.fa-stack
               %i.fa.fa-circle.fa-stack-2x
