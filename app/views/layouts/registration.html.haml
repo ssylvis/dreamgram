@@ -1,0 +1,10 @@
+- content_for :body do
+  %header.row
+    .col-xs-12
+      .header
+        %h1
+          = link_to t('layouts.header').upcase, account_root_path
+
+  = yield
+
+= render template: 'layouts/scaffold'

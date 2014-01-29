@@ -83,8 +83,9 @@ en:
   layouts:
     application:
       account: "Account"
-      header: "Dreamgram"
+      login: "Login"
       logout: "Logout"
+    header: "Dreamgram"
     title: "Dreamgram"
 
   users:

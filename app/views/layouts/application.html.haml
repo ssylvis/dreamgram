@@ -1,17 +1,18 @@
 - content_for :body do
-  - if account_signed_in?
-    %section.profile
-      .navigation
+  %section.profile
+    .navigation
+      - if account_signed_in?
         = link_to t('.account'), edit_account_registration_path, :class => 'btn-link'
         = button_to t('.logout'), destroy_account_session_path, :method => :delete, :class => 'btn-link'
+      - else
+        = link_to t('.login'), new_account_session_path, :class => 'btn-link login'
 
   %header.row
     .col-xs-12
       .header
         %h1
-          = link_to t('.header').upcase, account_root_path
-        - if @account.persisted?
-          %h1.account-name= @account.name.upcase
+          = link_to t('layouts.header').upcase, account_root_path
+        %h1.account-name= @account.name.upcase
         = yield :header
 
   = yield

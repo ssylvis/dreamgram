@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+  layout :assign_layout
 
 protected
 
@@ -8,6 +9,14 @@ protected
 
   def after_update_path_for(resource)
     edit_account_registration_path
+  end
+
+  def assign_layout
+    if action_name == 'edit'
+      'application'
+    else
+      'registration'
+    end
   end
 
   def update_resource(resource, params)
