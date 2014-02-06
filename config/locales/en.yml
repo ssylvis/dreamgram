@@ -94,4 +94,4 @@ en:
       done: "Done"
       no_dreams_html: "The bucket list is empty! Come back after a dream is added."
       no_dreams_owner_html: "What's on your bucket list? Get started by %{link} now."
-      title: "Dreams"
+      title: "Bucketlist"
