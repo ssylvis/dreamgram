@@ -96,3 +96,6 @@ en:
       no_dreams_owner_html: "What's on your bucket list? Get started by %{link} now."
       share_title: "Share your bucketlist"
       title: "Bucketlist"
+    social:
+      description: "Check out my bucketlist on Dreamgram!"
+      name: "My bucketlist"
