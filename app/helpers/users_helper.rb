@@ -8,7 +8,7 @@ module UsersHelper
       :description => t('users.social.description', :dream => dream.description),
       :display => 'popup',
       :link => url,
-      :name => t('users.social.name'),
+      :name => t('users.social.title', :name => account.first_name),
       :picture => dream.image,
       :redirect_uri => url
     }

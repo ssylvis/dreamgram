@@ -100,5 +100,5 @@ en:
       title: "Bucketlist"
     social:
       description: "See my full bucketlist on Dreamgram. First up: %{dream}."
-      name: "My bucketlist"
+      title: "%{name}'s bucketlist"
       tweet: "See my full bucketlist on Dreamgram!"
