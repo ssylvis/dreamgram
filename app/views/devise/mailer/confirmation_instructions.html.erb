@@ -1,4 +1,4 @@
-<p>Welcome <%= @account.name %>!</p>
+<p>Welcome <%= @account.first_name %>!</p>
 
 <p><% unless @account.pending_reconfirmation? %>Thank you for creating a Dreamgram account.<% end %> Please confirm
 your email by clicking <%= link_to 'this link', account_confirmation_url(:confirmation_token => @token) %>.</p>

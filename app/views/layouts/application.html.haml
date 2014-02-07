@@ -12,7 +12,7 @@
       .header
         %h1
           = link_to t('layouts.header').upcase, account_root_path
-        %h1.account-name= @account.name.upcase
+        %h1.account-name= @account.full_name.upcase
         = yield :header
 
   = yield

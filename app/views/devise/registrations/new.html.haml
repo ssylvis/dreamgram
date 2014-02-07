@@ -4,11 +4,15 @@
 
 = form_for @account, :url => account_registration_path, :html => {:class => 'form-horizontal'} do |f|
   = f.hidden_field :remember_me, :value => true
-  - form_group_for(@account, :name) do
-    = f.label :name, t('.name'), :class => 'col-sm-2 control-label'
+  - form_group_for(@account, :first_name) do
+    = f.label :first_name, t('.first_name'), :class => 'col-sm-2 control-label'
     .col-sm-4
-      = f.text_field :name, :autofocus => true, :class => 'form-control'
-      - error_for @account, :name
+      = f.text_field :first_name, :autofocus => true, :class => 'form-control'
+      - error_for @account, :first_name
+  .form-group
+    = f.label :last_name, t('.last_name'), :class => 'col-sm-2 control-label'
+    .col-sm-4
+      = f.text_field :last_name, :autofocus => true, :class => 'form-control'
   = render :partial => 'devise/shared/credentials', :locals => {:form => f, :model => @account}
   - form_group_for(@account, :password_confirmation) do
     = f.label :password_confirmation, t('.password_confirmation'), :class => 'col-sm-2 control-label'

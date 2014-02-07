@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  SIGN_UP_PARAMS = [:name, :remember_me]
-  UPDATE_PARAMS = [:name]
+  SIGN_UP_PARAMS = [:first_name, :last_name, :remember_me]
+  UPDATE_PARAMS = [:first_name, :last_name]
 
   protect_from_forgery
 

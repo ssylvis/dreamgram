@@ -5,12 +5,16 @@ class Account < ActiveRecord::Base
 
   has_many :dreams, :dependent => :destroy
 
-  validates :name, :presence => true
+  validates :first_name, :presence => true
 
   before_create :assign_uid
 
   def self.find_by_uid(uid)
     where(:uid => uid).first
+  end
+
+  def full_name
+    [first_name, last_name].join(' ')
   end
 
   def reached_dreams_limit?
