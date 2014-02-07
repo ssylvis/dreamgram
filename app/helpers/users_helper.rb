@@ -1,11 +1,11 @@
 module UsersHelper
   def facebook_share_link(account)
     host = 'https://www.facebook.com/dialog/feed'
-    dream = account.dreams.first
+    dream = account.dreams.sample
     url = user_url(:uid => account.uid)
     params = {
       :app_id => '1387078131558211',
-      :caption => dream.description,
+      :caption => t('users.social.caption', :caption => dream.description),
       :description => t('users.social.description'),
       :display => 'popup',
       :link => url,

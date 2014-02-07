@@ -97,5 +97,6 @@ en:
       share_title: "Share your bucketlist"
       title: "Bucketlist"
     social:
-      description: "Check out my bucketlist on Dreamgram!"
+      caption: "First up: %{caption}"
+      description: "See my full bucketlist at Dreamgram"
       name: "My bucketlist"
