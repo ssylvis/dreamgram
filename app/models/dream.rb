@@ -14,7 +14,7 @@ class Dream < ActiveRecord::Base
     crop_x.present? && crop_y.present? && crop_w.present? && crop_h.present?
   end
 
-private
+  private
 
   def self.find_by_state(dream_state)
     case dream_state

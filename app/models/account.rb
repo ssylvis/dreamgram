@@ -17,7 +17,7 @@ class Account < ActiveRecord::Base
     dreams.count >= FREE_ACCOUNT_DREAMS_LIMIT
   end
 
-private
+  private
 
   def assign_uid
     self.uid = SecureRandom.hex(8)

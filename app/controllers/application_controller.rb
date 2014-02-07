@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   layout :assign_layout
 
-protected
+  protected
 
   def assign_layout
     if devise_controller?

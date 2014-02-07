@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     flash[:warning] = I18n.t("account.reached_dreams_limit") if @account.reached_dreams_limit?
   end
 
-private
+  private
 
   def find_account
     if params[:uid].nil?

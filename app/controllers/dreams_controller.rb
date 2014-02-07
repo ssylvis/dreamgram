@@ -42,7 +42,7 @@ class DreamsController < ApplicationController
     end
   end
 
-private
+  private
 
   def create_params
     params[:dream].permit(DREAM_PARAMS)

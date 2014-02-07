@@ -1,7 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
   layout :assign_layout
 
-protected
+  protected
 
   def after_inactive_sign_up_path_for(resource)
     new_account_session_path
@@ -19,17 +19,15 @@ protected
     end
   end
 
+  def needs_password?(params)
+    params[:password].present?
+  end
+
   def update_resource(resource, params)
     if needs_password?(params)
       resource.update_with_password(params)
     else
       resource.update_without_password(params)
     end
-  end
-
-private
-
-  def needs_password?(params)
-    params[:password].present?
   end
 end

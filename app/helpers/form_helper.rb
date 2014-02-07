@@ -19,7 +19,7 @@ module FormHelper
     end
   end
 
-private
+  private
 
   def full_message_for(model, field)
     (model.errors[field] || []).map { |m| model.errors.full_message(field, m) }.first
