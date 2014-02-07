@@ -5,8 +5,7 @@ module UsersHelper
     url = user_url(:uid => account.uid)
     params = {
       :app_id => '1387078131558211',
-      :caption => t('users.social.caption', :caption => dream.description),
-      :description => t('users.social.description'),
+      :description => t('users.social.description', :dream => dream.description),
       :display => 'popup',
       :link => url,
       :name => t('users.social.name'),
@@ -19,7 +18,7 @@ module UsersHelper
   def twitter_share_link(account)
     host = 'https://twitter.com/share'
     params = {
-      :text => t('users.social.description'),
+      :text => t('users.social.tweet'),
       :url => user_url(:uid => account.uid)
     }
     "#{host}?#{params.to_param}"
