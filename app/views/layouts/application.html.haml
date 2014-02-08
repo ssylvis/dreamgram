@@ -17,4 +17,8 @@
 
   = yield
 
+- content_for :footer do
+  %section.footer
+    = t('.copyright_html')
+
 = render template: 'layouts/scaffold'
