@@ -1,5 +1,7 @@
 - content_for :body do
   %section.profile
+    .brand
+      = t('.brand')
     .navigation
       - if account_signed_in?
         = link_to t('.account'), edit_account_registration_path, :class => 'btn-link'

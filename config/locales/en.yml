@@ -85,10 +85,11 @@ en:
   layouts:
     application:
       account: "Account"
+      brand: "Dreamgram"
       copyright_html: "Dreamgram &copy; 2014"
       login: "Login"
       logout: "Logout"
-    header: "Dreamgram"
+    header: "Bucket list"
     title: "Dreamgram"
 
   users:
