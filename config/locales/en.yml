@@ -49,11 +49,12 @@ en:
 
     sessions:
       new:
-        confirm_email: "Resend email confirmation"
         forgot_password: "Forgot password?"
         register: "Register for account"
+        resend_email: "Resend email confirmation"
         submit: "Sign In"
         title: "Sign In"
+        unconfirmed_html: "You must confirm your account before continuing. %{link} again."
 
     shared:
       credentials:

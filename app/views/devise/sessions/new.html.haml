@@ -1,5 +1,10 @@
 - @title = t('.title')
 
+- if confirm_email_alert?
+  -# replace with message that includes resend link
+  - resend_link = link_to t('.resend_email'), new_account_confirmation_path, :class => 'alert-link'
+  - flash.now[:alert] = t('.unconfirmed_html', :link => resend_link)
+
 = render :partial => 'shared/notices'
 
 = form_for :account, :url => new_account_session_path, :html => {:class => 'form-horizontal'} do |f|
@@ -13,10 +18,6 @@
       = link_to new_account_password_path, :class => 'secondary-link' do
         = t('.forgot_password')
         %i.fa.fa-chevron-circle-right
-      - if confirm_email_alert?
-        = link_to new_account_confirmation_path, :class => 'secondary-link' do
-          = t('.confirm_email')
-          %i.fa.fa-chevron-circle-right
       = link_to new_account_registration_path, :class => 'secondary-link' do
         = t('.register')
         %i.fa.fa-chevron-circle-right
