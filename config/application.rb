@@ -12,10 +12,10 @@ module Dreamgram
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    # Configure Action Mailer defaults
+    # Configure Action Mailer defaults.
     config.action_mailer.delivery_method = :sendmail
 
-    # Do not wrap fields with an error in div
+    # Do not wrap fields with an error in div.
     config.action_view.field_error_proc = Proc.new { |html_tag, instance|
       html_tag
     }
