@@ -3,6 +3,7 @@ ruby '2.0.0'
 
 gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'bootstrap-sass', '~> 3.0.3'
+gem 'bugsnag'
 gem 'coffee-rails'
 gem 'devise', '~> 3.2.2'
 gem 'font-awesome-rails', '~> 4.0.3'
