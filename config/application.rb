@@ -30,6 +30,9 @@ module Dreamgram
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
+    # Routes deal with exceptions.
+    config.exceptions_app = self.routes
+
     # Add validation for default locales.
     config.i18n.enforce_available_locales = true
 
