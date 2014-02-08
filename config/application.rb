@@ -12,6 +12,9 @@ module Dreamgram
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    # Custom directories with classes and modules you want to be autoloadable.
+    config.autoload_paths += %W(#{config.root}/lib)
+
     # Configure Action Mailer defaults.
     config.action_mailer.delivery_method = :sendmail
 
