@@ -1,4 +1,8 @@
 - content_for :body do
+  %section.profile
+    .brand
+      = t('layouts.brand')
+
   %header.row
     .col-xs-12
       .header
@@ -6,5 +10,8 @@
           = link_to t('layouts.header').upcase, account_root_path
 
   = yield
+
+  %section.footer
+    = t('layouts.copyright_html')
 
 = render template: 'layouts/scaffold'
