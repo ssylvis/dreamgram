@@ -1,5 +1,5 @@
 class ErrorsController < ApplicationController
-  layout 'registration'
+  layout 'basic'
 
   def internal_error
     render '500', :status => 500

@@ -15,7 +15,7 @@ class RegistrationsController < Devise::RegistrationsController
     if action_name == 'edit'
       'application'
     else
-      'registration'
+      'basic'
     end
   end
 

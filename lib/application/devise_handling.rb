@@ -14,7 +14,7 @@ module Application
 
     def assign_layout
       if devise_controller?
-        'registration'
+        'basic'
       else
         'application'
       end
