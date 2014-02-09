@@ -4,6 +4,12 @@ en:
   account:
     reached_dreams_limit: "You have reached the dreams limit for the free account."
 
+  account_mailer:
+    account_created:
+      subject: "Account created"
+    account_deleted:
+      subject: "Account deleted"
+
   devise:
     confirmations:
       new:
