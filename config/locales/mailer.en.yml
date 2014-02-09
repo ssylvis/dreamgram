@@ -1,0 +1,6 @@
+en:
+  account_mailer:
+    account_created:
+      subject: "Account created"
+    account_deleted:
+      subject: "Account deleted"
