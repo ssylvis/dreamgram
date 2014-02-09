@@ -1,6 +1,5 @@
 class Account < ActiveRecord::Base
   FREE_ACCOUNT_DREAMS_LIMIT = 10
-  STRING_ATTRIBUTES = %w{ email first_name last_name uid }
 
   devise :confirmable, :database_authenticatable, :recoverable, :registerable, :rememberable, :validatable
 
@@ -20,10 +19,6 @@ class Account < ActiveRecord::Base
 
   def reached_dreams_limit?
     dreams.count >= FREE_ACCOUNT_DREAMS_LIMIT
-  end
-
-  def to_s
-    attributes.slice(*STRING_ATTRIBUTES)
   end
 
   private
