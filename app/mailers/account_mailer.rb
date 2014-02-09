@@ -5,11 +5,11 @@ class AccountMailer < ActionMailer::Base
 
   def account_created(account)
     @account = account
-    mail :to => ADMIN_ADDRESS, :subject => t('.account_created')
+    mail :to => ADMIN_ADDRESS, :subject => t('.subject')
   end
 
   def account_deleted(account)
     @account = account
-    mail :to => ADMIN_ADDRESS, :subject => t('.account_deleted')
+    mail :to => ADMIN_ADDRESS, :subject => t('.subject')
   end
 end
