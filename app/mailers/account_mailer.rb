@@ -1,5 +1,5 @@
 class AccountMailer < ActionMailer::Base
-  ADMIN_ADDRESS = 'Admin <sean@dreamgr.am'
+  ADMIN_ADDRESS = 'Admin <ssylvis+dreamgram@gmail.com'
 
   default :from => 'Dreamgram <no-reply@dreamgr.am>'
 
