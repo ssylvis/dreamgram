@@ -29,7 +29,8 @@
             = t('.unverified_email', :email => @account.unconfirmed_email)
     .form-group
       .col-sm-offset-2.col-sm-4
-        = f.submit t('.update_account'), :class => 'btn btn-primary', :data => { :disable_with => t('.update_account') }
+        = f.submit t('.update_account'), :class => 'btn btn-primary',
+          :data => { :disable_with => t('.update_account') }
 
 %section.subsection
   %h4= t('.password_header')
@@ -52,7 +53,8 @@
         - error_for @account, :password_confirmation
     .form-group
       .col-sm-offset-2.col-sm-4
-        = f.submit t('.update_password'), :class => 'btn btn-primary', :data => { :disable_with => t('.update_password') }
+        = f.submit t('.update_password'), :class => 'btn btn-primary',
+          :data => { :disable_with => t('.update_password') }
 
 %section.subsection
   %h4= t('.delete_header')
