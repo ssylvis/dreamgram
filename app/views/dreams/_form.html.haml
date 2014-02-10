@@ -8,15 +8,15 @@
       - dream_src = @dream.image.present? ? @dream.image : 'empty.png'
       = image_tag dream_src, :id => 'dream_crop'
   .form-group
-    = f.label :description, t('.description'), :class => 'col-sm-2 control-label'
-    .col-sm-6
-      = f.text_field :description, :class => 'form-control'
-  .form-group
     = f.label :image, t('.image_url'), :class => 'col-sm-2 control-label'
     .col-sm-6
       - [:crop_x, :crop_y, :crop_w, :crop_h].each do |attribute|
         = f.hidden_field attribute, :id => attribute
       = f.text_field :image, :class => 'form-control'
+  .form-group
+    = f.label :description, t('.description'), :class => 'col-sm-2 control-label'
+    .col-sm-6
+      = f.text_field :description, :class => 'form-control'
   .form-group
     .col-sm-offset-2.col-sm-6
       = f.submit submit, :class => 'btn btn-primary', :data => { :disable_with => submit }
