@@ -76,8 +76,10 @@ en:
       title: "Edit Dream"
     form:
       cancel: "Cancel"
-      description: "Description:"
-      image_url: "Image URL:"
+      description: "Dream description:"
+      header: "Want to meet the queen? Surf Pipeline? Be Batman for a day? Give your dream a description and attach
+        a photo that will inspire you."
+      image_url: "Enter image URL:"
     new:
       submit: "Create"
       title: "Create Dream"
