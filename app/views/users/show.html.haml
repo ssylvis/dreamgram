@@ -39,7 +39,7 @@
         - add_link = link_to t('.adding_dream'), new_dream_path, :class => 'alert-link'
         = t('.no_dreams_owner_html', :link => add_link)
       - else
-        = t('.no_dreams_html')
+        = t('.no_dreams_html', :name => @account.first_name)
 
     - if @dreams.present?
       = render @dreams
