@@ -13,32 +13,32 @@ en:
   devise:
     confirmations:
       new:
-        email: "Email:"
+        email: "Email"
         submit: "Resend Confirmation Email"
         title: "Confirm Email"
 
     passwords:
       edit:
-        password: "New password:"
-        password_confirmation: "Confirm password:"
+        password: "New password"
+        password_confirmation: "Confirm password"
         submit: "Update Password"
         title: "Reset Password"
       new:
-        email: "Email:"
+        email: "Email"
         submit: "Reset Password"
         title: "Forgot Password"
 
     registrations:
       edit:
         cancel: "Cancel"
-        current_password: "Current password:"
+        current_password: "Current password"
         delete: "Delete Account"
         delete_header: "Delete Account"
-        email: "Email:"
-        first_name: "First name:"
-        last_name: "Last name:"
-        password: "New password:"
-        password_confirmation: "Confirm password:"
+        email: "Email"
+        first_name: "First name"
+        last_name: "Last name"
+        password: "New password"
+        password_confirmation: "Confirm password"
         password_header: "Update Password"
         title: "Account Settings"
         unverified_email: "Unverified email: %{email}"
@@ -46,9 +46,9 @@ en:
         update_header: "Update Account"
         update_password: "Update Password"
       new:
-        first_name: "First name:"
-        last_name: "Last name:"
-        password_confirmation: "Confirm password:"
+        first_name: "First name"
+        last_name: "Last name"
+        password_confirmation: "Confirm password"
         signin: "Sign in"
         submit: "Sign Up"
         title: "Sign Up"
@@ -64,8 +64,8 @@ en:
 
     shared:
       credentials:
-        email: "Email:"
-        password: "Password:"
+        email: "Email"
+        password: "Password"
 
   dream:
     completed_ago: "completed %{time} ago"
@@ -76,10 +76,10 @@ en:
       title: "Edit Dream"
     form:
       cancel: "Cancel"
-      description: "Dream description:"
+      description: "Dream description"
       header: "Want to meet the queen? Surf Pipeline? Be Batman for a day? Give your dream a description and attach
         a photo that will inspire you."
-      image_url: "Enter image URL:"
+      image_url: "Enter image URL"
     new:
       submit: "Create"
       title: "Create Dream"
