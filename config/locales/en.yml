@@ -31,6 +31,7 @@ en:
     registrations:
       edit:
         cancel: "Cancel"
+        confirm_delete: "We're sorry to see you go! Are you sure you want to delete your account?"
         current_password: "Current password"
         delete: "Delete Account"
         delete_header: "Delete Account"

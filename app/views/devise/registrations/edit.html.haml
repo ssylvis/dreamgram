@@ -62,4 +62,5 @@
       :html => {:class => 'form-horizontal'} do |f|
     .form-group
       .col-sm-offset-2.col-sm-4
-        = f.submit t('.delete'), :class => 'btn btn-danger', :data => { :disable_with => t('.delete') }
+        = f.submit t('.delete'), :class => 'btn btn-danger',
+          :data => { :disable_with => t('.delete'), :confirm => t('.confirm_delete') }
