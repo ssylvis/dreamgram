@@ -3,58 +3,61 @@
 .notices
   = render :partial => 'shared/notices'
 
-%h4= t('.update_header')
-= form_for @account, :url => account_registration_path, :method => :patch,
-    :html => {:class => 'form-horizontal'} do |f|
-  - form_group_for(@account, :first_name) do
-    = f.label :first_name, t('.first_name'), :class => 'col-sm-2 control-label'
-    .col-sm-4
-      = f.text_field :first_name, :autofocus => true, :class => 'form-control'
-      - error_for @account, :first_name
-  .form-group
-    = f.label :last_name, t('.last_name'), :class => 'col-sm-2 control-label'
-    .col-sm-4
-      = f.text_field :last_name, :autofocus => true, :class => 'form-control'
-  - form_group_for(@account, :email) do
-    = f.label :email, t('.email'), :class => 'col-sm-2 control-label'
-    .col-sm-4
-      = f.text_field :email, :class => 'form-control'
-      - error_for @account, :email
-  - if @account.pending_reconfirmation?
+%section.subsection
+  %h4= t('.update_header')
+  = form_for @account, :url => account_registration_path, :method => :patch,
+      :html => {:class => 'form-horizontal'} do |f|
+    - form_group_for(@account, :first_name) do
+      = f.label :first_name, t('.first_name'), :class => 'col-sm-2 control-label'
+      .col-sm-4
+        = f.text_field :first_name, :autofocus => true, :class => 'form-control'
+        - error_for @account, :first_name
+    .form-group
+      = f.label :last_name, t('.last_name'), :class => 'col-sm-2 control-label'
+      .col-sm-4
+        = f.text_field :last_name, :autofocus => true, :class => 'form-control'
+    - form_group_for(@account, :email) do
+      = f.label :email, t('.email'), :class => 'col-sm-2 control-label'
+      .col-sm-4
+        = f.text_field :email, :class => 'form-control'
+        - error_for @account, :email
+    - if @account.pending_reconfirmation?
+      .form-group
+        .col-sm-offset-2.col-sm-4
+          .alert.alert-warning
+            %i.fa.fa-exclamation-circle
+            = t('.unverified_email', :email => @account.unconfirmed_email)
     .form-group
       .col-sm-offset-2.col-sm-4
-        .alert.alert-warning
-          %i.fa.fa-exclamation-circle
-          = t('.unverified_email', :email => @account.unconfirmed_email)
-  .form-group
-    .col-sm-offset-2.col-sm-4
-      = f.submit t('.update_account'), :class => 'btn btn-primary'
+        = f.submit t('.update_account'), :class => 'btn btn-primary'
 
-%h4= t('.password_header')
-= form_for @account, :url => account_registration_path, :method => :patch,
-    :html => {:class => 'form-horizontal'} do |f|
-  - form_group_for(@account, :current_password) do
-    = f.label :current_password, t('.current_password'), :class => 'col-sm-2 control-label'
-    .col-sm-4
-      = f.password_field :current_password, :class => 'form-control'
-      - error_for @account, :current_password
-  - form_group_for(@account, :password) do
-    = f.label :password, t('.password'), :class => 'col-sm-2 control-label'
-    .col-sm-4
-      = f.password_field :password, :class => 'form-control'
-      - error_for @account, :password
-  - form_group_for(@account, :password_confirmation) do
-    = f.label :password_confirmation, t('.password_confirmation'), :class => 'col-sm-2 control-label'
-    .col-sm-4
-      = f.password_field :password_confirmation, :class => 'form-control'
-      - error_for @account, :password_confirmation
-  .form-group
-    .col-sm-offset-2.col-sm-4
-      = f.submit t('.update_password'), :class => 'btn btn-primary'
+%section.subsection
+  %h4= t('.password_header')
+  = form_for @account, :url => account_registration_path, :method => :patch,
+      :html => {:class => 'form-horizontal'} do |f|
+    - form_group_for(@account, :current_password) do
+      = f.label :current_password, t('.current_password'), :class => 'col-sm-2 control-label'
+      .col-sm-4
+        = f.password_field :current_password, :class => 'form-control'
+        - error_for @account, :current_password
+    - form_group_for(@account, :password) do
+      = f.label :password, t('.password'), :class => 'col-sm-2 control-label'
+      .col-sm-4
+        = f.password_field :password, :class => 'form-control'
+        - error_for @account, :password
+    - form_group_for(@account, :password_confirmation) do
+      = f.label :password_confirmation, t('.password_confirmation'), :class => 'col-sm-2 control-label'
+      .col-sm-4
+        = f.password_field :password_confirmation, :class => 'form-control'
+        - error_for @account, :password_confirmation
+    .form-group
+      .col-sm-offset-2.col-sm-4
+        = f.submit t('.update_password'), :class => 'btn btn-primary'
 
-%h4= t('.delete_header')
-= form_for @account, :url => account_registration_path, :method => 'delete',
-    :html => {:class => 'form-horizontal'} do |f|
-  .form-group
-    .col-sm-offset-2.col-sm-4
-      = f.submit t('.delete'), :class => 'btn btn-danger'
+%section.subsection
+  %h4= t('.delete_header')
+  = form_for @account, :url => account_registration_path, :method => 'delete',
+      :html => {:class => 'form-horizontal'} do |f|
+    .form-group
+      .col-sm-offset-2.col-sm-4
+        = f.submit t('.delete'), :class => 'btn btn-danger'
