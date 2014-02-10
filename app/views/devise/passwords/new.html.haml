@@ -10,4 +10,4 @@
       - error_for @account, :email
   .form-group
     .col-sm-offset-2.col-sm-4
-      = f.submit t('.submit'), :class => 'btn btn-primary'
+      = f.submit t('.submit'), :class => 'btn btn-primary', :data => { :disable_with => t('.submit') }
