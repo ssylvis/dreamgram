@@ -63,4 +63,8 @@
     .form-group
       .col-sm-offset-2.col-sm-4
         = f.submit t('.delete'), :class => 'btn btn-danger',
-          :data => { :disable_with => t('.delete'), :confirm => t('.confirm_delete') }
+          :data => { :disable_with => t('.delete'), :confirm => '#confirm_dialog' }
+
+<!-- confirm_dialog -->
+= render :partial => 'shared/confirm_dialog', :locals => { :dialog_id => 'confirm_dialog',
+  :dialog_message => t('.confirm_delete'), :dialog_title => t('.confirm_title') }
