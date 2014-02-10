@@ -1,9 +1,6 @@
-<p>Welcome <%= @account.first_name %>!</p>
+<p>Hello <%= @account.first_name %>!</p>
 
-<p><% unless @account.pending_reconfirmation? %>Thank you for creating a Dreamgram account.<% end %> Please confirm
-your email by clicking <%= link_to 'this link', account_confirmation_url(:confirmation_token => @token) %>.</p>
+<p><% unless @account.pending_reconfirmation? %>Welcome to Dreamgram!<% end %> Please confirm your email address by
+clicking <%= link_to 'this link', account_confirmation_url(:confirmation_token => @token) %>.</p>
 
-<p>Once you have confirmed your email, you can start adding your dreams and sharing them with friends!</p>
-
-<p>Thanks,<br/>
-Dreamgram</p>
+<p>Once you confirm, you can start adding dreams to your bucket list and share it with friends!</p>
