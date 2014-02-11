@@ -3,7 +3,7 @@
 en:
   devise:
     confirmations:
-      confirmed: "Your account has been confirmed. You can sign in now."
+      confirmed: "Thank you for confirming your account. You can sign in now."
       send_instructions: "An email has been sent with instructions on how to confirm your account."
 
     failure:
