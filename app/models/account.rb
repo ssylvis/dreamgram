@@ -10,7 +10,7 @@ class Account < ActiveRecord::Base
   before_create :assign_uid
 
   def self.find_by_uid(uid)
-    where(:uid => uid).first
+    where(:uid => uid).first!
   end
 
   def full_name
