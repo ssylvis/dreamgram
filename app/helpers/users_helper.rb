@@ -4,7 +4,7 @@ module UsersHelper
     dream = account.dreams.sample
     url = user_url(:uid => account.uid)
     params = {
-      :app_id => '1387078131558211',
+      :app_id => ENV['FACEBOOK_ID'],
       :description => t('users.social.description', :dream => dream.description),
       :display => 'popup',
       :link => url,
