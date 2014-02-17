@@ -20,7 +20,7 @@ $(document).ready(function() {
     // add Jcrop back to image target
     initJcrop(storeJcrop, true);
   });
-});
+})
 
 // initialize Jcrop and connect to the target image
 function initJcrop(storeJcrop, resetCrop) {

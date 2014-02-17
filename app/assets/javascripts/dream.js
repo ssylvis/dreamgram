@@ -5,4 +5,4 @@ $(document).ready(function() {
   }, function() {
     $(this).find(".edit-buttons").not(".show").hide(SHOW_DELAY);
   });
-});
+})
