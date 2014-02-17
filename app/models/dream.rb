@@ -1,7 +1,7 @@
 class Dream < ActiveRecord::Base
   belongs_to :account
 
-  validates :account_id, :presence => true
+  validates :description, :presence => true
 
   scope :completed, ->(state) { find_by_state(state) }
   scope :order_by_creation, -> { order(:created_at) }

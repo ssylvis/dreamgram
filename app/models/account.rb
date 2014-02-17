@@ -5,7 +5,9 @@ class Account < ActiveRecord::Base
 
   has_many :dreams, :dependent => :destroy
 
+  validates :email, :presence => true
   validates :first_name, :presence => true
+  validates :uid, :presence => true
 
   before_create :assign_uid
 
