@@ -1,5 +1,5 @@
 class DreamsController < ApplicationController
-  DREAM_PARAMS = [:description, :image, :crop_x, :crop_y, :crop_w, :crop_h]
+  DREAM_PARAMS = [:crop_x, :crop_y, :crop_w, :crop_h, :description, :image]
 
   before_filter :authenticate_account!
   before_filter :find_account
