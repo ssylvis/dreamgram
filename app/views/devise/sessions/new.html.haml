@@ -7,17 +7,21 @@
 
 = render :partial => 'shared/notices'
 
-= form_for :account, :url => new_account_session_path, :html => {:class => 'form-horizontal'} do |f|
-  = f.hidden_field :remember_me, :value => true
-  = render :partial => 'devise/shared/credentials', :locals => {:form => f, :autofocus => true}
+= form_tag nil, :class => 'form-horizontal provider' do |f|
   .form-group
-    .col-sm-offset-2.col-sm-3
-      = f.submit t('.submit'), :class => 'btn btn-primary', :data => { :disable_with => t('.submit') }
+    .col-sm-offset-1.col-sm-3
+      %h4= t('.login')
   .form-group
-    .col-sm-offset-2.col-sm-3
-      = link_to new_account_password_path, :class => 'secondary-link' do
-        = t('.forgot_password')
-        %i.fa.fa-chevron-circle-right
+    .col-sm-offset-1.col-sm-3
+      .input-group.facebook
+        - auth_link = account_omniauth_authorize_path(:facebook)
+        %span.input-group-btn
+          = link_to auth_link, :class => 'btn btn-facebook' do
+            %i.fa.fa-facebook
+        = link_to t('.facebook'), auth_link, :class => 'form-control btn btn-facebook'
+  %br
+  .form-group
+    .col-sm-offset-1.col-sm-3
       = link_to new_account_registration_path, :class => 'secondary-link' do
         = t('.register')
         %i.fa.fa-chevron-circle-right

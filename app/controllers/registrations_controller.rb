@@ -30,16 +30,4 @@ class RegistrationsController < Devise::RegistrationsController
       'basic'
     end
   end
-
-  def needs_password?(params)
-    params[:password].present?
-  end
-
-  def update_resource(resource, params)
-    if needs_password?(params)
-      resource.update_with_password(params)
-    else
-      resource.update_without_password(params)
-    end
-  end
 end

@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def new_session_path(*args)
+    new_account_session_path
+  end
+
   def record_not_found
     raise ActiveRecord::RecordNotFound
   end

@@ -15,23 +15,11 @@ en:
         submit: "Resend Confirmation Email"
         title: "Confirm Email"
 
-    passwords:
-      edit:
-        password: "New password"
-        password_confirmation: "Confirm password"
-        submit: "Update Password"
-        title: "Reset Password"
-      new:
-        email: "Email"
-        submit: "Reset Password"
-        title: "Forgot Password"
-
     registrations:
       edit:
         cancel: "Cancel"
         confirm_delete: "We're sorry to see you go. Are you sure you want to delete your account?"
         confirm_title: "Delete account"
-        current_password: "Current password"
         delete: "Delete Account"
         delete_header: "Delete Account"
         email: "Email"
@@ -44,26 +32,24 @@ en:
         update_header: "Update Account"
         update_password: "Update Password"
       new:
+        cancel: "Cancel"
+        email: "Email"
+        facebook: "Sign up with Facebook"
         first_name: "First name"
         last_name: "Last name"
-        password_confirmation: "Confirm password"
-        signin: "Sign in"
+        login: "Login with existing account"
+        signup: "Create a free Dreamgram account"
         submit: "Sign Up"
         title: "Sign Up"
 
     sessions:
       new:
-        forgot_password: "Forgot password?"
-        register: "Register for account"
+        facebook: "Login with Facebook"
+        login: "Login to Dreamgram"
+        register: "Register for new account"
         resend_email: "Resend email confirmation"
-        submit: "Sign In"
         title: "Sign In"
         unconfirmed_html: "You must confirm your account before continuing. %{link}."
-
-    shared:
-      credentials:
-        email: "Email"
-        password: "Password"
 
   dream:
     completed_ago: "completed %{time} ago"

@@ -32,30 +32,6 @@
           :data => { :disable_with => t('.update_account') }
 
 %section.subsection
-  %h4= t('.password_header')
-  = form_for @account, :url => account_registration_path, :method => :patch,
-      :html => {:class => 'form-horizontal'} do |f|
-    - form_group_for(@account, :current_password) do
-      = f.label :current_password, t('.current_password'), :class => 'col-sm-2 control-label'
-      .col-sm-3
-        = f.password_field :current_password, :class => 'form-control'
-        - error_for @account, :current_password
-    - form_group_for(@account, :password) do
-      = f.label :password, t('.password'), :class => 'col-sm-2 control-label'
-      .col-sm-3
-        = f.password_field :password, :class => 'form-control'
-        - error_for @account, :password
-    - form_group_for(@account, :password_confirmation) do
-      = f.label :password_confirmation, t('.password_confirmation'), :class => 'col-sm-2 control-label'
-      .col-sm-3
-        = f.password_field :password_confirmation, :class => 'form-control'
-        - error_for @account, :password_confirmation
-    .form-group
-      .col-sm-offset-2.col-sm-3
-        = f.submit t('.update_password'), :class => 'btn btn-primary',
-          :data => { :disable_with => t('.update_password') }
-
-%section.subsection
   %h4= t('.delete_header')
   = form_for @account, :url => account_registration_path, :method => 'delete',
       :html => {:class => 'form-horizontal'} do |f|

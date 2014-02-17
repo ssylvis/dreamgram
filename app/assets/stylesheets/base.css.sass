@@ -1,3 +1,10 @@
+@import "bootstrap"
+@import "variables"
+
+$btn-facebook-color: #fff !default
+$btn-facebook-bg: $facebook-color
+$btn-facebook-border: darken($facebook-color, 5%)
+
 body
   font-family: Helvetica,sans-serif !important
 
@@ -14,6 +21,12 @@ footer
   text-align: right
 
 form
+  .btn-facebook
+    @include button-variant($btn-facebook-color, $btn-facebook-bg, $btn-facebook-border)
+
+  .facebook i
+    font-size: 1.5em
+
   .secondary-link
     color: black
     display: block

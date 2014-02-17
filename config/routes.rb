@@ -1,9 +1,14 @@
 Dreamgram::Application.routes.draw do
   # Devise/account resources
   devise_for :account,
-    :controllers => { :registrations => :registrations },
+    :controllers => { :omniauth_callbacks => 'authentication', :registrations => :registrations },
     :path => '',
     :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup' }
+
+  devise_scope :account do
+    get 'login', :to => 'devise/sessions#new', :as => :new_account_session
+    delete 'logout', :to => 'devise/sessions#destroy', :as => :destroy_account_session
+  end
 
   authenticated :account do
     root :to => 'users#show', :as => :account_root
