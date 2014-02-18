@@ -5,9 +5,9 @@
 = form_for @account, :url => account_password_path, :html => {:class => 'form-horizontal'} do |f|
   - form_group_for(@account, :email) do
     = f.label :email, t('.email'), :class => 'col-sm-2 control-label'
-    .col-sm-4
+    .col-sm-3
       = f.text_field :email, :autofocus => true, :class => 'form-control'
       - error_for @account, :email
   .form-group
-    .col-sm-offset-2.col-sm-4
+    .col-sm-offset-2.col-sm-3
       = f.submit t('.submit'), :class => 'btn btn-primary', :data => { :disable_with => t('.submit') }

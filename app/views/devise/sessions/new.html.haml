@@ -11,10 +11,10 @@
   = f.hidden_field :remember_me, :value => true
   = render :partial => 'devise/shared/credentials', :locals => {:form => f, :autofocus => true}
   .form-group
-    .col-sm-offset-2.col-sm-5
+    .col-sm-offset-2.col-sm-3
       = f.submit t('.submit'), :class => 'btn btn-primary', :data => { :disable_with => t('.submit') }
   .form-group
-    .col-sm-offset-2.col-sm-5
+    .col-sm-offset-2.col-sm-3
       = link_to new_account_password_path, :class => 'secondary-link' do
         = t('.forgot_password')
         %i.fa.fa-chevron-circle-right

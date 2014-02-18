@@ -6,24 +6,24 @@
   = f.hidden_field :remember_me, :value => true
   - form_group_for(@account, :first_name) do
     = f.label :first_name, t('.first_name'), :class => 'col-sm-2 control-label'
-    .col-sm-4
+    .col-sm-3
       = f.text_field :first_name, :autofocus => true, :class => 'form-control'
       - error_for @account, :first_name
   .form-group
     = f.label :last_name, t('.last_name'), :class => 'col-sm-2 control-label'
-    .col-sm-4
+    .col-sm-3
       = f.text_field :last_name, :autofocus => true, :class => 'form-control'
   = render :partial => 'devise/shared/credentials', :locals => {:form => f, :model => @account}
   - form_group_for(@account, :password_confirmation) do
     = f.label :password_confirmation, t('.password_confirmation'), :class => 'col-sm-2 control-label'
-    .col-sm-4
+    .col-sm-3
       = f.password_field :password_confirmation, :class => 'form-control'
       - error_for @account, :password_confirmation
   .form-group
-    .col-sm-offset-2.col-sm-4
+    .col-sm-offset-2.col-sm-3
       = f.submit t('.submit'), :class => 'btn btn-primary'
   .form-group
-    .col-sm-offset-2.col-sm-4
+    .col-sm-offset-2.col-sm-3
       = link_to new_account_session_path, :class => 'secondary-link' do
         = t('.signin')
         %i.fa.fa-chevron-circle-right
