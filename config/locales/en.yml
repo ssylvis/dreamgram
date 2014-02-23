@@ -1,6 +1,4 @@
 en:
-  request_failed: "Oh no! There was an issue processing your request. Please try again in a minute."
-
   account:
     reached_dreams_limit: "You have reached the dreams limit for the free account."
 
@@ -62,7 +60,7 @@ en:
         resend_email: "Resend email confirmation"
         submit: "Sign In"
         title: "Sign In"
-        unconfirmed_html: "You must confirm your account before continuing. %{link} again."
+        unconfirmed_html: "You must confirm your account before continuing. %{link}."
 
     shared:
       credentials:
@@ -101,6 +99,8 @@ en:
     copyright_html: "Dreamgram &copy; 2014"
     header: "Bucket list"
     title: "Dreamgram"
+
+  request_failed: "Oh no! There was an issue processing your request. Please try again in a minute."
 
   users:
     show:
