@@ -9,7 +9,7 @@ class Account < ActiveRecord::Base
   validates :first_name, :presence => true
   validates :uid, :presence => true
 
-  before_create :assign_uid
+  before_validation :assign_uid, :only => :create
 
   def self.find_by_uid(uid)
     where(:uid => uid).first!
