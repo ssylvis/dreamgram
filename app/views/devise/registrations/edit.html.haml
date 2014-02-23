@@ -1,5 +1,10 @@
 - @title = t('.title')
 
+-# if we did not just update the email, add notice about email confirmation
+- if flash.empty? && @account.pending_reconfirmation?
+  - resend_link = link_to t('.resend_email'), new_account_confirmation_path, :class => 'alert-link'
+  - flash.now[:warning] = t('.unverified_email_html', :email => @account.unconfirmed_email, :link => resend_link)
+
 .notices
   = render :partial => 'shared/notices'
 
@@ -21,12 +26,6 @@
       .col-sm-3
         = f.text_field :email, :class => 'form-control'
         - error_for @account, :email
-    - if @account.pending_reconfirmation?
-      .form-group
-        .col-sm-offset-2.col-sm-3
-          .alert.alert-warning
-            %i.fa.fa-exclamation-circle
-            = t('.unverified_email', :email => @account.unconfirmed_email)
     .form-group
       .col-sm-offset-2.col-sm-3
         = f.submit t('.update_account'), :class => 'btn btn-primary',
