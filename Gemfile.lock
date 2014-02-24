@@ -95,8 +95,6 @@ GEM
       byebug (~> 2.2)
       pry (~> 0.9.12)
     rack (1.5.2)
-    rack-handlers (0.7.0)
-      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rack-timeout (0.0.4)
@@ -182,7 +180,6 @@ DEPENDENCIES
   newrelic_rpm
   pg (~> 0.15.1)
   pry-byebug
-  rack-handlers
   rack-timeout
   rails (~> 4.0.2)
   rails_12factor
