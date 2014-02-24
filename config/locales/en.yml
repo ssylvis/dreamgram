@@ -39,7 +39,7 @@ en:
         last_name: "Last name"
         resend_email: "Resend email confirmation"
         title: "Account Settings"
-        unverified_email_html: "Your updated email must be confirmed before it can be used. %{link} to %{email}."
+        unverified_email_html: "Your updated email has not yet been confirmed. %{link} to %{email}."
         update_account: "Update Account"
         update_header: "Update Account"
         update_password: "Update Password"
