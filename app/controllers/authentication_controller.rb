@@ -3,6 +3,16 @@ class AuthenticationController < Devise::OmniauthCallbacksController
   include Devise::Controllers::Rememberable
 
   def facebook
+    authenticate_request(:facebook)
+  end
+
+  def google
+    authenticate_request(:google)
+  end
+
+  private
+
+  def authenticate_request(provider)
     auth = request.env['omniauth.auth']
     # sign in existing accounts whether login or signup request
     if account = Account.find_by_provider(auth.provider, auth.uid)
@@ -19,7 +29,8 @@ class AuthenticationController < Devise::OmniauthCallbacksController
           account.update!(update_provider_params)
           sign_in_and_redirect account
         else
-          set_flash_message(:notice, :oauth_signup, :provider => 'Facebook') if is_flashing_format?
+          provider_name = provider.to_s.capitalize
+          set_flash_message(:notice, :oauth_signup, :provider => provider_name) if is_flashing_format?
           redirect_to new_account_registration_path
         end
       end

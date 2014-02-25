@@ -4,7 +4,7 @@ class Account < ActiveRecord::Base
   FREE_ACCOUNT_DREAMS_LIMIT = 10
 
   devise :confirmable, :registerable, :rememberable
-  devise :omniauthable, :omniauth_providers => [:facebook]
+  devise :omniauthable, :omniauth_providers => [:facebook, :google]
 
   has_many :dreams, :dependent => :destroy
 

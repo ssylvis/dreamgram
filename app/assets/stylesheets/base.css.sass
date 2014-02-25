@@ -5,6 +5,10 @@ $btn-facebook-color: #fff !default
 $btn-facebook-bg: $facebook-color
 $btn-facebook-border: darken($facebook-color, 5%)
 
+$btn-google-color: #fff !default
+$btn-google-bg: $google-color
+$btn-google-border: darken($google-color, 5%)
+
 body
   font-family: Helvetica,sans-serif !important
 
@@ -24,8 +28,16 @@ form
   .btn-facebook
     @include button-variant($btn-facebook-color, $btn-facebook-bg, $btn-facebook-border)
 
-  .facebook i
-    font-size: 1.5em
+  .btn-google
+    @include button-variant($btn-google-color, $btn-google-bg, $btn-google-border)
+
+  .provider
+    a
+      text-align: left
+    i
+      font-size: 1.5em
+      text-align: center
+      width: 15px
 
   .secondary-link
     color: black
