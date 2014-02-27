@@ -7,21 +7,16 @@ class Account < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:facebook, :google]
 
   has_many :dreams, :dependent => :destroy
+  has_many :oauths, :dependent => :destroy
 
   validates :email, :presence => true, :uniqueness => true
   validates :first_name, :presence => true
-  validates :provider, :presence => true
-  validates :provider_uid, :presence => true
   validates :uid, :presence => true
 
   before_validation :assign_uid, :only => :create
 
   def self.find_by_email(email)
     where(:email => email).first
-  end
-
-  def self.find_by_provider(provider, uid)
-    where(:provider => provider, :provider_uid => uid).first
   end
 
   def self.find_by_uid(uid)
@@ -35,8 +30,9 @@ class Account < ActiveRecord::Base
         account.email ||= oauth[:email]
         account.first_name ||= oauth[:first_name]
         account.last_name ||= oauth[:last_name]
-        account.provider ||= oauth[:provider]
-        account.provider_uid ||= oauth[:provider_uid]
+        unless oauth.empty?
+          account.oauths.build(:provider => oauth[:provider], :provider_uid => oauth[:provider_uid])
+        end
       end
     end
   end

@@ -15,7 +15,8 @@ class AuthenticationController < Devise::OmniauthCallbacksController
   def authenticate_request(provider)
     auth = request.env['omniauth.auth']
     # sign in existing accounts whether login or signup request
-    if account = Account.find_by_provider(auth.provider, auth.uid)
+    if oauth = Oauth.find_by_provider(auth.provider, auth.uid)
+      account = oauth.account
       remember_me account
       sign_in_and_redirect account
     else
@@ -26,7 +27,7 @@ class AuthenticationController < Devise::OmniauthCallbacksController
         # check whether we have an existing email account
         self.class.save_oauth_data(session, auth)
         if account = Account.find_by_email(auth.info.email)
-          account.update!(update_provider_params)
+          account.oauths.create!(oauth_create_params(account))
           sign_in_and_redirect account
         else
           provider_name = provider.to_s.capitalize
@@ -43,7 +44,7 @@ class AuthenticationController < Devise::OmniauthCallbacksController
     request.env['omniauth.origin'] == new_account_session_url
   end
 
-  def update_provider_params
-    self.class.oauth_data(session).slice(:provider, :provider_uid)
+  def oauth_create_params(account)
+    self.class.oauth_data(session).slice(:provider, :provider_uid).merge(:account => account)
   end
 end
