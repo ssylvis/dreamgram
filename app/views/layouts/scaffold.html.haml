@@ -9,6 +9,7 @@
     %meta{:content => 'width=device-width, initial-scale=1.0', :name => 'viewport'}
     /[if lt IE 9]
       %script{:src => 'http://html5shim.googlecode.com/svn/trunk/html5.js'}
+    = yield :head
 
   %body.container
     = yield :body

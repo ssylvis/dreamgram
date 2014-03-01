@@ -1,17 +1,7 @@
 module UsersHelper
   def facebook_share_link(account)
-    host = 'https://www.facebook.com/dialog/feed'
-    dream = account.dreams.sample
-    url = user_url(:uid => account.uid)
-    params = {
-      :app_id => ENV['FACEBOOK_ID'],
-      :description => t('users.social.description', :dream => dream.description),
-      :display => 'popup',
-      :link => url,
-      :name => t('users.social.title', :name => account.first_name),
-      :picture => dream.image,
-      :redirect_uri => url
-    }
+    host = 'https://www.facebook.com/sharer/sharer.php'
+    params = {:u => user_url(:uid => account.uid)}
     "#{host}?#{params.to_param}"
   end
 
