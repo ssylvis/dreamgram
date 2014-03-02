@@ -3,7 +3,7 @@
 - if @dreams.present?
   - content_for :head do
     -# Add Open Graph tags for Facebook sharing link
-    - dream = @dreams.sample
+    - dream = @dreams.first
     %meta{:property => 'fb:app_id', :content => ENV['FACEBOOK_ID']}
     %meta{:property => 'og:description', :content => t('users.social.description', :dream => dream.description)}
     %meta{:property => 'og:image', :content => dream.image}
@@ -35,9 +35,6 @@
             %span.fa-stack
               %i.fa.fa-circle.fa-stack-2x
               %i.fa.fa-pencil.fa-inverse.fa-stack-1x
-        - unless @reached_dreams_limit
-          = link_to new_dream_path, :class => 'new' do
-            %i.fa.fa-plus-circle.fa-2x
 
 .notices
   = render :partial => 'shared/notices', :locals => {:show => [:alert, :warning]}
@@ -52,8 +49,18 @@
       - else
         = t('.no_dreams_html', :name => @account.first_name)
 
+    -# Show user dreams
     - if @dreams.present?
       = render @dreams
+
+    -# Show Add button placeholder
+    - unless @account.reached_dreams_limit?
+      = render 'dreams/add'
+
+    -# Show dream placeholder with number
+    - (@account.dreams_remaining - 1).times do |i|
+      - number = @dreams.count + i + 2
+      = render :partial => 'dreams/placeholder', :locals => {:number => number}
 
 <!-- share_modal -->
 .modal{:id => 'share_modal', :tabindex => '-1', :role => 'dialog'}

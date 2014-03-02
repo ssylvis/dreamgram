@@ -3,8 +3,6 @@ class UsersController < ApplicationController
 
   def show
     @dreams = @account.dreams.completed(DreamState::ALL)
-    @reached_dreams_limit = @account.reached_dreams_limit?
-    flash[:warning] = I18n.t("account.reached_dreams_limit") if @account.reached_dreams_limit?
   end
 
   private

@@ -1,7 +1,4 @@
 en:
-  account:
-    reached_dreams_limit: "You have reached the dreams limit for the free account."
-
   account_mailer:
     account_created:
       subject: "Account created"
@@ -93,10 +90,10 @@ en:
       adding_dream: "adding your first dream"
       done: "Done"
       no_dreams_html: "%{name}'s bucket list is empty! Come back after a dream is added."
-      no_dreams_owner_html: "What's on your bucket list? Get started by %{link}."
+      no_dreams_owner_html: "What's on your top-ten bucket list? Get started by %{link} then share it friends."
       share_title: "Share your bucket list"
       title: "Bucket list"
     social:
-      description: "See my full bucket list on Dreamgram. First up: %{dream}."
+      description: "See my top-ten bucket list on Dreamgram. First up: %{dream}."
       title: "%{name}'s bucket list"
-      tweet: "See my full bucket list on Dreamgram!"
+      tweet: "See my top-ten bucket list on Dreamgram!"

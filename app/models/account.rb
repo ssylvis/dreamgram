@@ -1,7 +1,7 @@
 class Account < ActiveRecord::Base
   include Application::OauthHandling
 
-  FREE_ACCOUNT_DREAMS_LIMIT = 10
+  DREAMS_LIMIT = 10
 
   devise :confirmable, :registerable, :rememberable
   devise :omniauthable, :omniauth_providers => [:facebook, :google]
@@ -37,12 +37,16 @@ class Account < ActiveRecord::Base
     end
   end
 
+  def dreams_remaining
+    DREAMS_LIMIT - dreams.count
+  end
+
   def full_name
     [first_name, last_name].join(' ')
   end
 
   def reached_dreams_limit?
-    dreams.count >= FREE_ACCOUNT_DREAMS_LIMIT
+    dreams_remaining == 0
   end
 
   private
