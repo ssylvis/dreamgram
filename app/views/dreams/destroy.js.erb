@@ -4,7 +4,8 @@
 <% else -%>
   $("#dream_<%= @dream.id %>").remove();
   <% if current_account.dreams.empty? %>
-    $(".header .buttons .edit").remove();
+    $(".header .buttons .edit").hide();
+    $(".header .buttons .social").hide();
     $(".dreams .alert").show();
   <% end -%>
 <% end -%>

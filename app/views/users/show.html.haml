@@ -18,7 +18,7 @@
         = link_to t('.done'), account_root_path, :remote => true, :class => 'btn-link done'
       .listing{:style => 'display: block'}
         - if @dreams.present?
-          .social
+          .social{:style => 'display: block'}
             = link_to facebook_share_link(@account), :class => 'facebook', :target => '_blank' do
               %span.fa-stack
                 %i.fa.fa-circle.fa-stack-2x
