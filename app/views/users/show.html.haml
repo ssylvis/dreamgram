@@ -1,14 +1,15 @@
 - @title = t('.title')
 
-- content_for :head do
-  -# Add Open Graph tags for Facebook sharing link
-  - dream = @dreams.sample
-  %meta{:property => 'fb:app_id', :content => ENV['FACEBOOK_ID']}
-  %meta{:property => 'og:description', :content => t('users.social.description', :dream => dream.description)}
-  %meta{:property => 'og:image', :content => dream.image}
-  %meta{:property => 'og:site_name', :content => t('layouts.title')}
-  %meta{:property => 'og:title', :content => t('users.social.title', :name => @account.first_name)}
-  %meta{:property => 'og:url', :content => user_url(:uid => @account.uid)}
+- if @dreams.present?
+  - content_for :head do
+    -# Add Open Graph tags for Facebook sharing link
+    - dream = @dreams.sample
+    %meta{:property => 'fb:app_id', :content => ENV['FACEBOOK_ID']}
+    %meta{:property => 'og:description', :content => t('users.social.description', :dream => dream.description)}
+    %meta{:property => 'og:image', :content => dream.image}
+    %meta{:property => 'og:site_name', :content => t('layouts.title')}
+    %meta{:property => 'og:title', :content => t('users.social.title', :name => @account.first_name)}
+    %meta{:property => 'og:url', :content => user_url(:uid => @account.uid)}
 
 - if owned_by_account?(@account)
   - content_for :header do
