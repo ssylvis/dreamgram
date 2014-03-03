@@ -74,7 +74,7 @@ en:
   home:
     show:
       login: "Login"
-      signup: "Join Now"
+      signup: "Get Started"
       subtitle: "What's on your bucket list?"
       title: "Dreamgram"
 
@@ -94,10 +94,10 @@ en:
       adding_dream: "adding your first dream"
       done: "Done"
       no_dreams_html: "%{name}'s bucket list is empty! Come back after a dream is added."
-      no_dreams_owner_html: "What's on your top-ten bucket list? Get started by %{link} then share it friends."
+      no_dreams_owner_html: "What's on your bucket list? Get started by %{link}."
       share_title: "Share your bucket list"
       title: "Bucket list"
     social:
-      description: "See my top-ten bucket list on Dreamgram. First up: %{dream}."
+      description: "See my bucket list on Dreamgram. First up: %{dream}."
       title: "%{name}'s bucket list"
-      tweet: "See my top-ten bucket list on Dreamgram!"
+      tweet: "See my bucket list on Dreamgram!"

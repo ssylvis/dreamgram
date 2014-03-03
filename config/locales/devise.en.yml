@@ -8,7 +8,7 @@ en:
         oauth_signup: "You're almost done! Complete the form below to sign up with your %{provider} account."
 
     confirmations:
-      confirmed: "Thank you for confirming your account. You can sign in now."
+      confirmed: "Thanks for confirming your account. You can sign in now!"
       send_instructions: "An email has been sent with instructions on how to confirm your account."
 
     failure:
