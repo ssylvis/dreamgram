@@ -23,6 +23,10 @@ class RegistrationsController < Devise::RegistrationsController
     edit_account_registration_path
   end
 
+  def update_resource(resource, params)
+    resource.update(params)
+  end
+
   def assign_layout
     if action_name == 'edit'
       'application'
