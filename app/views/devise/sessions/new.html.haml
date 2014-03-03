@@ -17,7 +17,7 @@
         - auth_link = account_omniauth_authorize_path(:facebook)
         %span.input-group-btn
           = link_to auth_link, :class => 'btn btn-facebook' do
-            %i.fa.fa-facebook
+            = image_tag 'facebook.png', :class => 'logo-facebook'
         = link_to t('.facebook'), auth_link, :class => 'form-control btn btn-facebook'
   .form-group
     .col-sm-offset-1.col-sm-3
@@ -25,7 +25,7 @@
         - auth_link = account_omniauth_authorize_path(:google)
         %span.input-group-btn
           = link_to auth_link, :class => 'btn btn-google' do
-            %i.fa.fa-google-plus
+            = image_tag 'google.png', :class => 'logo-google'
         = link_to t('.google'), auth_link, :class => 'form-control btn btn-google'
   %br
   .form-group
