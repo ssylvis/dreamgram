@@ -6,6 +6,10 @@ en:
       subject: "Account deleted"
 
   devise:
+    authentication:
+      account:
+        failure: "We failed to authenticate you with %{kind} because \"%{reason}\"."
+
     confirmations:
       new:
         email: "Email"
