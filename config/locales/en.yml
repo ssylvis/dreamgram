@@ -8,7 +8,7 @@ en:
   devise:
     authentication:
       account:
-        failure: "We failed to authenticate you with %{kind} because \"%{reason}\"."
+        failure: "We failed to authenticate you with %{kind}: %{reason}."
 
     confirmations:
       new:
