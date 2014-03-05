@@ -1,8 +1,23 @@
 <% if @dream.errors.any? -%>
   var notice = $("<%= escape_javascript(render(:partial => "shared/notices")) %>");
   $(".notices").empty().append(notice);
+
 <% else -%>
-  $("#dream_<%= @dream.id %> .completed-button button").toggleClass("completed");
-  $("#dream_<%= @dream.id %> .completed-button #dream_completed").attr("value", "<%= !@dream.completed? %>");
-  $("#dream_<%= @dream.id %> img").attr("title", "<%= dream_image_title(@dream) %>");
+  var dream = $("#dream_<%= @dream.id %>");
+  $(".dreams .row .completed").show();
+  $(".dreams .row .completed h4").after(dream);
+
+  dream.find(".complete-form").hide();
+  dream.find(".completed-tag").show();
+  dream.find(".edit-buttons").hide();
+  dream.find("img").attr("title", "<%= dream_image_title(@dream) %>");
+
+  <% if @account.dreams_remaining == 1 -%>
+    var placeholder = $("<%= escape_javascript(render('dreams/add')) %>");
+    $(".dreams .row .active").append(placeholder);
+  <% else -%>
+    var placeholder = $("<%= escape_javascript(
+      render(:partial => 'dreams/placeholder', :locals => {:number => @account.dreams.active.count + 2})) %>");
+    $("#add_dream").after(placeholder);
+  <% end -%>
 <% end -%>

@@ -3,8 +3,10 @@ class Dream < ActiveRecord::Base
 
   validates :description, :presence => true
 
+  scope :active, -> { find_by_state(DreamState::ACTIVE) }
   scope :completed, -> { find_by_state(DreamState::COMPLETED) }
-  scope :order_by_creation, -> { order(:created_at) }
+  scope :order_by_completed, -> { order(:completed_at => :desc) }
+  scope :order_by_created, -> { order(:created_at) }
 
   def completed?
     completed_at.present?

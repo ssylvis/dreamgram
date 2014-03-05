@@ -38,7 +38,7 @@ class Account < ActiveRecord::Base
   end
 
   def dreams_remaining
-    DREAMS_LIMIT - dreams.count
+    DREAMS_LIMIT - dreams.active.count
   end
 
   def full_name

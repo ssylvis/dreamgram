@@ -95,6 +95,7 @@ en:
   users:
     show:
       adding_dream: "adding your first dream"
+      completed_dreams: "Completed Dreams"
       done: "Done"
       no_dreams_html: "%{name}'s bucket list is empty! Come back after a dream is added."
       no_dreams_owner_html: "What's on your bucket list? Get started by %{link}."

@@ -3,7 +3,7 @@
 - if @dreams.present?
   - content_for :head do
     -# Add Open Graph tags for Facebook sharing link
-    - dream = @dreams.first
+    - dream = @active_dreams.first || @completed_dreams.first
     %meta{:property => 'fb:app_id', :content => ENV['FACEBOOK_ID']}
     %meta{:property => 'og:description', :content => t('users.social.description', :dream => dream.description)}
     %meta{:property => 'og:image', :content => dream.image}
@@ -53,7 +53,7 @@
 
 %section.dreams
   .row
-    .col-xs-12
+    .col-xs-12.active
       .alert.alert-info.text-center{:style => block_or_none(@dreams.empty?)}
         - if owned_by_account?(@account)
           - add_link = link_to t('.adding_dream'), new_dream_path, :class => 'alert-link'
@@ -61,9 +61,9 @@
         - else
           = t('.no_dreams_html', :name => @account.first_name)
 
-      -# Show user dreams
-      - if @dreams.present?
-        = render @dreams
+      -# Show active dreams
+      - if @active_dreams.present?
+        = render @active_dreams
 
       -# Show Add button placeholder
       - unless @account.reached_dreams_limit?
@@ -71,5 +71,12 @@
 
       -# Show dream placeholder with number
       - (@account.dreams_remaining - 1).times do |i|
-        - number = @dreams.count + i + 2
+        - number = @active_dreams.count + i + 2 # start at one and skip Add button
         = render :partial => 'dreams/placeholder', :locals => {:number => number}
+
+  .row
+    .col-xs-12.completed{:style => block_or_none(@completed_dreams.present?)}
+      %h4= t('.completed_dreams')
+
+      -# Show completed dreams
+      = render @completed_dreams

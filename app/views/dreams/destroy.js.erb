@@ -5,18 +5,25 @@
 <% else -%>
   $("#dream_<%= @dream.id %>").remove();
 
-  <% if @account.dreams_remaining == 1 -%>
-    var placeholder = $("<%= escape_javascript(render('dreams/add')) %>");
-    $(".dreams .col-xs-12").append(placeholder);
-  <% else -%>
-    var placeholder = $("<%= escape_javascript(
-      render(:partial => 'dreams/placeholder', :locals => {:number => @account.dreams.count + 2})) %>");
-    $("#add_dream").after(placeholder);
-  <% end -%>
+  <% if @dream.completed? -%>
+    <% if current_account.dreams.completed.empty? %>
+      $(".dreams .row .completed").hide();
+    <% end -%>
 
-  <% if current_account.dreams.empty? %>
-    $(".header .buttons .edit").hide();
-    $(".header .buttons .social").hide();
-    $(".dreams .alert").show();
+  <% else -%>
+    <% if @account.dreams_remaining == 1 -%>
+      var placeholder = $("<%= escape_javascript(render('dreams/add')) %>");
+      $(".dreams .row .active").append(placeholder);
+    <% else -%>
+      var placeholder = $("<%= escape_javascript(
+        render(:partial => 'dreams/placeholder', :locals => {:number => @account.dreams.active.count + 2})) %>");
+      $("#add_dream").after(placeholder);
+    <% end -%>
+
+    <% if current_account.dreams.empty? %>
+      $(".header .buttons .edit").hide();
+      $(".header .buttons .social").hide();
+      $(".dreams .alert").show();
+    <% end -%>
   <% end -%>
 <% end -%>
