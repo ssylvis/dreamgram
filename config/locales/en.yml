@@ -56,6 +56,9 @@ en:
 
   dream:
     completed_ago: "completed %{time} ago"
+    complete_title: "Mark dream completed"
+    delete_title: "Delete dream"
+    edit_title: "Edit dream"
 
   dreams:
     edit:
