@@ -27,12 +27,12 @@
         = f.submit t('.submit'), :class => 'btn btn-primary'
         = link_to t('.cancel'), cancel_account_registration_path, :class => 'btn btn-default'
 - else
-  = form_tag nil, :class => 'form-horizontal' do |f|
+  = form_tag nil, :class => 'form-horizontal registrations' do |f|
     .form-group
-      .col-sm-offset-1.col-sm-4
+      .col-sm-offset-1.col-sm-10
         %h4= t('.signup')
     .form-group
-      .col-sm-offset-1.col-sm-3
+      .col-sm-offset-1.col-sm-10
         .input-group.provider
           - auth_link = account_omniauth_authorize_path(:facebook)
           %span.input-group-btn
@@ -40,7 +40,7 @@
               = image_tag 'facebook.png', :class => 'logo-facebook'
           = link_to t('.facebook'), auth_link, :class => 'form-control btn btn-facebook'
     .form-group
-      .col-sm-offset-1.col-sm-3
+      .col-sm-offset-1.col-sm-10
         .input-group.provider
           - auth_link = account_omniauth_authorize_path(:google)
           %span.input-group-btn
@@ -49,7 +49,7 @@
           = link_to t('.google'), auth_link, :class => 'form-control btn btn-google'
     %br
     .form-group
-      .col-sm-offset-1.col-sm-3
+      .col-sm-offset-1.col-sm-10
         = link_to new_account_session_path, :class => 'secondary-link' do
           = t('.login')
           %i.fa.fa-chevron-circle-right
