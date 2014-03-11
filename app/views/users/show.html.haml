@@ -54,8 +54,7 @@
 %section.dreams
   .row
     .col-xs-12
-      - display_style = @dreams.present? ? 'display: none' : 'display: block'
-      .alert.alert-info.text-center{:style => display_style}
+      .alert.alert-info.text-center{:style => block_or_none(@dreams.empty?)}
         - if owned_by_account?(@account)
           - add_link = link_to t('.adding_dream'), new_dream_path, :class => 'alert-link'
           = t('.no_dreams_owner_html', :link => add_link)

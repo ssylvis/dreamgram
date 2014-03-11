@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def block_or_none(condition)
+    condition ? 'display: block' : 'display: none'
+  end
+
   def dismiss_button
     haml_tag :button, :type => "button", :class => "close", :"data-dismiss" => "alert" do
       haml_concat "&times;".html_safe
