@@ -36,32 +36,6 @@
               %i.fa.fa-circle.fa-stack-2x
               %i.fa.fa-pencil.fa-inverse.fa-stack-1x
 
-.notices
-  = render :partial => 'shared/notices', :locals => {:show => [:alert, :warning]}
-
-%section.dreams.row
-  .col-xs-12
-    - display_style = @dreams.present? ? 'display: none' : 'display: block'
-    .alert.alert-info.text-center{:style => display_style}
-      - if owned_by_account?(@account)
-        - add_link = link_to t('.adding_dream'), new_dream_path, :class => 'alert-link'
-        = t('.no_dreams_owner_html', :link => add_link)
-      - else
-        = t('.no_dreams_html', :name => @account.first_name)
-
-    -# Show user dreams
-    - if @dreams.present?
-      = render @dreams
-
-    -# Show Add button placeholder
-    - unless @account.reached_dreams_limit?
-      = render 'dreams/add'
-
-    -# Show dream placeholder with number
-    - (@account.dreams_remaining - 1).times do |i|
-      - number = @dreams.count + i + 2
-      = render :partial => 'dreams/placeholder', :locals => {:number => number}
-
 <!-- share_modal -->
 .modal{:id => 'share_modal', :tabindex => '-1', :role => 'dialog'}
   .modal-dialog
@@ -73,3 +47,30 @@
       .modal-body
         %form
           = text_field_tag :link, user_url(:uid => @account.uid), :class => 'form-control'
+
+.notices
+  = render :partial => 'shared/notices', :locals => {:show => [:alert, :warning]}
+
+%section.dreams
+  .row
+    .col-xs-12
+      - display_style = @dreams.present? ? 'display: none' : 'display: block'
+      .alert.alert-info.text-center{:style => display_style}
+        - if owned_by_account?(@account)
+          - add_link = link_to t('.adding_dream'), new_dream_path, :class => 'alert-link'
+          = t('.no_dreams_owner_html', :link => add_link)
+        - else
+          = t('.no_dreams_html', :name => @account.first_name)
+
+      -# Show user dreams
+      - if @dreams.present?
+        = render @dreams
+
+      -# Show Add button placeholder
+      - unless @account.reached_dreams_limit?
+        = render 'dreams/add'
+
+      -# Show dream placeholder with number
+      - (@account.dreams_remaining - 1).times do |i|
+        - number = @dreams.count + i + 2
+        = render :partial => 'dreams/placeholder', :locals => {:number => number}
