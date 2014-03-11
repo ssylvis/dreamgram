@@ -3,7 +3,7 @@ class Dream < ActiveRecord::Base
 
   validates :description, :presence => true
 
-  scope :completed, ->(state) { find_by_state(state) }
+  scope :completed, -> { find_by_state(DreamState::COMPLETED) }
   scope :order_by_creation, -> { order(:created_at) }
 
   def completed?
@@ -18,12 +18,10 @@ class Dream < ActiveRecord::Base
 
   def self.find_by_state(dream_state)
     case dream_state
-    when DreamState::ALL
-      order_by_creation
     when DreamState::ACTIVE
-      where(:completed_at => nil).order_by_creation
-    when DreamState::FULFILLED
-      where.not(:completed_at => nil).order_by_creation
+      where(:completed_at => nil)
+    when DreamState::COMPLETED
+      where.not(:completed_at => nil)
     end
   end
 end

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :find_account
 
   def show
-    @dreams = @account.dreams.completed(DreamState::ALL)
+    @dreams = @account.dreams.order_by_creation
   end
 
   private

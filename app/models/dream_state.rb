@@ -1,7 +1,7 @@
 module DreamState
   ALL = :all
   ACTIVE = :active
-  FULFILLED = :fulfilled
+  COMPLETED = :completed
 
   def self.value_of(string)
     return if string.blank?
@@ -10,8 +10,8 @@ module DreamState
       ALL
     when 'active'
       ACTIVE
-    when 'fulfilled'
-      FULFILLED
+    when 'completed'
+      COMPLETED
     end
   end
 end
