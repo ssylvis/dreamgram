@@ -22,6 +22,9 @@ Dreamgram::Application.routes.draw do
   resources :dreams, :except => [:index, :show]
   resources :users, :param => :uid, :only => [:show]
 
+  # Mailer
+  post :feedback, :to => 'email#feedback'
+
   # Exceptions
   match '404', :to => 'errors#not_found', :via => :all
   match '500', :to => 'errors#internal_error', :via => :all

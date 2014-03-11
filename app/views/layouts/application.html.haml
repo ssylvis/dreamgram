@@ -1,4 +1,25 @@
 - content_for :body do
+  .feedback
+    = link_to '#feedback_modal', :'data-toggle' => "modal" do
+      %i.fa.fa-envelope
+      %span= t('.feedback.link')
+
+  <!-- feedback_modal -->
+  .modal{:id => 'feedback_modal', :tabindex => '-1', :role => 'dialog'}
+    .modal-dialog
+      .modal-content
+        = form_tag feedback_path, :remote => true, :class => 'form-horizontal' do
+          .modal-header
+            %button.close{:type => 'button', :'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
+              &times;
+            %h4.modal-title= t('.feedback.title')
+          .modal-body
+            .form-group
+              = text_area_tag 'email[feedback]', nil, :class => 'form-control', :rows => 4
+          .modal-footer
+            %button.btn.btn-default{:type => 'button', :'data-dismiss' => 'modal'}= t('.feedback.close')
+            = submit_tag t('.feedback.submit'), :class => 'btn btn-primary'
+
   %section.profile
     .brand
       = image_tag 'dreamgram_28.gif'

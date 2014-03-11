@@ -12,4 +12,10 @@ class AccountMailer < ActionMailer::Base
     @account = account
     mail :to => ADMIN_ADDRESS, :subject => t('.subject')
   end
+
+  def user_feedback(account, feedback)
+    @account = account
+    @feedback = feedback
+    mail :to => ADMIN_ADDRESS, :subject => t('.subject')
+  end
 end

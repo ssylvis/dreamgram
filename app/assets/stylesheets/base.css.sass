@@ -5,6 +5,8 @@ $btn-facebook-color: #fff !default
 $btn-facebook-bg: $facebook-color
 $btn-facebook-border: darken($facebook-color, 5%)
 
+$feedback-color: #428bca
+
 $btn-google-color: #fff !default
 $btn-google-bg: $google-color
 $btn-google-border: darken($google-color, 5%)
@@ -53,6 +55,7 @@ form
     color: black
     display: block
     text-decoration: none
+
     &:hover
       text-decoration: underline
 
@@ -63,8 +66,6 @@ form.sessions .provider
   width: 232px
 
 header
-  margin: 25px 8px 40px
-
   h1
     display: inline-block
     font-size: 35px
@@ -91,12 +92,32 @@ header
 .buttons
   font-size: 1.2em
 
+.feedback
+  background: $feedback-color
+  border-radius: 5px
+  left: 50%
+  margin-left: -60px
+  padding: 6px 16px
+  position: absolute
+  top: 0
+
+  a:hover
+    text-decoration: none
+  i
+    color: white
+  span
+    color: white
+    margin-left: 4px
+    vertical-align: middle
+
+#feedback_modal textarea
+  resize: none
+
 .profile
   position: relative
 
   .brand
     position: absolute
-    top: -8px
 
   .btn-link
     color: gray
@@ -107,7 +128,6 @@ header
   .navigation
     position: absolute
     right: -8px
-    top: -2px
 
     a
       display: inline-block
@@ -126,10 +146,42 @@ header
   body
     margin: 50px 30px
 
+  header
+    margin: 25px 8px 40px
+
+  .feedback
+    i
+      font-size: 1.2em
+    span
+      font-size: 1.1em
+
+  .profile
+    .brand
+      top: -8px
+
+    .navigation
+      top: -2px
+
 // Portrait tablet and smaller
 @media (max-width: 767px)
   body
     margin: 20px
+
+  header
+    margin-top: 50px
+
+  .feedback
+    i
+      font-size: 1em
+    span
+      font-size: 1em
+
+  .profile
+    .brand
+      top: 16px
+
+    .navigation
+      top: 22px
 
 // Landscape phone and larger
 @media (min-width: 480px)

@@ -4,6 +4,8 @@ en:
       subject: "Account created"
     account_deleted:
       subject: "Account deleted"
+    user_feedback:
+      subject: "Feedback from user"
 
   devise:
     authentication:
@@ -74,6 +76,10 @@ en:
       submit: "Create"
       title: "Create Dream"
 
+  email:
+    feedback:
+      email_sent: "Thank you! Your feedback has been sent to our support team for review."
+
   home:
     show:
       login: "Login"
@@ -84,6 +90,11 @@ en:
   layouts:
     application:
       account: "Account"
+      feedback:
+        close: "Close"
+        link: "Feedback"
+        submit: "Send"
+        title: "Have a question or issue? Send us a note!"
       login: "Login"
       logout: "Logout"
     copyright_html: "Dreamgram &copy; 2014"
