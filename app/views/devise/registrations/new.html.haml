@@ -16,11 +16,11 @@
     .form-group
       = f.label :last_name, t('.last_name'), :class => 'col-sm-2 control-label'
       .col-sm-3
-        = f.text_field :last_name, :autofocus => true, :class => 'form-control'
+        = f.text_field :last_name, :class => 'form-control'
     - form_group_for(@account, :email) do
       = f.label :email, t('.email'), :class => 'col-sm-2 control-label'
       .col-sm-3
-        = f.text_field :email, :autofocus => true, :class => 'form-control'
+        = f.text_field :email, :class => 'form-control'
         - error_for @account, :email
     .form-group
       .col-sm-offset-2.col-sm-3
