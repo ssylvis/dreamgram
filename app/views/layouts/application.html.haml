@@ -15,7 +15,7 @@
             %h4.modal-title= t('.feedback.title')
           .modal-body
             .form-group
-              = text_area_tag 'email[feedback]', nil, :class => 'form-control', :rows => 4
+              = text_area_tag 'email[feedback]', nil, :rows => 4, :class => 'form-control'
           .modal-footer
             %button.btn.btn-default{:type => 'button', :'data-dismiss' => 'modal'}= t('.feedback.close')
             = submit_tag t('.feedback.submit'), :class => 'btn btn-primary'
