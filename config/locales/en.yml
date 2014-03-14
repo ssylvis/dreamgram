@@ -10,7 +10,7 @@ en:
   devise:
     authentication:
       account:
-        failure: "We failed to authenticate you with %{kind}: %{reason}."
+        failure: "Authentication with %{kind} failed for the following reason: %{reason}."
 
     confirmations:
       new:
