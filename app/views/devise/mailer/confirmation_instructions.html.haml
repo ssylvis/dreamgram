@@ -1,13 +1,16 @@
-%p
-  Hello
-  = "#{@account.first_name}!"
+!!!
+%html
+  %body
+    %p
+      Hello
+      = "#{@account.first_name}!"
 
-%p
-  - unless @account.pending_reconfirmation?
-    Welcome to Dreamgram!
-  Please confirm your email address by clicking
-  - confirmation_link = link_to('this link', account_confirmation_url(:confirmation_token => @token))
-  = raw "#{confirmation_link}."
+    %p
+      - unless @account.pending_reconfirmation?
+        Welcome to Dreamgram!
+      Please confirm your email address by clicking
+      - confirmation_link = link_to('this link', account_confirmation_url(:confirmation_token => @token))
+      = raw "#{confirmation_link}."
 
-%p
-  Once you confirm, you can start adding dreams to your bucket list and share it with friends!
+    %p
+      Once you confirm, you can start adding dreams to your bucket list and share it with friends!

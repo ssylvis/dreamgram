@@ -1,0 +1,7 @@
+!!!
+%html
+  %body
+    %p
+      Feedback received from
+      = "#{@account.email}:"
+    = simple_format(@feedback)
