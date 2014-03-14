@@ -22,9 +22,8 @@ en:
 
     mailer:
       confirmation_instructions:
+        confirm_link: "Confirm your account"
         subject: "Confirmation instructions"
-      reset_password_instructions:
-        subject: "Reset password instructions"
 
     registrations:
       destroyed: ""

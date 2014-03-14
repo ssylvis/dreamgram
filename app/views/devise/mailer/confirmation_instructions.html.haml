@@ -1,16 +1,16 @@
 !!!
 %html
-  %body
+  %body{:style => 'font-family: Helvetica, sans-serif; font-size: 14px'}
     %p
       Hello
-      = "#{@account.first_name}!"
-
+      = "#{@account.first_name},"
     %p
       - unless @account.pending_reconfirmation?
         Welcome to Dreamgram!
-      Please confirm your email address by clicking
-      - confirmation_link = link_to('this link', account_confirmation_url(:confirmation_token => @token))
-      = raw "#{confirmation_link}."
-
+      Please confirm your email address by clicking the link below. Once you confirm, you can start adding dreams to
+      your bucket list and share it with friends.
+    %p{:style => 'margin: 28px 0'}
+      = link_to t('.confirm_link'), account_confirmation_url(:confirmation_token => @token),
+        :style => 'background-color: #428BCA; border-radius: 6px; color: white; font-size: 16px; margin-left: 40px; padding: 10px 16px; text-decoration: none'
     %p
-      Once you confirm, you can start adding dreams to your bucket list and share it with friends!
+      What's on your bucket list?
