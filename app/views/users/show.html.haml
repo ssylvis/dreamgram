@@ -49,7 +49,7 @@
           = text_field_tag :link, user_url(:uid => @account.uid), :class => 'form-control'
 
 .notices
-  = render :partial => 'shared/notices', :locals => {:show => [:alert, :warning]}
+  = render :partial => 'shared/notices', :locals => {:show => [:alert, :notice, :warning]}
 
 %section.dreams
   .row

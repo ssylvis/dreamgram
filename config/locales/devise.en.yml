@@ -4,6 +4,7 @@ en:
   devise:
     authentication:
       account:
+        already_registered: "Welcome back! You've already registered with your %{provider} account."
         invalid: "Oops! You need to register your account first."
         oauth_signup: "You're almost done! Complete the form below to sign up with your %{provider} account."
 
