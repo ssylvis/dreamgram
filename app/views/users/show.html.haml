@@ -66,12 +66,16 @@
         = render @active_dreams
 
       -# Show Add button placeholder
-      - unless @account.reached_dreams_limit?
+      - placeholder_start = @active_dreams.count + 1
+      - placeholder_count = @account.dreams_remaining
+      - if owned_by_account?(@account) && !@account.reached_dreams_limit?
+        - placeholder_start += 1
+        - placeholder_count -= 1
         = render 'dreams/add'
 
       -# Show dream placeholder with number
-      - (@account.dreams_remaining - 1).times do |i|
-        - number = @active_dreams.count + i + 2 # start at one and skip Add button
+      - placeholder_count.times do |i|
+        - number = placeholder_start + i
         = render :partial => 'dreams/placeholder', :locals => {:number => number}
 
   .row
