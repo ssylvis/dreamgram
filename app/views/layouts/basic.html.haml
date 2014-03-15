@@ -1,7 +1,8 @@
 - content_for :body do
   %section.profile
     .brand
-      = image_tag 'dreamgram_28.gif'
+      = link_to account_root_path do
+        = image_tag 'dreamgram_28.gif'
 
   %header.row
     .col-xs-12
