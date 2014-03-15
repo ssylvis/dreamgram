@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'bootstrap-sass', '~> 3.0.3'
 gem 'bugsnag'
 gem 'coffee-rails'
@@ -16,6 +15,7 @@ gem 'omniauth-google-oauth2'
 gem 'rack-timeout'
 gem 'rails', '~> 4.0.2'
 gem 'sass-rails'
+gem 'sprockets', '<= 2.11.0' # https://github.com/rails/sass-rails/issues/191
 gem 'uglifier'
 gem 'unicorn'
 
