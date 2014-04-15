@@ -82,9 +82,18 @@ en:
 
   home:
     show:
+      caption: "Visit the Tianzi Mountains in China"
       login: "Login"
-      signup: "Get Started"
-      subtitle: "What's on your bucket list?"
+      signup: "Join Now"
+      subtitle_html: "<p>Where do your dreams live?</p>
+<p>For most of us they occupy passing thoughts as we go about our day&#8212;waiting in line, eating dinner, stuck in traffic.</p>
+<p>Bring your dreams into focus with Dreamgram:
+<ul>
+<li>Create your list</li>
+<li>Share your progress</li>
+<li>Be inspired by others</li>
+</ul>
+<p>Big things can happen.</p>"
       title: "Dreamgram"
 
   layouts:

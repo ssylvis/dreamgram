@@ -5,14 +5,11 @@ $btn-facebook-color: #fff !default
 $btn-facebook-bg: $facebook-color
 $btn-facebook-border: darken($facebook-color, 5%)
 
-$feedback-color: #428bca
-
 $btn-google-color: #fff !default
 $btn-google-bg: $google-color
 $btn-google-border: darken($google-color, 5%)
 
-body
-  font-family: Helvetica,sans-serif !important
+$feedback-color: #428bca
 
 button, i
   text-decoration: none
@@ -27,12 +24,6 @@ footer
   text-align: right
 
 form
-  .btn-facebook
-    @include button-variant($btn-facebook-color, $btn-facebook-bg, $btn-facebook-border)
-
-  .btn-google
-    @include button-variant($btn-google-color, $btn-google-bg, $btn-google-border)
-
   .provider
     a
       font-weight: bold
@@ -88,6 +79,12 @@ header
   font-size: 1.5em
   margin-right: 5px
   vertical-align: middle
+
+.btn-facebook
+  @include button-variant($btn-facebook-color, $btn-facebook-bg, $btn-facebook-border)
+
+.btn-google
+  @include button-variant($btn-google-color, $btn-google-bg, $btn-google-border)
 
 .buttons
   font-size: 1.2em

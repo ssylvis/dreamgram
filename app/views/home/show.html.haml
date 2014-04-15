@@ -1,8 +1,10 @@
-.login-link.pull-right
-  = link_to t('.login'), new_account_session_path, :class => 'btn btn-link btn-lg'
+.caption
+  = t('.caption')
+
 .dream-splash
-  = image_tag 'dreamgram.gif'
-  .title
-    %h1= t('.title')
-    %h2= t('.subtitle')
-    = link_to t('.signup'), new_account_registration_path, :class => 'btn btn-primary btn-lg'
+  %h1
+    = t('.title')
+  .subtitle
+    = t('.subtitle_html')
+  = link_to t('.signup'), new_account_registration_path, :class => 'btn btn-signup'
+  = link_to t('.login'), new_account_session_path, :class => 'btn btn-login'

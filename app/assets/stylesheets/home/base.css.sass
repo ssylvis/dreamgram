@@ -1,0 +1,16 @@
+@import "bootstrap"
+@import "variables"
+
+$btn-login-color: #fff !default
+$btn-login-bg: $login-color
+$btn-login-border: darken($login-color, 5%)
+
+$btn-signup-color: #fff !default
+$btn-signup-bg: $signup-color
+$btn-signup-border: darken($signup-color, 5%)
+
+.btn-login
+  @include button-variant($btn-login-color, $btn-login-bg, $btn-login-border)
+
+.btn-signup
+  @include button-variant($btn-signup-color, $btn-signup-bg, $btn-signup-border)
