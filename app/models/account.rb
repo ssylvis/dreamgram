@@ -41,6 +41,10 @@ class Account < ActiveRecord::Base
     DREAMS_LIMIT - dreams.active.count
   end
 
+  def friends
+    Account.where.not(:id => id)
+  end
+
   def full_name
     [first_name, last_name].join(' ')
   end

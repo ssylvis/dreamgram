@@ -1,8 +1,9 @@
+- linkable ||= false
 - height = DreamsHelper::IMAGE_HEIGHT
 - width = DreamsHelper::IMAGE_WIDTH
 
 .dream.thumbnail.pull-left{ :id => "dream_#{dream.id}", :style => "width: #{width}px" }
-  - if owned_by_account?(@account)
+  - if owned_by_account?(dream)
     .buttons.edit-buttons{ :style => 'display: none' }
       = form_tag dream_path(dream), :method => 'delete', :remote => true do
         = button_tag :type => 'submit', :title => t('dream.delete_title'), :class => 'btn-link remove' do
@@ -29,5 +30,10 @@
 
   .image{ :style => "height: #{height}px" }
     - image_src = dream.image.blank? ? 'empty.png' : dream.image
-    = image_tag image_src, :style => image_style(dream), :title => dream_image_title(dream)
+    - image_options = { :style => image_style(dream), :title => dream_image_title(dream) }
+    - if linkable
+      = link_to user_path(:uid => dream.account.uid) do
+        = image_tag image_src, image_options
+    - else
+      = image_tag image_src, image_options
   .caption= dream.description
