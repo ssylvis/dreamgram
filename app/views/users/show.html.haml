@@ -4,21 +4,21 @@
   - content_for :head do
     -# Add Open Graph tags for Facebook sharing link
     - dream = @active_dreams.first || @completed_dreams.first
-    %meta{:property => 'fb:app_id', :content => ENV['FACEBOOK_ID']}
-    %meta{:property => 'og:description', :content => t('users.social.description', :dream => dream.description)}
-    %meta{:property => 'og:image', :content => dream.image}
-    %meta{:property => 'og:site_name', :content => t('layouts.title')}
-    %meta{:property => 'og:title', :content => t('users.social.title', :name => @account.first_name)}
-    %meta{:property => 'og:url', :content => user_url(:uid => @account.uid)}
+    %meta{ :property => 'fb:app_id', :content => ENV['FACEBOOK_ID'] }
+    %meta{ :property => 'og:description', :content => t('users.social.description', :dream => dream.description) }
+    %meta{ :property => 'og:image', :content => dream.image }
+    %meta{ :property => 'og:site_name', :content => t('layouts.title') }
+    %meta{ :property => 'og:title', :content => t('users.social.title', :name => @account.first_name) }
+    %meta{ :property => 'og:url', :content => user_url(:uid => @account.uid) }
 
 - if owned_by_account?(@account)
   - content_for :header do
     .buttons
-      .editing{:style => 'display: none'}
+      .editing{ :style => 'display: none' }
         = link_to t('.done'), account_root_path, :remote => true, :class => 'btn-link done'
-      .listing{:style => 'display: block'}
+      .listing{ :style => 'display: block' }
         - if @dreams.present?
-          .social{:style => 'display: block'}
+          .social{ :style => 'display: block' }
             = link_to facebook_share_link(@account), :class => 'facebook', :target => '_blank' do
               %span.fa-stack
                 %i.fa.fa-circle.fa-stack-2x
@@ -37,11 +37,11 @@
               %i.fa.fa-pencil.fa-inverse.fa-stack-1x
 
 <!-- share_modal -->
-.modal{:id => 'share_modal', :tabindex => '-1', :role => 'dialog'}
+.modal{ :id => 'share_modal', :tabindex => '-1', :role => 'dialog' }
   .modal-dialog
     .modal-content
       .modal-header
-        %button.close{:type => 'button', :'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
+        %button.close{ :type => 'button', :'data-dismiss' => 'modal', :'aria-hidden' => 'true' }
           &times;
         %h4.modal-title= t('.share_title')
       .modal-body
@@ -49,12 +49,12 @@
           = text_field_tag :link, user_url(:uid => @account.uid), :class => 'form-control'
 
 .notices
-  = render :partial => 'shared/notices', :locals => {:show => [:alert, :notice, :warning]}
+  = render :partial => 'shared/notices', :locals => { :show => [:alert, :notice, :warning] }
 
 %section.dreams
   .row
     .col-xs-12.active
-      .alert.alert-info.text-center{:style => block_or_none(@dreams.empty?)}
+      .alert.alert-info.text-center{ :style => block_or_none(@dreams.empty?) }
         - if owned_by_account?(@account)
           - add_link = link_to t('.adding_dream'), new_dream_path, :class => 'alert-link'
           = t('.no_dreams_owner_html', :link => add_link)
@@ -76,11 +76,10 @@
       -# Show dream placeholder with number
       - placeholder_count.times do |i|
         - number = placeholder_start + i
-        = render :partial => 'dreams/placeholder', :locals => {:number => number}
+        = render :partial => 'dreams/placeholder', :locals => { :number => number }
 
   .row
-    .col-xs-12.completed{:style => block_or_none(@completed_dreams.present?)}
+    .col-xs-12.completed{ :style => block_or_none(@completed_dreams.present?) }
       %h4= t('.completed_dreams')
-
       -# Show completed dreams
       = render @completed_dreams

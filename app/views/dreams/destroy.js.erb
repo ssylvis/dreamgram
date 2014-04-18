@@ -16,7 +16,7 @@
       $(".dreams .row .active").append(placeholder);
     <% else -%>
       var placeholder = $("<%= escape_javascript(
-        render(:partial => 'dreams/placeholder', :locals => {:number => @account.dreams.active.count + 2})) %>");
+        render(:partial => 'dreams/placeholder', :locals => { :number => @account.dreams.active.count + 2 })) %>");
       $("#add_dream").after(placeholder);
     <% end -%>
 

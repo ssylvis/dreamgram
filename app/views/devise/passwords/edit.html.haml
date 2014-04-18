@@ -2,7 +2,7 @@
 
 = render :partial => 'shared/notices'
 
-= form_for @account, :url => account_password_path, :method => :patch, :html => {:class => 'form-horizontal'} do |f|
+= form_for @account, :url => account_password_path, :method => :patch, :html => { :class => 'form-horizontal' } do |f|
   = f.hidden_field :reset_password_token
   - form_group_for(@account, :password) do
     = f.label :password, t('.password'), :class => 'col-sm-2 control-label'

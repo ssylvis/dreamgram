@@ -2,10 +2,10 @@
 - width = DreamsHelper::IMAGE_WIDTH
 
 -# Classes from _dream are used for consistent style
-.dream.thumbnail.placeholder.pull-left{:id => 'add_dream', :style => "width: #{width}px"}
+.dream.thumbnail.placeholder.pull-left{ :id => 'add_dream', :style => "width: #{width}px" }
   .content
     = link_to new_dream_path, :class => 'add' do
       %i.fa.fa-plus-circle.fa-3x
   .image
-    %div.background{:style => "height: #{height}px"}
+    %div.background{ :style => "height: #{height}px" }
     .caption

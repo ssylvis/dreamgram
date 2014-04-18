@@ -5,19 +5,19 @@
       %span= t('.feedback.link')
 
   <!-- feedback_modal -->
-  .modal{:id => 'feedback_modal', :tabindex => '-1', :role => 'dialog'}
+  .modal{ :id => 'feedback_modal', :tabindex => '-1', :role => 'dialog' }
     .modal-dialog
       .modal-content
         = form_tag feedback_path, :remote => true, :class => 'form-horizontal' do
           .modal-header
-            %button.close{:type => 'button', :'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
+            %button.close{ :type => 'button', :'data-dismiss' => 'modal', :'aria-hidden' => 'true' }
               &times;
             %h4.modal-title= t('.feedback.title')
           .modal-body
             .form-group
               = text_area_tag 'email[feedback]', nil, :rows => 4, :class => 'form-control'
           .modal-footer
-            %button.btn.btn-default{:type => 'button', :'data-dismiss' => 'modal'}= t('.feedback.close')
+            %button.btn.btn-default{ :type => 'button', :'data-dismiss' => 'modal' }= t('.feedback.close')
             = submit_tag t('.feedback.submit'), :class => 'btn btn-primary'
 
   %section.profile

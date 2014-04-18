@@ -2,7 +2,7 @@
   %h4= t('.title')
   .subtitle= t('.subtitle')
 
-= form_for @dream, :html => {:class => 'form-horizontal'} do |f|
+= form_for @dream, :html => { :class => 'form-horizontal' } do |f|
   .form-group
     .col-sm-offset-2.col-sm-6
       - dream_src = @dream.image.present? ? @dream.image : 'empty.png'

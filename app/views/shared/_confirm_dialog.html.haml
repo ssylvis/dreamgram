@@ -1,12 +1,12 @@
-.modal{:id => dialog_id, :tabindex => '-1', :role => 'dialog'}
+.modal{ :id => dialog_id, :tabindex => '-1', :role => 'dialog' }
   .modal-dialog
     .modal-content
       .modal-header
-        %button.close{:type => 'button', :'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
+        %button.close{ :type => 'button', :'data-dismiss' => 'modal', :'aria-hidden' => 'true' }
           &times;
         %h4.modal-title= dialog_title
       .modal-body
         = dialog_message
       .modal-footer
-        %button.btn.btn-default{:type => 'button', :'data-dismiss' => 'modal'} Close
-        %button.btn.btn-primary{:type => 'button', :'data-dismiss' => 'modal'} OK
+        %button.btn.btn-default{ :type => 'button', :'data-dismiss' => 'modal' } Close
+        %button.btn.btn-primary{ :type => 'button', :'data-dismiss' => 'modal' } OK

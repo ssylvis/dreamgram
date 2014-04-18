@@ -3,7 +3,7 @@
 = render :partial => 'shared/notices'
 
 - if oauth_authenticated?
-  = form_for @account, :url => account_registration_path, :html => {:class => 'form-horizontal'} do |f|
+  = form_for @account, :url => account_registration_path, :html => { :class => 'form-horizontal' } do |f|
     .form-group
       .col-sm-offset-1.col-sm-4
         %h4= t('.signup')
