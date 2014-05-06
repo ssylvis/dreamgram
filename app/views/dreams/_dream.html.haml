@@ -1,4 +1,3 @@
-- linkable ||= false
 - height = DreamsHelper::IMAGE_HEIGHT
 - width = DreamsHelper::IMAGE_WIDTH
 
@@ -31,9 +30,5 @@
   .image{ :style => "height: #{height}px" }
     - image_src = dream.image.blank? ? 'empty.png' : dream.image
     - image_options = { :style => image_style(dream), :title => dream_image_title(dream) }
-    - if linkable
-      = link_to user_path(:uid => dream.account.uid) do
-        = image_tag image_src, image_options
-    - else
-      = image_tag image_src, image_options
+    = image_tag image_src, image_options
   .caption= dream.description

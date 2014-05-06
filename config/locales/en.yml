@@ -119,7 +119,6 @@ en:
       done: "Done"
       no_dreams_html: "%{name}'s bucket list is empty! Come back after a dream is added."
       no_dreams_owner_html: "What's on your bucket list? Get started by %{link}."
-      others_dreams: "See what others have in their bucket list"
       share_title: "Share your bucket list"
       title: "Bucket list"
     social:
