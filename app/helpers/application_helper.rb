@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   def owned_by_account?(object)
-    (object == current_account) || current_account.dreams.include?(object)
+    (object == current_account) || (current_account && current_account.dreams.include?(object))
   end
 
   def page_title(page)
